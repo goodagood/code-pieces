@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<!--
+In event handler, `this` get to be the DOM element emits the event.
+-->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+
+<title> see `this' point, a </title>
+<!--
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+-->
+<script src="http://code.jquery.com/jquery.min.js"></script>
+
+<script src="./jquery.inspect.js"></script>
+
+<script type="text/javascript">
+  function MyObject(the_secret) {
+    var that = this;
+
+    this.secret = the_secret;
+    this.this_secret = function () {
+      alert("Is this what you want: " + this.secret);
+    };
+    this.that_secret = function () {
+      alert("Is that what you want: " + that.secret);
+    };
+
+    this.show_this = function(){
+      $.inspect(this, 'window');
+    };
+  }
+
+  function addhandler() {
+    var deep_thought = new MyObject(42),
+    this_secret_button = document.getElementById('this-secret');
+    that_secret_button = document.getElementById('that-secret');
+
+    this_secret_button.onclick = deep_thought.this_secret;
+    that_secret_button.onclick = deep_thought.that_secret;
+  }
+
+  window.onload = addhandler;
+
+</script>
+</head>
+<body>
+
+<h1> test a, <span id="inh1">jquery</span> inspect </h1>
+<button id="this-secret"> this secret button </button>
+<button id="that-secret"> that secret button </button>
+<button id="show-this"> show this button </button>
+<button id="show-that"> show that button </button>
+
+</body>
+<!-- vim: et sw=2 ts=2
+-->
+</html>
