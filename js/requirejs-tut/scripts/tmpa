@@ -1,0 +1,32 @@
+//purchase.js
+
+function purchaseProduct(){
+    console.log("Function : purchaseProduct");
+
+    var credits = getCredits();
+    if(credits > 0){
+        reserveProduct();
+        return true;
+    }
+    return false;
+}
+
+products.js
+
+function reserveProduct(){
+    console.log("Function : reserveProduct");
+
+    return true;
+}
+
+credits.js
+
+function getCredits(){
+    console.log("Function : getCredits");
+
+    var credits = "100";
+    return credits;
+}
+
+//main.js
+var result = purchaseProduct();
