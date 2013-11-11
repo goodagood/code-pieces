@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+
+<title> jquery template </title>
+<style>
+.error {color:red;}
+</style>
+</head>
+<body>
+
+<h1> jquery template </h1>
+<form id="aform">
+  <input type="text" id="inpa" name="inpa" />
+  <input type="submit" id="ok" name="ok" />
+    
+</form>
+
+<!--
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+-->
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="libs/jquery.validate.js"></script>
+
+<script>
+$( document ).ready(function() {
+  console.log( "document loaded" );
+  $("#aform").validate({
+    rules:{
+      inpa: {
+        required:true,
+        minlength:2,
+      }
+    },
+    onfocusout: false,
+    submitHandler: function(form) {
+      //$(form).ajaxSubmit();
+      alert('submit handler');
+    }
+  });
+});
+</script>
+</body>
+<!-- vim: et ts=2 sw=2
+-->
+</html>
