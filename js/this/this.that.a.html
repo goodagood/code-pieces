@@ -1,14 +1,25 @@
+<!--
+`this` is a keyword in Javascript.
+For programmers accustomed to local scope of object in other programming languages,
+the annoying truth is Javascript would reset `this`.
+
+In event handler, `this` get to be the DOM element who emits the event.
+
+How to see it:
+Load this with a browser if you know how to find `jquery.inspect.js` on github,
+or:
+
+  git clone https://github.com/goodagood/code-pieces.git
+  # It's  js/this/this.that.html
+-->
 <!DOCTYPE HTML>
 <html>
-<!--
-In event handler, `this` get to be the DOM element emits the event.
--->
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="play in goodagood" />
-<meta name="keywords" content="javascript this that object and event" />
+<meta name="keywords" content="javascript, `this` `that` `object` and `event`" />
 
-<title> see `this' point, a </title>
+<title> Play when work on goodagood </title>
 </head>
 <body>
 
@@ -27,17 +38,20 @@ In event handler, `this` get to be the DOM element emits the event.
 <script src="./jquery.inspect.js"></script>
 
 <script type="text/javascript">
+  // MyObject is a function, but when called with `new`, it returns `this`.
   function MyObject(the_secret) {
+    // Let's get hold on the true local variable `that`:
     var that = this;
 
     this.secret = the_secret;
-    this.this_secret = function () {
+    this.show_this_secret = function () {
       alert("Is this what you want: " + this.secret + "!?");
     };
-    this.that_secret = function () {
+    this.show_that_secret = function () {
       alert("Is that what you want: " + that.secret);
     };
 
+    // jquery.inspect.js is what we used to show the evil details.
     this.show_this = function(){
       //$.inspect(this, 'window');
       $.inspect(this);
@@ -49,26 +63,24 @@ In event handler, `this` get to be the DOM element emits the event.
   }
 
   function addhandler() {
-    var deep_thought = new MyObject(38),
+    // Note: the secret is 38, simply a number.
+    var my_obj = new MyObject(38);
     this_secret_button = document.getElementById('this-secret');
     that_secret_button = document.getElementById('that-secret');
     show_this_button = document.getElementById('show-this');
     show_that_button = document.getElementById('show-that');
 
-    this_secret_button.onclick = deep_thought.this_secret;
-    that_secret_button.onclick = deep_thought.that_secret;
-    show_this_button.onclick = deep_thought.show_this;
-    show_that_button.onclick = deep_thought.show_that;
+    // The method will be called, of course, but `this` changed.
+    this_secret_button.onclick = my_obj.show_this_secret;
+    // So, we get that:
+    that_secret_button.onclick = my_obj.show_that_secret;
+    // The details:
+    show_this_button.onclick = my_obj.show_this;
+    show_that_button.onclick = my_obj.show_that;
   }
 
-  /*
-  $(function(){
-    $("#show-this").click($.inspect(this));
-  });
-  */
 
   window.onload = addhandler;
-
 </script>
 
 <!-- vim: et sw=2 ts=2
