@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+
+<title> jquery template </title>
+<style>
+.error {color:red;}
+</style>
+</head>
+<body>
+
+<h1> jquery template </h1>
+<form id="aform">
+  <input type="text" id="inpa" name="inpa" />
+  <input type="submit" id="ok" name="ok" value="set name" />
+</form>
+<br />
+
+<form id="bform">
+  <input type="text" id="inpb" name="inpb" />
+  <input type="submit" id="submitb" name="submitb" />
+</form>
+
+<h1> welcom <span id="welcom-span"> who? </span> </h1>
+<!--
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+-->
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="libs/jquery.validate.js"></script>
+<script src="libs/jquery.inspect.js"></script>
+
+<script>
+$( document ).ready(function() {
+  console.log( "document loaded" );
+  $("#aform").validate({
+    rules:{
+      inpa: {
+        required:true,
+        minlength:2,
+      }
+    },
+    onfocusout: false,
+    submitHandler: function(form) {
+      //$(form).ajaxSubmit();
+      alert('submit handler');
+      $("#ok").attr("value", "change my name");
+    }
+  });
+
+
+  $("#bform").validate({
+    rules:{
+      inpb: {
+        required:true,
+        minlength:2,
+        email:true,
+      }
+    },
+    //onfocusout: false,
+    submitHandler: function(form) {
+      //$(form).ajaxSubmit();
+      //alert('submit b handler');
+      //$.inspect(form);
+      var email = $("#inpb").val();
+      sayEmail(email);
+    }
+  });
+
+  //
+  function sayEmail(email){
+    $("#welcom-span").html(email);
+  }
+});
+</script>
+</body>
+<!-- vim: et ts=2 sw=2
+-->
+</html>

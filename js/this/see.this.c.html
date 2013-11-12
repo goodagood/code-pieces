@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+
+<title> html5 template </title>
+<!--
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+-->
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="./jquery.inspect.js"></script>
+
+<script type="text/javascript">
+  function BigComputer(answer) {
+    this.the_answer = answer;
+    this.ask_question = function () {
+      alert(this.the_answer);
+    }
+  }
+
+  function clickHandler(){
+    var deep_thought = new BigComputer(42);
+    deep_thought.ask_question();
+  }
+
+  function addhandler() {
+    var deep_thought = new BigComputer(42),
+    the_button = document.getElementById('thebutton');
+
+    //the_button.onclick = deep_thought.ask_question;
+    the_button.onclick = clickHandler;
+  }
+
+  window.onload = addhandler;
+
+</script>
+</head>
+<body>
+
+<h1> test a, <span id="inh1">jquery</span> inspect </h1>
+<button id="thebutton"> the button </button>
+
+</body>
+<!-- vim: et sw=2 ts=2
+-->
+</html>
