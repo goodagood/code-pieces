@@ -21,6 +21,7 @@ or:
 
 <title> Play when work on goodagood </title>
 </head>
+
 <body>
 
 <h1> Inspect `this`, `that`, `object` and `event` </h1>
@@ -43,6 +44,7 @@ or:
     // Let's get hold on the true local variable `that`:
     var that = this;
 
+    // Don't be cheated by `this`, it can not hold the secret.
     this.secret = the_secret;
     this.show_this_secret = function () {
       alert("Is this what you want: " + this.secret + "!?");
@@ -70,7 +72,10 @@ or:
     show_this_button = document.getElementById('show-this');
     show_that_button = document.getElementById('show-that');
 
-    // The method will be called, of course, but `this` changed.
+    /* The method will be called, of course, but `this` changed.
+    * `this` changed to be the event emitter,
+    * and it has no property named as `secret`, it gives your: `undefined`.
+    */
     this_secret_button.onclick = my_obj.show_this_secret;
     // So, we get that:
     that_secret_button.onclick = my_obj.show_that_secret;
