@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+
+<title> crafty 1126 </title>
+</head>
+<body>
+
+<h1> crafty, game thing </h1>
+
+<!--
+<script src="http://code.jquery.com/jquery.min.js"></script>
+-->
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/jquery-inspect/jquery.inspect.js"></script>
+
+<script src="lib/crafty.js"></script>
+<script src="src/game.js"></script>
+<script src="src/components.js"></script>
+<script src="src/scene.js"></script>
+<script>
+  $( document ).ready(function() {
+      //console.log( this == $ ? 'yes' : 'no' );
+      //$.inspect(this, 'window');
+  });
+
+  window.addEventListener('load', Game.start);
+</script>
+</body>
+<!-- vim: et ts=2 sw=2
+-->
+</html>
+
+
+
+<!--  aaa -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="lib/crafty.js"></script>
+  <script src="src/game.js"></script>
+  <script src="src/components.js"></script>
+  <script src="src/scenes.js"></script>
+  <script>
+    window.addEventListener('load', Game.start);
+  </script>
+  <style type="text/css" media="screen">
+    body {
+      background: black;
+      text-align: center;
+      color: #DDD;
+      font-family: Arial;
+    }
+
+    .controls {
+      color: #BBB;
+    }
+
+    #cr-stage { margin: 20px auto 0; }
+
+    .bottom {
+      font-size: 12px;
+      color: #888;
+      margin-top: 50px;
+    }
+
+    .bottom a {
+      color: #AAA;
+    }
+  </style>
+</head>
+<body>
+  <h2>Crafty's Adventure</h2>
+
+  <p>Help Crafty visit her friends in each village.</p>
+
+  <p class="controls">Controls: Use W, A, S, and D or arrow keys to move around.</p>
+
+  <div id="cr-stage"></div>
+
+  <p class="bottom">Created for the "Introduction to Crafty Game Engine" tutorial on <a href="http://buildnewgames.com" target="_blank">Build New Games</a>.
+</body>
+</html>

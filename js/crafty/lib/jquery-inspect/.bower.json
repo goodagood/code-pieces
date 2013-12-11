@@ -1,0 +1,14 @@
+{
+  "name": "jquery-inspect",
+  "homepage": "https://github.com/ssoper/jquery-inspect",
+  "_release": "01b0c78dd1",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "01b0c78dd11858535a382c2289ac3bd14fa9b96b"
+  },
+  "_source": "https://github.com/ssoper/jquery-inspect.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/ssoper/jquery-inspect.git",
+  "_direct": true
+}

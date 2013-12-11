@@ -1,0 +1,43 @@
+<!--
+The default global variable is one of the reason Javascript get so many hate.
+
+Here we show it:
+  
+In file "b.js", we can change the variable defined in "a.js",
+and left functions in "a.js" in confusion.
+
+The page will alert a string message, instead of the original number.
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <title> Global variable get changed in different script file </title>
+</head>
+<body>
+
+<h1> Global variable get changed in different script file </h1>
+
+<script src="a.js"></script>
+<!-- Content of "a.js" :
+
+  var a = 3;
+
+  setTimeout(function(){
+    alert(a);
+  }, 2000);
+-->
+
+<script src="b.js"></script>
+<!-- Content of "b.js" :
+
+  var a = "I have changed your variable: a";
+-->
+
+</body>
+<!-- vim: et ts=2 sw=2
+-->
+</html>

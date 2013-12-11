@@ -5,12 +5,22 @@ In event handler, `this` get to be the DOM element emits the event.
 -->
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<meta name="description" content="" />
-<meta name="keywords" content="" />
+<meta name="description" content="play in goodagood" />
+<meta name="keywords" content="javascript this that object and event" />
 
 <title> see `this' point, a </title>
+</head>
+<body>
+
+<h1> Inspect `this`, `that`, `object` and `event` </h1>
+<button id="this-secret"> this secret button </button>
+<button id="that-secret"> that secret button </button>
+<button id="show-this"> show this button </button>
+<button id="show-that"> show that button </button>
+
+</body>
+
 <!--
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 -->
 <script src="http://code.jquery.com/jquery.min.js"></script>
 
@@ -22,39 +32,45 @@ In event handler, `this` get to be the DOM element emits the event.
 
     this.secret = the_secret;
     this.this_secret = function () {
-      alert("Is this what you want: " + this.secret);
+      alert("Is this what you want: " + this.secret + "!?");
     };
     this.that_secret = function () {
       alert("Is that what you want: " + that.secret);
     };
 
     this.show_this = function(){
-      $.inspect(this, 'window');
+      //$.inspect(this, 'window');
+      $.inspect(this);
+    };
+    this.show_that = function(){
+      //$.inspect(that, 'window');
+      $.inspect(that);
     };
   }
 
   function addhandler() {
-    var deep_thought = new MyObject(42),
+    var deep_thought = new MyObject(38),
     this_secret_button = document.getElementById('this-secret');
     that_secret_button = document.getElementById('that-secret');
+    show_this_button = document.getElementById('show-this');
+    show_that_button = document.getElementById('show-that');
 
     this_secret_button.onclick = deep_thought.this_secret;
     that_secret_button.onclick = deep_thought.that_secret;
+    show_this_button.onclick = deep_thought.show_this;
+    show_that_button.onclick = deep_thought.show_that;
   }
+
+  /*
+  $(function(){
+    $("#show-this").click($.inspect(this));
+  });
+  */
 
   window.onload = addhandler;
 
 </script>
-</head>
-<body>
 
-<h1> test a, <span id="inh1">jquery</span> inspect </h1>
-<button id="this-secret"> this secret button </button>
-<button id="that-secret"> that secret button </button>
-<button id="show-this"> show this button </button>
-<button id="show-that"> show that button </button>
-
-</body>
 <!-- vim: et sw=2 ts=2
 -->
 </html>
