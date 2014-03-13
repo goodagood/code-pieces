@@ -8,6 +8,35 @@
 <title> front end 'this' of javascript, jquery </title>
 <script src="http://code.jquery.com/jquery.min.js"></script>
 <script>
+function _gg_get_color(){
+  var color = ['#cc0000', '#00cc00', '#0000cc'];
+  var length = color.length -1;
+  var index = 0;
+
+  function get_color(){
+    if (index >= length){
+      index = index - length;
+    }else{
+      index = index + 1;
+    }
+    return color[index];
+  }
+  return get_color;
+}
+
+function changeColor() {
+  var color = _gg_get_color();
+  $("p#show-this").html( inspect(this, 1));
+  this.style.color = color();
+}
+
+function objChangeColor(obj, level) {
+  if (typeof level === 'undefined' or level == null) level = 1;
+  var color = _gg_get_color();
+  $("p#show-this").html( inspect(obj, level));
+  obj.style.color = color();
+}
+
 var color1 = '#cc0000', color2 = '#00cc00', c = '#0000cc';
 
 // Let's prepare to inspect something.
@@ -41,12 +70,14 @@ function inspect(obj, maxLevels, level)
   {
     try
     {
-      // Show "property" and "type property"
       type =  typeof(obj[property]);
-      var property_string =  obj[property]==null ? ': <b>null</b>' : 
-          obj[property].toString();
 
-      str += '<li>(' + type + ') ' + property +  ' : ' + property_string
+      var property_string =  ': <b>null</b>' ;
+      if (obj[property] !== null) property_string = obj[property].toString();
+
+      str += '<li>(' + type + ') ' + 
+        property +  ' : ' + 
+        property_string +
         '</li>';
 
       // We keep iterating if this property is an Object, non null
@@ -73,8 +104,6 @@ function inspect(obj, maxLevels, level)
 </script>
 <script>
 $( document ).ready(function() {
-  console.log( "document loaded" );
-  console.log(inspect($("h1")));
 
   //$("p#here").append( inspect($("p")));
   //$("p#here").append( inspect(window.document.location, 3));
@@ -95,7 +124,10 @@ $( document ).ready(function() {
 
 <h1> <i>javascript, this</i> and inspecting 2014, 0311 </h1>
 <p id="dosomething"> Do something, click me.</p>
+<p onclick="changeColor()"> onclick="changeColor()" </p>
+<p onclick="objChangeColor(this)"> onclick="objChangeColor(this)" </p>
 <h1> Show 'this' </h1>
+
 <p id="show-this"> </p>
 
 </body>
@@ -140,9 +172,10 @@ miserably and produces JavaScript errors.
 
 Copying
 
-So if we want to use this to its full extent we have to take care that the function that uses it
-is "owned" by the correct HTML element. In other words, we have to copy the function to our
-onclick property. Traditional event registration takes care of it.
+So if we want to use this to its full extent we have to take care that the
+function that uses it is "owned" by the correct HTML element. In other words,
+we have to copy the function to our onclick property. Traditional event
+registration takes care of it.
 
 element.onclick = doSomething;
 
