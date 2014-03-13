@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+
+<title> html5 template </title>
+<!--
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+-->
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="../jquery.inspect.js"></script>
+<script>
+    $( document ).ready(function() {
+        console.log( this == $ ? 'yes' : 'no' );
+        //$.inspect(this, 'window');
+
+        Function.prototype.method = function(name, func){
+          this.prototype[name] = func;
+          return this;
+        }
+
+        var s = "a string   ";
+        String.method('toy', function(){return 'i get a toy'});
+        //$.inspect(s);
+        alert(s.toy());
+
+        var spa = $('p#pa').html();
+        spa.toUpperCase();
+        $('#ba').html(spa);
+
+    });
+</script>
+</head>
+<body>
+
+<h1> test 1207, good parts, jquery inspect </h1>
+
+<p id='pa'> this is the string <b id='ba'> ? </b> </p>
+
+</body>
+<!-- vim: et ts=2 sw=2
+-->
+</html>
