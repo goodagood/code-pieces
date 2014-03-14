@@ -38,9 +38,10 @@ miserably and produces JavaScript errors.
 
 Copying
 
-So if we want to use this to its full extent we have to take care that the function that uses it
-is "owned" by the correct HTML element. In other words, we have to copy the function to our
-onclick property. Traditional event registration takes care of it.
+So if we want to use this to its full extent we have to take care that the
+function that uses it is "owned" by the correct HTML element. In other words,
+we have to copy the function to our onclick property. Traditional event
+registration takes care of it.
 
 element.onclick = doSomething;
 
