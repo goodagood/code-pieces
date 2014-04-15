@@ -1,0 +1,405 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>~/workspace/code-pieces/js/this-a.html.html</title>
+<meta name="Generator" content="Vim/7.3">
+<meta name="plugin-version" content="vim7.3_v10">
+<meta name="syntax" content="html">
+<meta name="settings" content="number_lines,use_css,pre_wrap,expand_tabs">
+<style type="text/css">
+<!--
+pre { white-space: pre-wrap; font-family: monospace; color: #ffffff; background-color: #000000; }
+body { font-family: monospace; color: #ffffff; background-color: #000000; }
+.lnr { color: #ffff00; font-weight: bold; }
+.Title { color: #ff40ff; font-weight: bold; }
+.Statement { color: #ffff00; font-weight: bold; }
+.Identifier { color: #00ffff; font-weight: bold; }
+.Special { color: #ff6060; font-weight: bold; }
+.Type { color: #00ff00; font-weight: bold; }
+.Error { color: #ffffff; background-color: #ff6060; font-weight: bold; }
+.Comment { color: #00ffff; font-weight: bold; }
+-->
+</style>
+</head>
+<body>
+<pre>
+<span class="lnr">  1 </span><span class="Comment">&lt;!</span><span class="Comment">--</span>
+<span class="lnr">  2 </span>
+<span class="lnr">  3 </span><span class="Comment">In javascript `this` can be different, </span>
+<span class="lnr">  4 </span><span class="Comment">here we test a few cases and inspect into it.</span>
+<span class="lnr">  5 </span>
+<span class="lnr">  6 </span><span class="Comment">What does `this` refer to in the function doSomething()?</span>
+<span class="lnr">  7 </span>
+<span class="lnr">  8 </span>
+<span class="lnr">  9 </span><span class="Comment">  function doSomething() {</span>
+<span class="lnr"> 10 </span><span class="Comment">     this.style.color = '#cc0000';</span>
+<span class="lnr"> 11 </span><span class="Comment">  }</span>
+<span class="lnr"> 12 </span>
+<span class="lnr"> 13 </span>
+<span class="lnr"> 14 </span><span class="Comment">Concept of `this` is commonly used in object oriented programming, such as in</span>
+<span class="lnr"> 15 </span><span class="Comment">C++, Ruby, Python, and more. </span>
+<span class="lnr"> 16 </span>
+<span class="lnr"> 17 </span><span class="Comment">Javascript makes it harder by letting `this` refers to different objects</span>
+<span class="lnr"> 18 </span><span class="Comment">according to conditions.</span>
+<span class="lnr"> 19 </span>
+<span class="lnr"> 20 </span><span class="Comment">When running in browsers, the global object would be `window`, for functions</span>
+<span class="lnr"> 21 </span><span class="Comment">defined in global context, `this` can refer to `window`.</span>
+<span class="lnr"> 22 </span>
+<span class="lnr"> 23 </span><span class="Comment">But when it's event handler, this can refer to the HTML element where the event</span>
+<span class="lnr"> 24 </span><span class="Comment">is targeted. </span>
+<span class="lnr"> 25 </span>
+<span class="lnr"> 26 </span><span class="Comment">Knowing the above clear can be good help when play with Javascript.</span>
+<span class="lnr"> 27 </span>
+<span class="lnr"> 28 </span>
+<span class="lnr"> 29 </span><span class="Comment">------------ window --------------------------------------</span>
+<span class="lnr"> 30 </span><span class="Error">|                                          / \           |</span>
+<span class="lnr"> 31 </span><span class="Error">|                                           |            |</span>
+<span class="lnr"> 32 </span><span class="Error">|                                          this          |</span>
+<span class="lnr"> 33 </span><span class="Error">|   </span><span class="Comment">----------------                        </span><span class="Error">|            |</span>
+<span class="lnr"> 34 </span><span class="Error">|   | HTML element | </span><span class="Comment">&lt;</span><span class="Comment">-- this         -----------------  |</span>
+<span class="lnr"> 35 </span><span class="Comment">|   ----------------      |           | doSomething() |  |</span>
+<span class="lnr"> 36 </span><span class="Comment">|               |         |           -----------------  |</span>
+<span class="lnr"> 37 </span><span class="Comment">|          --------------------                          |</span>
+<span class="lnr"> 38 </span><span class="Comment">|          | onclick property |                          |</span>
+<span class="lnr"> 39 </span><span class="Comment">|          --------------------                          |</span>
+<span class="lnr"> 40 </span><span class="Comment">|                                                        |</span>
+<span class="lnr"> 41 </span><span class="Comment">----------------------------------------------------------</span>
+<span class="lnr"> 42 </span>
+<span class="lnr"> 43 </span><span class="Error">If we execute doSomething() without any more preparation the this keyword</span>
+<span class="lnr"> 44 </span><span class="Error">refers to the window and the function tries to change the style.color of the</span>
+<span class="lnr"> 45 </span><span class="Error">window. Since the window doesn't have a style object the function fails</span>
+<span class="lnr"> 46 </span><span class="Error">miserably and produces JavaScript errors.</span>
+<span class="lnr"> 47 </span>
+<span class="lnr"> 48 </span><span class="Error">Copying</span>
+<span class="lnr"> 49 </span>
+<span class="lnr"> 50 </span><span class="Error">So if we want to use this to its full extent we have to take care that the</span>
+<span class="lnr"> 51 </span><span class="Error">function that uses it is &quot;owned&quot; by the correct HTML element. In other words,</span>
+<span class="lnr"> 52 </span><span class="Error">we have to copy the function to our onclick property. Traditional event</span>
+<span class="lnr"> 53 </span><span class="Error">registration takes care of it.</span>
+<span class="lnr"> 54 </span>
+<span class="lnr"> 55 </span>
+<span class="lnr"> 56 </span><span class="Error">  element.onclick = doSomething;</span>
+<span class="lnr"> 57 </span>
+<span class="lnr"> 58 </span>
+<span class="lnr"> 59 </span><span class="Error">The function is copied in its entirety to the onclick property (which now</span>
+<span class="lnr"> 60 </span><span class="Error">becomes a method). So if the event handler is executed this refers to the HTML</span>
+<span class="lnr"> 61 </span><span class="Error">element and its color is changed.</span>
+<span class="lnr"> 62 </span>
+<span class="lnr"> 63 </span>
+<span class="lnr"> 64 </span><span class="Comment">------------ </span><span class="Error">window </span><span class="Comment">--------------------------------------</span>
+<span class="lnr"> 65 </span><span class="Comment">|                                                        |</span>
+<span class="lnr"> 66 </span><span class="Comment">|                                                        |</span>
+<span class="lnr"> 67 </span><span class="Comment">|                                                        |</span>
+<span class="lnr"> 68 </span><span class="Comment">|   ----------------                                     |</span>
+<span class="lnr"> 69 </span><span class="Comment">|   | HTML element | &lt;-- </span><span class="Error">this         </span><span class="Comment">----------------</span><span class="Error">-  |</span>
+<span class="lnr"> 70 </span><span class="Error">|   </span><span class="Comment">----------------      </span><span class="Error">|           | doSomething() |  |</span>
+<span class="lnr"> 71 </span><span class="Error">|               |         |           </span><span class="Comment">----------------</span><span class="Error">-  |</span>
+<span class="lnr"> 72 </span><span class="Error">|          </span><span class="Comment">-----------------------          |            |</span>
+<span class="lnr"> 73 </span><span class="Comment">|          |copy of doSomething()|  &lt;-- </span><span class="Error">copy function    |</span>
+<span class="lnr"> 74 </span><span class="Error">|          </span><span class="Comment">-----------------------                       |</span>
+<span class="lnr"> 75 </span><span class="Comment">|                                                        |</span>
+<span class="lnr"> 76 </span><span class="Comment">----------------------------------------------------------</span>
+<span class="lnr"> 77 </span>
+<span class="lnr"> 78 </span><span class="Error">The trick is of course that we can copy the function to several event handlers.</span>
+<span class="lnr"> 79 </span><span class="Error">Each time this will refer to the correct HTML element:</span>
+<span class="lnr"> 80 </span>
+<span class="lnr"> 81 </span><span class="Comment">------------ </span><span class="Error">window </span><span class="Comment">--------------------------------------</span>
+<span class="lnr"> 82 </span><span class="Comment">|                                                        |</span>
+<span class="lnr"> 83 </span><span class="Comment">|                                                        |</span>
+<span class="lnr"> 84 </span><span class="Comment">|                                                        |</span>
+<span class="lnr"> 85 </span><span class="Comment">|   ----------------                                     |</span>
+<span class="lnr"> 86 </span><span class="Comment">|   | HTML element | &lt;-- </span><span class="Error">this         </span><span class="Comment">----------------</span><span class="Error">-  |</span>
+<span class="lnr"> 87 </span><span class="Error">|   </span><span class="Comment">----------------      </span><span class="Error">|           | doSomething() |  |</span>
+<span class="lnr"> 88 </span><span class="Error">|               |         |           </span><span class="Comment">----------------</span><span class="Error">-  |</span>
+<span class="lnr"> 89 </span><span class="Error">|          </span><span class="Comment">-----------------------          |            |</span>
+<span class="lnr"> 90 </span><span class="Comment">|          |copy of doSomething()|  &lt;-- </span><span class="Error">copy function    |</span>
+<span class="lnr"> 91 </span><span class="Error">|          </span><span class="Comment">-----------------------          |            |</span>
+<span class="lnr"> 92 </span><span class="Comment">|                                           |            |</span>
+<span class="lnr"> 93 </span><span class="Comment">|   ----------------------</span><span class="Error">-                 |            |</span>
+<span class="lnr"> 94 </span><span class="Error">|   | another HTML element| </span><span class="Comment">&lt;</span><span class="Comment">-- this        |            |</span>
+<span class="lnr"> 95 </span><span class="Comment">|   ----------------------</span><span class="Error">-     |           |            |</span>
+<span class="lnr"> 96 </span><span class="Error">|               |               |           |            |</span>
+<span class="lnr"> 97 </span><span class="Error">|          </span><span class="Comment">-----------------------          |            |</span>
+<span class="lnr"> 98 </span><span class="Comment">|          |copy of doSomething()|  &lt;-- </span><span class="Error">copy function    |</span>
+<span class="lnr"> 99 </span><span class="Error">|          </span><span class="Comment">-----------------------                       |</span>
+<span class="lnr">100 </span><span class="Comment">|                                                        |</span>
+<span class="lnr">101 </span><span class="Comment">----------------------------------------------------------</span>
+<span class="lnr">102 </span>
+<span class="lnr">103 </span><span class="Error">Thus you use this to the fullest extent. Each time the function is called, this</span>
+<span class="lnr">104 </span><span class="Error">refers to the HTML element that is currently handling the event, the HTML</span>
+<span class="lnr">105 </span><span class="Error">element that &quot;owns&quot; the copy of doSomething().</span>
+<span class="lnr">106 </span>
+<span class="lnr">107 </span>
+<span class="lnr">108 </span><span class="Error">Referring</span>
+<span class="lnr">109 </span><span class="Comment">--------</span><span class="Error">-</span>
+<span class="lnr">110 </span>
+<span class="lnr">111 </span>
+<span class="lnr">112 </span><span class="Error">However, if you use inline event registration</span>
+<span class="lnr">113 </span>
+<span class="lnr">114 </span><span class="Comment">&lt;</span><span class="Error">element onclick=&quot;doSomething()&quot;</span><span class="Comment">&gt;</span>
+<span class="lnr">115 </span>
+<span class="lnr">116 </span>you do not copy the function! Instead, you refer to it, and the difference is
+<span class="lnr">117 </span>crucial. The onclick property does not contain the actual function, but merely
+<span class="lnr">118 </span>a function call:
+<span class="lnr">119 </span>
+<span class="lnr">120 </span>doSomething();
+<span class="lnr">121 </span>
+<span class="lnr">122 </span>So it says “Go to doSomething() and execute it.” When we arrive at
+<span class="lnr">123 </span>doSomething() the this keyword once again refers to the global window object
+<span class="lnr">124 </span>and the function returns error messages.
+<span class="lnr">125 </span>
+<span class="lnr">126 </span>------------ window --------------------------------------
+<span class="lnr">127 </span>|                                          / \           |
+<span class="lnr">128 </span>|                                           |            |
+<span class="lnr">129 </span>|                                          this          |
+<span class="lnr">130 </span>|   ----------------                        |            |
+<span class="lnr">131 </span>|   | HTML element | &lt;-- this         -----------------  |
+<span class="lnr">132 </span>|   ----------------      |           | doSomething() |  |
+<span class="lnr">133 </span>|               |         |           -----------------  |
+<span class="lnr">134 </span>|          -----------------------         / \           |
+<span class="lnr">135 </span>|          | go to doSomething() |          |            |
+<span class="lnr">136 </span>|          | and execute it      | ---- reference to     |
+<span class="lnr">137 </span>|          -----------------------       function        |
+<span class="lnr">138 </span>|                                                        |
+<span class="lnr">139 </span>----------------------------------------------------------
+<span class="lnr">140 </span>
+<span class="lnr">141 </span>The difference
+<span class="lnr">142 </span>
+<span class="lnr">143 </span>If you want to use this <span class="Type">for</span> accessing the HTML element that is handling the
+<span class="lnr">144 </span>event, you must make sure that the this keyword is actually written into the
+<span class="lnr">145 </span>onclick property. Only in that case does it refer to the HTML element the event
+<span class="lnr">146 </span>handler is registered to. So if you do
+<span class="lnr">147 </span>
+<span class="lnr">148 </span>  element.onclick = doSomething;
+<span class="lnr">149 </span>  alert(element.onclick)
+<span class="lnr">150 </span>
+<span class="lnr">151 </span>you get
+<span class="lnr">152 </span>
+<span class="lnr">153 </span>  function doSomething()
+<span class="lnr">154 </span>  {
+<span class="lnr">155 </span>      this.<span class="Type">style</span>.<span class="Type">color</span> = '#cc0000';
+<span class="lnr">156 </span>  }
+<span class="lnr">157 </span>
+<span class="lnr">158 </span>As you can see, the this keyword is present in the onclick <span class="Type">method</span>. Therefore it
+<span class="lnr">159 </span>refers to the HTML element.
+<span class="lnr">160 </span>
+<span class="lnr">161 </span>But if you do
+<span class="lnr">162 </span>
+<span class="lnr">163 </span>&lt;element <span class="Special">onclick=&quot;</span><span class="Special">doSomething</span>()<span class="Special">&quot;</span>&gt;
+<span class="lnr">164 </span>alert(element.onclick)
+<span class="lnr">165 </span>
+<span class="lnr">166 </span>you get
+<span class="lnr">167 </span>
+<span class="lnr">168 </span>function onclick()
+<span class="lnr">169 </span>{
+<span class="lnr">170 </span>    doSomething()
+<span class="lnr">171 </span>}
+<span class="lnr">172 </span>
+<span class="lnr">173 </span>This is merely a reference to function doSomething(). The this keyword is not
+<span class="lnr">174 </span>present in the onclick method so it doesn't refer to the HTML element.
+<span class="lnr">175 </span>
+<span class="lnr">176 </span>Examples - copying
+<span class="lnr">177 </span>
+<span class="lnr">178 </span>this is written into the onclick method in the following cases:
+<span class="lnr">179 </span>
+<span class="lnr">180 </span>  element.onclick = doSomething
+<span class="lnr">181 </span>  element.addEventListener('click',doSomething,false)
+<span class="lnr">182 </span>  element.onclick = function () {this.style.color = '#cc0000';}
+<span class="lnr">183 </span>  &lt;element <span class="Special">onclick=&quot;</span><span class="Identifier">this</span><span class="Special">.style.color = </span>'#cc0000'<span class="Special">;</span><span class="Special">&quot;</span>&gt;
+<span class="lnr">184 </span>
+<span class="lnr">185 </span>Examples - referring
+<span class="lnr">186 </span>
+<span class="lnr">187 </span>In the following cases this refers to the window:
+<span class="lnr">188 </span>
+<span class="lnr">189 </span>  element.onclick = function () {doSomething()}
+<span class="lnr">190 </span>  element.attachEvent('onclick',doSomething)
+<span class="lnr">191 </span>  &lt;element <span class="Special">onclick=&quot;</span><span class="Special">doSomething</span>()<span class="Special">&quot;</span>&gt;
+<span class="lnr">192 </span>
+<span class="lnr">193 </span>Note the presence of attachEvent(). The main drawback of the Microsoft event
+<span class="lnr">194 </span>registration model is that attachEvent() creates a reference to the function
+<span class="lnr">195 </span>and does not copy it. Therefore it is sometimes impossible to know which HTML
+<span class="lnr">196 </span>currently handles the event.
+<span class="lnr">197 </span>
+<span class="lnr">198 </span>Combination
+<span class="lnr">199 </span>
+<span class="lnr">200 </span>When using inline event registration you can also send this to the function so
+<span class="lnr">201 </span>that you can still use it:
+<span class="lnr">202 </span>
+<span class="lnr">203 </span>  &lt;element <span class="Special">onclick=&quot;</span><span class="Special">doSomething</span>(<span class="Identifier">this</span>)<span class="Special">&quot;</span>&gt;
+<span class="lnr">204 </span>
+<span class="lnr">205 </span>  function doSomething(obj) {
+<span class="lnr">206 </span>      // this is present in the event handler and is sent to the function
+<span class="lnr">207 </span>      // obj now refers to the HTML element, so we can do
+<span class="lnr">208 </span>      obj.style.color = '#cc0000';
+<span class="lnr">209 </span>  }
+<span class="lnr">210 </span>
+<span class="lnr">211 </span>
+<span class="lnr">212 </span>
+<span class="lnr">213 </span>Refers to: <a href="http://www.quirksmode.org/js/this.html">http://www.quirksmode.org/js/this.html</a>
+<span class="lnr">214 </span>--<span class="Error">&gt;</span>
+<span class="lnr">215 </span><span class="Comment">&lt;!DOCTYPE HTML&gt;</span>
+<span class="lnr">216 </span>&lt;<span class="Statement">html</span>&gt;
+<span class="lnr">217 </span>&lt;<span class="Statement">head</span>&gt;
+<span class="lnr">218 </span>&lt;<span class="Statement">meta</span> <span class="Type">http-equiv</span>=&quot;content-type&quot; <span class="Type">content</span>=&quot;text/html; charset=utf-8&quot; /&gt;
+<span class="lnr">219 </span>&lt;<span class="Statement">meta</span> <span class="Type">name</span>=&quot;description&quot; <span class="Type">content</span>=&quot;&quot; /&gt;
+<span class="lnr">220 </span>&lt;<span class="Statement">meta</span> <span class="Type">name</span>=&quot;keywords&quot; <span class="Type">content</span>=&quot;&quot; /&gt;
+<span class="lnr">221 </span>&lt;<span class="Statement">title</span>&gt;<span class="Title"> front end 'this' of javascript, jquery </span><span class="Identifier">&lt;/</span><span class="Statement">title</span><span class="Identifier">&gt;</span>
+<span class="lnr">222 </span><span class="Identifier">&lt;/</span><span class="Statement">head</span><span class="Identifier">&gt;</span>
+<span class="lnr">223 </span>&lt;<span class="Statement">body</span>&gt;
+<span class="lnr">224 </span>
+<span class="lnr">225 </span>  &lt;<span class="Statement">h1</span>&gt;<span class="Title"> </span>&lt;<span class="Statement">i</span>&gt;<span class="Title">`this` in javascript</span><span class="Identifier">&lt;/</span><span class="Statement">i</span><span class="Identifier">&gt;</span><span class="Title"> 2014, 0311 </span><span class="Identifier">&lt;/</span><span class="Statement">h1</span><span class="Identifier">&gt;</span>
+<span class="lnr">226 </span>  &lt;<span class="Statement">p</span> <span class="Type">id</span>=&quot;dosomething&quot;&gt; Do something, click me.<span class="Identifier">&lt;/</span><span class="Statement">p</span><span class="Identifier">&gt;</span>
+<span class="lnr">227 </span>  &lt;<span class="Statement">p</span> <span class="Special">onclick=&quot;</span><span class="Special">changeColor</span>()<span class="Special">&quot;</span>&gt; onclick=&quot;changeColor()&quot; <span class="Identifier">&lt;/</span><span class="Statement">p</span><span class="Identifier">&gt;</span>
+<span class="lnr">228 </span>  &lt;<span class="Statement">p</span> <span class="Special">onclick=&quot;</span><span class="Special">objChangeColor</span>(<span class="Identifier">this</span>)<span class="Special">&quot;</span>&gt; onclick=&quot;objChangeColor(this)&quot; <span class="Identifier">&lt;/</span><span class="Statement">p</span><span class="Identifier">&gt;</span>
+<span class="lnr">229 </span>  &lt;<span class="Statement">p</span> <span class="Special">onclick=&quot;</span><span class="Special">showComments</span>()<span class="Special">&quot;</span>&gt; onclick=&quot;showComments()&quot; <span class="Identifier">&lt;/</span><span class="Statement">p</span><span class="Identifier">&gt;</span>
+<span class="lnr">230 </span>  &lt;<span class="Statement">h1</span>&gt;<span class="Title"> Inspect object / Comments: </span><span class="Identifier">&lt;/</span><span class="Statement">h1</span><span class="Identifier">&gt;</span>
+<span class="lnr">231 </span>  &lt;<span class="Statement">p</span> <span class="Type">id</span>=&quot;show-this&quot;&gt; <span class="Identifier">&lt;/</span><span class="Statement">p</span><span class="Identifier">&gt;</span>
+<span class="lnr">232 </span>
+<span class="lnr">233 </span><span class="Identifier">&lt;/</span><span class="Statement">body</span><span class="Identifier">&gt;</span>
+<span class="lnr">234 </span>
+<span class="lnr">235 </span>&lt;<span class="Statement">script</span> <span class="Type">src</span>=&quot;<a href="http://code.jquery.com/jquery.min.js">http://code.jquery.com/jquery.min.js</a>&quot;&gt;<span class="Identifier">&lt;/</span><span class="Statement">script</span><span class="Identifier">&gt;</span>
+<span class="lnr">236 </span>&lt;<span class="Statement">script</span>&gt;
+<span class="lnr">237 </span>function<span class="Special"> _gg_get_color</span>(){
+<span class="lnr">238 </span><span class="Special">  </span><span class="Identifier">var</span><span class="Special"> color = </span>['#cc0000'<span class="Special">, </span>'#00cc00'<span class="Special">, </span>'#0000cc']<span class="Special">;</span>
+<span class="lnr">239 </span><span class="Special">  </span><span class="Identifier">var</span><span class="Special"> length = color.length </span>-1<span class="Special">;</span>
+<span class="lnr">240 </span><span class="Special">  </span><span class="Identifier">var</span><span class="Special"> index = </span>0<span class="Special">;</span>
+<span class="lnr">241 </span>
+<span class="lnr">242 </span><span class="Special">  </span>function<span class="Special"> get_color</span>(){
+<span class="lnr">243 </span><span class="Special">    </span><span class="Statement">if</span><span class="Special"> </span>(<span class="Special">index &gt;= length</span>){
+<span class="lnr">244 </span><span class="Special">      index = index - length;</span>
+<span class="lnr">245 </span><span class="Special">    </span>}<span class="Statement">else</span>{
+<span class="lnr">246 </span><span class="Special">      index = index + </span>1<span class="Special">;</span>
+<span class="lnr">247 </span><span class="Special">    </span>}
+<span class="lnr">248 </span><span class="Special">    </span><span class="Statement">return</span><span class="Special"> color</span>[<span class="Special">index</span>]<span class="Special">;</span>
+<span class="lnr">249 </span><span class="Special">  </span>}
+<span class="lnr">250 </span><span class="Special">  </span><span class="Statement">return</span><span class="Special"> get_color;</span>
+<span class="lnr">251 </span>}
+<span class="lnr">252 </span>
+<span class="lnr">253 </span>function<span class="Special"> changeColor</span>()<span class="Special"> </span>{
+<span class="lnr">254 </span><span class="Special">  </span><span class="Identifier">var</span><span class="Special"> color = _gg_get_color</span>()<span class="Special">;</span>
+<span class="lnr">255 </span><span class="Special">  $</span>(&quot;p#show-this&quot;)<span class="Special">.html</span>(<span class="Special"> inspect</span>(<span class="Identifier">this</span><span class="Special">, </span>1))<span class="Special">;</span>
+<span class="lnr">256 </span><span class="Special">  </span><span class="Identifier">this</span><span class="Special">.style.color = color</span>()<span class="Special">;</span>
+<span class="lnr">257 </span>}
+<span class="lnr">258 </span>
+<span class="lnr">259 </span>function<span class="Special"> objChangeColor</span>(<span class="Special">obj, level</span>)<span class="Special"> </span>{
+<span class="lnr">260 </span><span class="Special">  </span><span class="Statement">if</span><span class="Special"> </span>(typeof<span class="Special"> level === </span>'undefined'<span class="Special"> || level == </span><span class="Statement">null</span>)<span class="Special"> level = </span>1<span class="Special">;</span>
+<span class="lnr">261 </span><span class="Special">  </span><span class="Identifier">var</span><span class="Special"> color = _gg_get_color</span>()<span class="Special">;</span>
+<span class="lnr">262 </span><span class="Special">  $</span>(&quot;p#show-this&quot;)<span class="Special">.html</span>(<span class="Special"> inspect</span>(<span class="Special">obj, level</span>))<span class="Special">;</span>
+<span class="lnr">263 </span><span class="Special">  obj.style.color = color</span>()<span class="Special">;</span>
+<span class="lnr">264 </span>}
+<span class="lnr">265 </span>
+<span class="lnr">266 </span><span class="Comment">// To get comments in HTML doc</span>
+<span class="lnr">267 </span>function<span class="Special"> getComment</span>(){
+<span class="lnr">268 </span><span class="Special">  </span><span class="Identifier">var</span><span class="Special"> nodes = </span><span class="Statement">document</span><span class="Special">.childNodes;</span>
+<span class="lnr">269 </span><span class="Special">  </span><span class="Identifier">var</span><span class="Special"> all = </span>[]<span class="Special">;</span>
+<span class="lnr">270 </span><span class="Special">  </span><span class="Statement">for</span><span class="Special"> </span>(<span class="Identifier">var</span><span class="Special"> i = </span>0<span class="Special">, len = nodes.length; i !== len; ++i</span>)<span class="Special"> </span>{
+<span class="lnr">271 </span><span class="Special">      </span><span class="Statement">if</span><span class="Special"> </span>(<span class="Special">nodes</span>[<span class="Special">i</span>]<span class="Special">.nodeType === </span>8)<span class="Special"> </span>{
+<span class="lnr">272 </span><span class="Special">          </span><span class="Comment">//console.log('Found comment' + nodes[i].nodeValue);</span>
+<span class="lnr">273 </span><span class="Special">          all.push </span>(<span class="Special">nodes</span>[<span class="Special">i</span>]<span class="Special">.nodeValue</span>)<span class="Special">;</span>
+<span class="lnr">274 </span><span class="Special">          </span><span class="Comment">//console.log('Found comment' + nodes[i].nodeValue);</span>
+<span class="lnr">275 </span><span class="Special">      </span>}
+<span class="lnr">276 </span><span class="Special">  </span>}
+<span class="lnr">277 </span><span class="Special">  </span><span class="Statement">return</span><span class="Special"> all;</span>
+<span class="lnr">278 </span>}
+<span class="lnr">279 </span>
+<span class="lnr">280 </span>function<span class="Special"> showComments</span>(){
+<span class="lnr">281 </span><span class="Special">  </span><span class="Identifier">var</span><span class="Special"> comments = getComment</span>()<span class="Special">;</span>
+<span class="lnr">282 </span><span class="Special">  </span><span class="Identifier">var</span><span class="Special"> joined = </span>&quot;&lt;p&gt;&lt;pre&gt; <span class="Special">\n</span>&quot;<span class="Special">;</span>
+<span class="lnr">283 </span><span class="Special">  joined = joined + comments.join</span>(&quot; <span class="Special">\n</span>&lt;/pre&gt;<span class="Special">\n</span> &lt;hr /&gt; &lt;pre&gt;<span class="Special">\n</span> &quot;)<span class="Special">;</span>
+<span class="lnr">284 </span><span class="Special">  joined += </span>&quot;&lt;/pre&gt;&lt;/p&gt;<span class="Special">\n</span>&quot;<span class="Special">;</span>
+<span class="lnr">285 </span>
+<span class="lnr">286 </span><span class="Special">  $</span>(&quot;p#show-this&quot;)<span class="Special">.html</span>(<span class="Special">joined</span>)<span class="Special">;</span>
+<span class="lnr">287 </span>
+<span class="lnr">288 </span>}
+<span class="lnr">289 </span>
+<span class="lnr">290 </span><span class="Comment">// old</span>
+<span class="lnr">291 </span><span class="Identifier">var</span><span class="Special"> color1 = </span>'#cc0000'<span class="Special">, color2 = </span>'#00cc00'<span class="Special">, c = </span>'#0000cc'<span class="Special">;</span>
+<span class="lnr">292 </span>
+<span class="lnr">293 </span><span class="Comment">// Let's prepare to inspect something.</span>
+<span class="lnr">294 </span><span class="Comment">// Refers to: <a href="http://stackoverflow.com/questions/4716297/how-can-i-inspect-a-jquery-object">http://stackoverflow.com/questions/4716297/how-can-i-inspect-a-jquery-object</a></span>
+<span class="lnr">295 </span>
+<span class="lnr">296 </span>function<span class="Special"> inspect</span>(<span class="Special">obj, maxLevels, level</span>)
+<span class="lnr">297 </span>{
+<span class="lnr">298 </span><span class="Special">  </span><span class="Identifier">var</span><span class="Special"> str = </span>''<span class="Special">, type, msg;</span>
+<span class="lnr">299 </span>
+<span class="lnr">300 </span><span class="Special">  str = str + obj.toString</span>()<span class="Special"> + </span>&quot; : <span class="Special">\n</span>&quot;<span class="Special">;</span>
+<span class="lnr">301 </span>
+<span class="lnr">302 </span><span class="Special">  </span><span class="Comment">// Start Input Validations</span>
+<span class="lnr">303 </span><span class="Special">  </span><span class="Comment">// Don't touch, we start iterating at level zero</span>
+<span class="lnr">304 </span><span class="Special">  </span><span class="Statement">if</span>(<span class="Special">level == </span><span class="Statement">null</span>)<span class="Special">  level = </span>0<span class="Special">;</span>
+<span class="lnr">305 </span>
+<span class="lnr">306 </span><span class="Special">  </span><span class="Comment">// At least you want to show the first level</span>
+<span class="lnr">307 </span><span class="Special">  </span><span class="Statement">if</span>(<span class="Special">maxLevels == </span><span class="Statement">null</span>)<span class="Special"> maxLevels = </span>1<span class="Special">;</span>
+<span class="lnr">308 </span><span class="Special">  </span><span class="Statement">if</span>(<span class="Special">maxLevels &lt; </span>1)<span class="Special">     </span>
+<span class="lnr">309 </span><span class="Special">  </span><span class="Statement">return</span><span class="Special"> </span>'&lt;font color=&quot;red&quot;&gt;Error: Levels number must be &gt; 0&lt;/font&gt;'<span class="Special">;</span>
+<span class="lnr">310 </span>
+<span class="lnr">311 </span><span class="Special">  </span><span class="Comment">// We start with a non null object</span>
+<span class="lnr">312 </span><span class="Special">  </span><span class="Statement">if</span>(<span class="Special">obj == </span><span class="Statement">null</span>)
+<span class="lnr">313 </span><span class="Special">  </span><span class="Statement">return</span><span class="Special"> </span>'&lt;font color=&quot;red&quot;&gt;Error: Object &lt;b&gt;NULL&lt;/b&gt;&lt;/font&gt;'<span class="Special">;</span>
+<span class="lnr">314 </span><span class="Special">  </span><span class="Comment">// End Input Validations</span>
+<span class="lnr">315 </span>
+<span class="lnr">316 </span><span class="Special">  </span><span class="Comment">// Each Iteration must be indented</span>
+<span class="lnr">317 </span><span class="Special">  str += </span>'&lt;ul&gt;'<span class="Special">;</span>
+<span class="lnr">318 </span>
+<span class="lnr">319 </span><span class="Special">  </span><span class="Comment">// Start iterations for all objects in obj</span>
+<span class="lnr">320 </span><span class="Special">  </span><span class="Statement">for</span>(<span class="Identifier">var</span><span class="Special"> property </span><span class="Statement">in</span><span class="Special"> obj</span>)
+<span class="lnr">321 </span><span class="Special">  </span>{
+<span class="lnr">322 </span><span class="Special">    </span><span class="Statement">try</span>
+<span class="lnr">323 </span><span class="Special">    </span>{
+<span class="lnr">324 </span><span class="Special">      type =  </span>typeof(<span class="Special">obj</span>[<span class="Special">property</span>])<span class="Special">;</span>
+<span class="lnr">325 </span>
+<span class="lnr">326 </span><span class="Special">      </span><span class="Identifier">var</span><span class="Special"> property_string =  </span>': &lt;b&gt;null&lt;/b&gt;'<span class="Special"> ;</span>
+<span class="lnr">327 </span><span class="Special">      </span><span class="Statement">if</span><span class="Special"> </span>(<span class="Special">obj</span>[<span class="Special">property</span>]<span class="Special"> !== </span><span class="Statement">null</span>)<span class="Special"> property_string = obj</span>[<span class="Special">property</span>]<span class="Special">.toString</span>()<span class="Special">;</span>
+<span class="lnr">328 </span>
+<span class="lnr">329 </span><span class="Special">      str += </span>'&lt;li&gt;('<span class="Special"> + type + </span>') '<span class="Special"> + </span>
+<span class="lnr">330 </span><span class="Special">        property +  </span>' : '<span class="Special"> + </span>
+<span class="lnr">331 </span><span class="Special">        property_string +</span>
+<span class="lnr">332 </span><span class="Special">        </span>'&lt;/li&gt;'<span class="Special">;</span>
+<span class="lnr">333 </span>
+<span class="lnr">334 </span><span class="Special">      </span><span class="Comment">// We keep iterating if this property is an Object, non null</span>
+<span class="lnr">335 </span><span class="Special">      </span><span class="Comment">// and we are inside the required number of levels</span>
+<span class="lnr">336 </span><span class="Special">      </span><span class="Statement">if</span>((<span class="Special">type == </span>'object')<span class="Special"> &amp;&amp; </span>(<span class="Special">obj</span>[<span class="Special">property</span>]<span class="Special"> != </span><span class="Statement">null</span>)<span class="Special"> &amp;&amp; </span>(<span class="Special">level+</span>1<span class="Special"> &lt; maxLevels</span>))
+<span class="lnr">337 </span><span class="Special">      str += inspect</span>(<span class="Special">obj</span>[<span class="Special">property</span>]<span class="Special">, maxLevels, level+</span>1)<span class="Special">;</span>
+<span class="lnr">338 </span><span class="Special">    </span>}<span class="Statement">catch</span>(<span class="Special">err</span>)
+<span class="lnr">339 </span><span class="Special">    </span>{
+<span class="lnr">340 </span><span class="Special">      </span><span class="Comment">// Are there some properties in obj we can't access? Print it red.</span>
+<span class="lnr">341 </span><span class="Special">      </span><span class="Statement">if</span>(typeof(<span class="Special">err</span>)<span class="Special"> == </span>'string')<span class="Special"> msg = err;</span>
+<span class="lnr">342 </span><span class="Special">      </span><span class="Statement">else</span><span class="Special"> </span><span class="Statement">if</span>(<span class="Special">err.message</span>)<span class="Special">        msg = err.message;</span>
+<span class="lnr">343 </span><span class="Special">      </span><span class="Statement">else</span><span class="Special"> </span><span class="Statement">if</span>(<span class="Special">err.description</span>)<span class="Special">    msg = err.description;</span>
+<span class="lnr">344 </span><span class="Special">      </span><span class="Statement">else</span><span class="Special">                        msg = </span>'Unknown'<span class="Special">;</span>
+<span class="lnr">345 </span>
+<span class="lnr">346 </span><span class="Special">      str += </span>'&lt;li&gt;&lt;font color=&quot;red&quot;&gt;(Error) '<span class="Special"> + property + </span>': '<span class="Special"> + msg +</span>'&lt;/font&gt;&lt;/li&gt;'<span class="Special">;</span>
+<span class="lnr">347 </span><span class="Special">    </span>}
+<span class="lnr">348 </span><span class="Special">  </span>}
+<span class="lnr">349 </span>
+<span class="lnr">350 </span><span class="Special">  </span><span class="Comment">// Close indent</span>
+<span class="lnr">351 </span><span class="Special">  str += </span>'&lt;/ul&gt;'<span class="Special">;</span>
+<span class="lnr">352 </span>
+<span class="lnr">353 </span><span class="Special">  </span><span class="Statement">return</span><span class="Special"> str;</span>
+<span class="lnr">354 </span>}
+<span class="lnr">355 </span><span class="Identifier">&lt;/</span><span class="Statement">script</span><span class="Identifier">&gt;</span>
+<span class="lnr">356 </span>&lt;<span class="Statement">script</span>&gt;
+<span class="lnr">357 </span><span class="Special">$</span>(<span class="Special"> </span><span class="Statement">document</span><span class="Special"> </span>)<span class="Special">.ready</span>(function()<span class="Special"> </span>{
+<span class="lnr">358 </span>
+<span class="lnr">359 </span><span class="Special">  </span><span class="Comment">//$(&quot;p#here&quot;).append( inspect($(&quot;p&quot;)));</span>
+<span class="lnr">360 </span><span class="Special">  </span><span class="Comment">//$(&quot;p#here&quot;).append( inspect(window.document.location, 3));</span>
+<span class="lnr">361 </span>
+<span class="lnr">362 </span><span class="Special">  </span>function<span class="Special"> doSomething</span>()<span class="Special"> </span>{
+<span class="lnr">363 </span><span class="Special">    c == color1 ? </span>(<span class="Special">c=color2</span>)<span class="Special"> : </span>(<span class="Special">c=color1</span>)<span class="Special">;</span>
+<span class="lnr">364 </span>
+<span class="lnr">365 </span><span class="Special">    $</span>(&quot;p#show-this&quot;)<span class="Special">.html</span>(<span class="Special"> inspect</span>(<span class="Identifier">this</span><span class="Special">, </span>1))<span class="Special">;</span>
+<span class="lnr">366 </span><span class="Special">    </span><span class="Identifier">this</span><span class="Special">.style.color = c;</span>
+<span class="lnr">367 </span><span class="Special">  </span>}
+<span class="lnr">368 </span>
+<span class="lnr">369 </span>
+<span class="lnr">370 </span><span class="Special">  $</span>(&quot;#dosomething&quot;)<span class="Special">.click</span>(<span class="Special">doSomething</span>)<span class="Special">;</span>
+<span class="lnr">371 </span>})<span class="Special">;</span>
+<span class="lnr">372 </span><span class="Identifier">&lt;/</span><span class="Statement">script</span><span class="Identifier">&gt;</span>
+<span class="lnr">373 </span>
+<span class="lnr">374 </span><span class="Identifier">&lt;/</span><span class="Statement">html</span><span class="Identifier">&gt;</span>
+<span class="lnr">375 </span><span class="Comment">&lt;!</span><span class="Comment">-- vim&#0058; et ts=2 sw=2</span>
+<span class="lnr">376 </span><span class="Comment">--</span><span class="Comment">&gt;</span>
+</pre>
+</body>
+</html>
