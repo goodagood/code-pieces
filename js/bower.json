@@ -16,6 +16,7 @@
     "tests"
   ],
   "dependencies":{
-      "jquery":"*"
+      "jquery":"*",
+      "handlebars.js":"*"
   }
 }

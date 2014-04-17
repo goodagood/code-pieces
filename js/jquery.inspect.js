@@ -1,6 +1,19 @@
 /*
  * jQuery inspect plugin, (a useful github project)
+ *
+ * my notes:
+ *
+    <script src="jquery.inspect.js"></script>
+
+    Call the inspect method
+    $.inspect('This is a string'); // Uses the alert as output by default
+
+    $.inspect([1,2,3,4], 'console'); // The console log can also be utilized
+
+    $.inspect(document, 'window'); // A new window can be used for larger objects
  */
+
+
 jQuery.fn.inspect = function(output) {
 	jQuery.inspect($(this), output);
 	return this;
