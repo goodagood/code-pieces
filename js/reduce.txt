@@ -1,0 +1,156 @@
+Tutorials Point
+
+ Javascript Array reduce() Method
+
+ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ previous next AddThis Social Bookmark Button
+ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+ Description:
+
+ Javascript array reduce() method applies a function simultaneously
+ against two values of the array (from left-to-right) as to reduce it
+ to a single value.
+
+ Syntax:
+
+ ┌─────────────────────────────────────────┐
+ │ array.reduce(callback[, initialValue]); │
+ └─────────────────────────────────────────┘
+
+ Here is the detail of parameters:
+
+   • callback : Function to execute on each value in the array.
+
+   • initialValue : Object to use as the first argument to the first
+     call of the callback.
+
+ Return Value:
+
+ Returns the reduced single value of the array.
+
+ Compatibility:
+
+ This method is a JavaScript extension to the ECMA-262 standard; as
+ such it may not be present in other implementations of the standard.
+ To make it work you need to add following code at the top of your
+ script:
+
+ ┌────────────────────────────────────────────────────────────────────┐
+ │ if (!Array.prototype.reduce)                                       │
+ │ {                                                                  │
+ │   Array.prototype.reduce = function(fun /*, initial*/)             │
+ │   {                                                                │
+ │     var len = this.length;                                         │
+ │     if (typeof fun != "function")                                  │
+ │       throw new TypeError();                                       │
+ │                                                                    │
+ │     // no value to return if no initial value and an empty array   │
+ │     if (len == 0 && arguments.length == 1)                         │
+ │       throw new TypeError();                                       │
+ │                                                                    │
+ │     var i = 0;                                                     │
+ │     if (arguments.length >= 2)                                     │
+ │     {                                                              │
+ │       var rv = arguments[1];                                       │
+ │     }                                                              │
+ │     else                                                           │
+ │     {                                                              │
+ │       do                                                           │
+ │       {                                                            │
+ │         if (i in this)                                             │
+ │         {                                                          │
+ │           rv = this[i++];                                          │
+ │           break;                                                   │
+ │         }                                                          │
+ │                                                                    │
+ │         // if array contains no values, no initial value to return │
+ │         if (++i >= len)                                            │
+ │           throw new TypeError();                                   │
+ │       }                                                            │
+ │       while (true);                                                │
+ │     }                                                              │
+ │                                                                    │
+ │     for (; i < len; i++)                                           │
+ │     {                                                              │
+ │       if (i in this)                                               │
+ │         rv = fun.call(null, rv, this[i], i, this);                 │
+ │     }                                                              │
+ │                                                                    │
+ │     return rv;                                                     │
+ │   };                                                               │
+ │ }                                                                  │
+ └────────────────────────────────────────────────────────────────────┘
+
+ Example:
+
+ ┌────────────────────────────────────────────────────────────────────┐
+ │ <html>                                                             │
+ │ <head>                                                             │
+ │ <title>JavaScript Array reduce Method</title>                      │
+ │ </head>                                                            │
+ │ <body>                                                             │
+ │ <script type="text/javascript">                                    │
+ │ if (!Array.prototype.reduce)                                       │
+ │ {                                                                  │
+ │   Array.prototype.reduce = function(fun /*, initial*/)             │
+ │   {                                                                │
+ │     var len = this.length;                                         │
+ │     if (typeof fun != "function")                                  │
+ │       throw new TypeError();                                       │
+ │                                                                    │
+ │     // no value to return if no initial value and an empty array   │
+ │     if (len == 0 && arguments.length == 1)                         │
+ │       throw new TypeError();                                       │
+ │                                                                    │
+ │     var i = 0;                                                     │
+ │     if (arguments.length >= 2)                                     │
+ │     {                                                              │
+ │       var rv = arguments[1];                                       │
+ │     }                                                              │
+ │     else                                                           │
+ │     {                                                              │
+ │       do                                                           │
+ │       {                                                            │
+ │         if (i in this)                                             │
+ │         {                                                          │
+ │           rv = this[i++];                                          │
+ │           break;                                                   │
+ │         }                                                          │
+ │                                                                    │
+ │         // if array contains no values, no initial value to return │
+ │         if (++i >= len)                                            │
+ │           throw new TypeError();                                   │
+ │       }                                                            │
+ │       while (true);                                                │
+ │     }                                                              │
+ │                                                                    │
+ │     for (; i < len; i++)                                           │
+ │     {                                                              │
+ │       if (i in this)                                               │
+ │         rv = fun.call(null, rv, this[i], i, this);                 │
+ │     }                                                              │
+ │                                                                    │
+ │     return rv;                                                     │
+ │   };                                                               │
+ │ }                                                                  │
+ │                                                                    │
+ │ var total = [0, 1, 2, 3].reduce(function(a, b){ return a + b; });  │
+ │ document.write("total is : " + total );                            │
+ │ </script>                                                          │
+ │ </body>                                                            │
+ │ </html>                                                            │
+ └────────────────────────────────────────────────────────────────────┘
+
+ This will produce following result:
+
+ ┌──────────────┐
+ │ total is : 6 │
+ └──────────────┘
+
+ To understand it in better way you can Try it yourself.
+
+
+ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+

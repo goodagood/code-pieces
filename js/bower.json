@@ -1,0 +1,21 @@
+{
+  "name": "code pieces git repo",
+  "version": "0.0.0",
+  "homepage": "https://github.com/goodagood/code-pieces",
+  "authors": [
+    "za <bin1510@gmail.com>"
+  ],
+  "description": "use bower to manage frontend js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies":{
+      "jquery":"*"
+  }
+}

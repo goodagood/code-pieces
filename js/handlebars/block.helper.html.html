@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>~/workspace/code-pieces/js/handlebars/block.helper.html.html</title>
+<meta name="Generator" content="Vim/7.3">
+<meta name="plugin-version" content="vim7.3_v10">
+<meta name="syntax" content="html">
+<meta name="settings" content="number_lines,use_css,pre_wrap,expand_tabs">
+<style type="text/css">
+<!--
+pre { white-space: pre-wrap; font-family: monospace; color: #ffffff; background-color: #808080; }
+body { font-family: monospace; color: #ffffff; background-color: #808080; }
+.lnr { color: #ffff00; font-weight: bold; }
+.Special { color: #ff6060; font-weight: bold; }
+.Title { color: #ff40ff; font-weight: bold; }
+.Constant { color: #ff40ff; font-weight: bold; }
+.Type { color: #00ff00; font-weight: bold; }
+.PreProc { color: #8080ff; font-weight: bold; }
+.Statement { color: #ffff00; font-weight: bold; }
+.Identifier { color: #00ffff; font-weight: bold; }
+.Comment { color: #00ffff; font-weight: bold; }
+-->
+</style>
+</head>
+<body>
+<pre>
+<span class="lnr">  1 </span><span class="Comment">&lt;!DOCTYPE HTML&gt;</span>
+<span class="lnr">  2 </span><span class="Identifier">&lt;</span><span class="Statement">html</span><span class="Identifier">&gt;</span>
+<span class="lnr">  3 </span><span class="Comment">&lt;!</span><span class="Comment">-- </span>
+<span class="lnr">  4 </span><span class="Comment">refers to: </span>
+<span class="lnr">  5 </span>
+<span class="lnr">  6 </span><span class="Comment">  <a href="http://javascriptissexy.com/handlebars-js-tutorial-learn-everything-about-handlebars-js-javascript-templating/">http://javascriptissexy.com/handlebars-js-tutorial-learn-everything-about-handlebars-js-javascript-templating/</a></span>
+<span class="lnr">  7 </span>
+<span class="lnr">  8 </span><span class="Comment">  <a href="http://blog.teamtreehouse.com/handlebars-js-part-2-partials-and-helpers">http://blog.teamtreehouse.com/handlebars-js-part-2-partials-and-helpers</a></span>
+<span class="lnr">  9 </span>
+<span class="lnr"> 10 </span><span class="Comment">  handlebarsjs.com</span>
+<span class="lnr"> 11 </span><span class="Comment">--</span><span class="Comment">&gt;</span>
+<span class="lnr"> 12 </span><span class="Identifier">&lt;</span><span class="Statement">head</span><span class="Identifier">&gt;</span>
+<span class="lnr"> 13 </span><span class="PreProc">  </span><span class="Identifier">&lt;</span><span class="Statement">meta</span><span class="Identifier"> </span><span class="Type">charset</span><span class="Identifier">=</span><span class="Constant">&quot;utf-8&quot;</span><span class="Identifier">&gt;</span>
+<span class="lnr"> 14 </span><span class="PreProc">  </span><span class="Identifier">&lt;</span><span class="Statement">title</span><span class="Identifier">&gt;</span><span class="Title">helper, block helper, options.fn in Handlebars.js</span><span class="Identifier">&lt;/</span><span class="Statement">title</span><span class="Identifier">&gt;</span>
+<span class="lnr"> 15 </span><span class="PreProc">  </span><span class="Comment">&lt;!</span><span class="Comment">-- Load handlerbars.js  --</span><span class="Comment">&gt;</span>
+<span class="lnr"> 16 </span><span class="PreProc">  </span><span class="Comment">&lt;!</span><span class="Comment">-- Download handlerbars.js and put it in the same folder. --</span><span class="Comment">&gt;</span>
+<span class="lnr"> 17 </span><span class="PreProc">  </span><span class="Identifier">&lt;</span><span class="Statement">script</span><span class="Identifier"> </span><span class="Type">src</span><span class="Identifier">=</span><span class="Constant">&quot;handlebars.js&quot;</span><span class="Identifier">&gt;</span><span class="Identifier">&lt;/</span><span class="Statement">script</span><span class="Identifier">&gt;</span>
+<span class="lnr"> 18 </span><span class="PreProc">  </span><span class="Comment">&lt;!</span><span class="Comment">-- Load Jquery from CDN  for easy DOM manipulations </span>
+<span class="lnr"> 19 </span><span class="Comment">    &lt;script src=&quot;<a href="http://code.jquery.com/jquery-latest.min.js">http://code.jquery.com/jquery-latest.min.js</a>&quot;    </span>
+<span class="lnr"> 20 </span><span class="Comment">    type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</span>
+<span class="lnr"> 21 </span><span class="Comment">  --</span><span class="Comment">&gt;</span>
+<span class="lnr"> 22 </span><span class="PreProc">  </span><span class="Comment">&lt;!</span><span class="Comment">-- Here jquery.min.js already put in local folder. --</span><span class="Comment">&gt;</span>
+<span class="lnr"> 23 </span><span class="PreProc">  </span><span class="Identifier">&lt;</span><span class="Statement">script</span><span class="Identifier"> </span><span class="Type">src</span><span class="Identifier">=</span><span class="Constant">&quot;../bower_components/jquery/dist/jquery.min.js&quot;</span><span class="Identifier">    </span><span class="Type">type</span><span class="Identifier">=</span><span class="Constant">&quot;text/javascript&quot;</span><span class="Identifier">&gt;</span><span class="Identifier">&lt;/</span><span class="Statement">script</span><span class="Identifier">&gt;</span>
+<span class="lnr"> 24 </span>
+<span class="lnr"> 25 </span><span class="PreProc">  </span><span class="Comment">&lt;!</span><span class="Comment">-- Handlebars template for a blog post, inside {{variable}} are variables</span>
+<span class="lnr"> 26 </span><span class="Comment">    we can afect with JS objects formatDate is a custom helper defined by us</span>
+<span class="lnr"> 27 </span><span class="Comment">  --</span><span class="Comment">&gt;</span>
+<span class="lnr"> 28 </span><span class="PreProc">  </span><span class="Identifier">&lt;</span><span class="Statement">script</span><span class="Identifier"> </span><span class="Type">id</span><span class="Identifier">=</span><span class="Constant">&quot;simple-template&quot;</span><span class="Identifier"> </span><span class="Type">type</span><span class="Identifier">=</span><span class="Constant">&quot;text/x-handlebars-template&quot;</span><span class="Identifier">&gt;</span>
+<span class="lnr"> 29 </span><span class="Special">    &lt;h1&gt;</span><span class="Identifier">{{</span><span class="Special">title</span><span class="Identifier">}}</span><span class="Special"> published at </span><span class="Identifier">{{</span><span class="Special">formatDate </span><span class="Type">date</span><span class="Identifier">}}</span><span class="Special">&lt;/h1&gt;</span>
+<span class="lnr"> 30 </span><span class="Special">    </span><span class="Identifier">{{</span><span class="Special">prettyAuthor author</span><span class="Identifier">}}</span>
+<span class="lnr"> 31 </span><span class="Special">    &lt;p&gt;</span>
+<span class="lnr"> 32 </span><span class="Special">      </span><span class="Identifier">{{</span><span class="Special">entry</span><span class="Identifier">}}</span>
+<span class="lnr"> 33 </span><span class="Special">    &lt;/p&gt;</span>
+<span class="lnr"> 34 </span><span class="Special">  </span><span class="Identifier">&lt;/</span><span class="Statement">script</span><span class="Identifier">&gt;</span>
+<span class="lnr"> 35 </span>
+<span class="lnr"> 36 </span><span class="PreProc">  </span><span class="Identifier">&lt;</span><span class="Statement">script</span><span class="Identifier"> </span><span class="Type">id</span><span class="Identifier">=</span><span class="Constant">&quot;block-template&quot;</span><span class="Identifier"> </span><span class="Type">type</span><span class="Identifier">=</span><span class="Constant">&quot;x-handlebars-template&quot;</span><span class="Identifier">&gt;</span>
+<span class="lnr"> 37 </span><span class="Special">    </span><span class="Identifier">{{</span><span class="Special">#userScore </span><span class="Identifier">this</span><span class="Identifier">}}</span>
+<span class="lnr"> 38 </span><span class="Special">      &lt;div&gt;</span><span class="Identifier">{{</span><span class="Special">firstName</span><span class="Identifier">}}</span><span class="Special"> </span><span class="Identifier">{{</span><span class="Special">lastName</span><span class="Identifier">}}</span><span class="Special">, Your Total Score is </span><span class="Identifier">{{</span><span class="Special">score</span><span class="Identifier">}}</span><span class="Special"> &lt;/div&gt;</span>
+<span class="lnr"> 39 </span><span class="Special">    </span><span class="Identifier">{{</span><span class="Special">/userScore</span><span class="Identifier">}}</span>
+<span class="lnr"> 40 </span><span class="Special">  </span><span class="Identifier">&lt;/</span><span class="Statement">script</span><span class="Identifier">&gt;</span>
+<span class="lnr"> 41 </span><span class="PreProc">  </span>
+<span class="lnr"> 42 </span><span class="PreProc">  </span><span class="Identifier">&lt;</span><span class="Statement">script</span><span class="Identifier"> </span><span class="Type">type</span><span class="Identifier">=</span><span class="Constant">&quot;text/javascript&quot;</span><span class="Identifier">&gt;</span>
+<span class="lnr"> 43 </span><span class="Special">    </span><span class="Comment">// This registers a new helper method on the Handlebars template</span>
+<span class="lnr"> 44 </span><span class="Special">    Handlebars.registerHelper</span>(<span class="Constant">&quot;formatDate&quot;</span><span class="Special">, </span><span class="Identifier">function</span>(<span class="Type">date</span>)<span class="Identifier">{</span>
+<span class="lnr"> 45 </span><span class="Special">      </span><span class="Comment">// This guard is needed to support Blog Posts without date</span>
+<span class="lnr"> 46 </span><span class="Special">      </span><span class="Comment">// the takeway point is that custom helpers parameters must be present on</span>
+<span class="lnr"> 47 </span><span class="Special">      </span><span class="Comment">// the context used to render the templates</span>
+<span class="lnr"> 48 </span><span class="Special">      </span><span class="Comment">// or JS error will be launched</span>
+<span class="lnr"> 49 </span><span class="Special">      </span><span class="Statement">if</span><span class="Special"> </span>(<span class="Statement">typeof</span>(<span class="Type">date</span>)<span class="Special"> == </span><span class="Constant">&quot;undefined&quot;</span>)<span class="Special"> </span><span class="Identifier">{</span>
+<span class="lnr"> 50 </span><span class="Special">        </span><span class="Statement">return</span><span class="Special"> </span><span class="Constant">&quot;Unknown&quot;</span><span class="Special">;</span>
+<span class="lnr"> 51 </span><span class="Special">      </span><span class="Identifier">}</span>
+<span class="lnr"> 52 </span><span class="Special">      </span><span class="Comment">// These methods need to return a String</span>
+<span class="lnr"> 53 </span><span class="Special">      </span><span class="Statement">return</span><span class="Special"> </span><span class="Type">date</span><span class="Special">.getDay</span>()<span class="Special"> + </span><span class="Constant">&quot;/&quot;</span><span class="Special"> + </span><span class="Type">date</span><span class="Special">.getMonth</span>()<span class="Special"> + </span><span class="Constant">&quot;/&quot;</span><span class="Special"> + </span><span class="Type">date</span><span class="Special">.getFullYear</span>()<span class="Special">;</span>
+<span class="lnr"> 54 </span><span class="Special">    </span><span class="Identifier">}</span>)<span class="Special">;</span>
+<span class="lnr"> 55 </span><span class="Special">    </span>
+<span class="lnr"> 56 </span><span class="Special">    </span><span class="Comment">// New helper method for Handlebars tempaltes that outputs HTML</span>
+<span class="lnr"> 57 </span><span class="Special">    </span><span class="Comment">// By default handlebars escapes special chars like &lt; or &gt; to have your helper outputing</span>
+<span class="lnr"> 58 </span><span class="Special">    </span><span class="Comment">// strings unescaped wrap the return values with Handlebars.SafeString</span>
+<span class="lnr"> 59 </span><span class="Special">    Handlebars.registerHelper</span>(<span class="Constant">&quot;prettyAuthor&quot;</span><span class="Special">, </span><span class="Identifier">function</span>(<span class="Special">author</span>)<span class="Identifier">{</span>
+<span class="lnr"> 60 </span><span class="Special">      author = author || </span><span class="Constant">&quot;John Doe&quot;</span>
+<span class="lnr"> 61 </span><span class="Special">      </span><span class="Statement">return</span><span class="Special"> </span><span class="Statement">new</span><span class="Special"> Handlebars.SafeString</span>(<span class="Constant">&quot;&lt;h2&gt;Written by &quot;</span><span class="Special"> + author + </span><span class="Constant">&quot; :-) &lt;/h2&gt;&quot;</span>)<span class="Special">;</span>
+<span class="lnr"> 62 </span><span class="Special">    </span><span class="Identifier">}</span>)<span class="Special">;</span>
+<span class="lnr"> 63 </span>
+<span class="lnr"> 64 </span><span class="Special">    </span><span class="Comment">// Start to do block helper things</span>
+<span class="lnr"> 65 </span><span class="Special">    </span><span class="Identifier">var</span><span class="Special"> contextObj_4block = </span><span class="Identifier">[</span>
+<span class="lnr"> 66 </span><span class="Special">        </span><span class="Identifier">{</span><span class="Special">firstName: </span><span class="Constant">&quot;Kapil&quot;</span><span class="Special">, lastName:</span><span class="Constant">&quot;Manish&quot;</span><span class="Special">, score:</span><span class="Identifier">[</span>22<span class="Special">, </span>34<span class="Special">, </span>45<span class="Special">, </span>67<span class="Identifier">]}</span><span class="Special">, </span>
+<span class="lnr"> 67 </span><span class="Special">        </span><span class="Identifier">{</span><span class="Special">firstName: </span><span class="Constant">&quot;Bruce&quot;</span><span class="Special">, lastName:</span><span class="Constant">&quot;Kasparov&quot;</span><span class="Special">, score:</span><span class="Identifier">[</span>10<span class="Special">, </span>34<span class="Special">, </span>67<span class="Special">, </span>90<span class="Identifier">]}]</span><span class="Special">;</span>
+<span class="lnr"> 68 </span>
+<span class="lnr"> 69 </span><span class="Special">    Handlebars.registerHelper </span>(<span class="Constant">&quot;userScore&quot;</span><span class="Special">, </span><span class="Identifier">function</span><span class="Special"> </span>(<span class="Special">dataObject, options</span>)<span class="Special"> </span><span class="Identifier">{</span>
+<span class="lnr"> 70 </span><span class="Special">      </span><span class="Identifier">var</span><span class="Special"> templateWithInterpolatedData = </span><span class="Constant">&quot;&quot;</span><span class="Special">;</span>
+<span class="lnr"> 71 </span>
+<span class="lnr"> 72 </span><span class="Special">      </span><span class="Statement">for</span><span class="Special"> </span>(<span class="Identifier">var</span><span class="Special"> i = dataObject.length - </span>1<span class="Special">; i &gt;= </span>0<span class="Special">; i--</span>)<span class="Special"> </span><span class="Identifier">{</span>
+<span class="lnr"> 73 </span><span class="Special">        </span><span class="Comment">//Sum user scores from the score array and replace the array with the total</span>
+<span class="lnr"> 74 </span><span class="Special">        dataObject</span><span class="Identifier">[</span><span class="Special">i</span><span class="Identifier">]</span><span class="Special">.score = dataObject</span><span class="Identifier">[</span><span class="Special">i</span><span class="Identifier">]</span><span class="Special">.score.reduce</span>(<span class="Identifier">function</span><span class="Special"> </span>(
+<span class="lnr"> 75 </span><span class="Special">          prev, cur, index, </span><span class="Type">array</span>)<span class="Special"> </span><span class="Identifier">{</span>
+<span class="lnr"> 76 </span><span class="Special">              </span><span class="Statement">return</span><span class="Special"> prev + cur;</span>
+<span class="lnr"> 77 </span><span class="Special">        </span><span class="Identifier">}</span>)<span class="Special">;</span>
+<span class="lnr"> 78 </span>
+<span class="lnr"> 79 </span><span class="Special">        </span><span class="Comment">// Each object in the data object array is interpolated with the</span>
+<span class="lnr"> 80 </span><span class="Special">        </span><span class="Comment">// options.fn method, which processes all the HTML from the template and</span>
+<span class="lnr"> 81 </span><span class="Special">        </span><span class="Comment">// insert the values from the object in their respective positions.</span>
+<span class="lnr"> 82 </span>
+<span class="lnr"> 83 </span><span class="Special">        </span><span class="Comment">// Just so you understand the purpose of the options.fn method: it does</span>
+<span class="lnr"> 84 </span><span class="Special">        </span><span class="Comment">// exactly what the regular handlebars template function does when we pass</span>
+<span class="lnr"> 85 </span><span class="Special">        </span><span class="Comment">// the data object to the function, to  retrieve the values from the</span>
+<span class="lnr"> 86 </span><span class="Special">        </span><span class="Comment">// object and insert them into the HTML from the template.</span>
+<span class="lnr"> 87 </span>
+<span class="lnr"> 88 </span><span class="Special">        </span><span class="Comment">// Without the options.fn object in this example, the raw objects</span>
+<span class="lnr"> 89 </span><span class="Special">        </span><span class="Comment">// (instead of the interpolated values) would have been returned</span>
+<span class="lnr"> 90 </span>
+<span class="lnr"> 91 </span><span class="Special">        templateWithInterpolatedData += options.fn </span>(<span class="Special">dataObject</span><span class="Identifier">[</span><span class="Special">i</span><span class="Identifier">]</span>)<span class="Special">;</span>
+<span class="lnr"> 92 </span>
+<span class="lnr"> 93 </span><span class="Special">      </span><span class="Identifier">}</span>
+<span class="lnr"> 94 </span>
+<span class="lnr"> 95 </span><span class="Special">      </span><span class="Comment">// We return the full string of HTML with all the values from the data</span>
+<span class="lnr"> 96 </span><span class="Special">      </span><span class="Comment">// object inserted into place.</span>
+<span class="lnr"> 97 </span>
+<span class="lnr"> 98 </span><span class="Special">      </span><span class="Statement">return</span><span class="Special"> templateWithInterpolatedData;</span>
+<span class="lnr"> 99 </span><span class="Special">    </span><span class="Identifier">}</span>)<span class="Special">;</span>
+<span class="lnr">100 </span>
+<span class="lnr">101 </span><span class="Special">  </span>
+<span class="lnr">102 </span><span class="Special">    </span><span class="Comment">//wait for page to load</span>
+<span class="lnr">103 </span><span class="Special">    $</span>(<span class="Statement">document</span>)<span class="Special">.ready</span>(<span class="Identifier">function</span>()<span class="Identifier">{</span>
+<span class="lnr">104 </span><span class="Special">      </span><span class="Comment">// Extract the text from the template .html() is the jquery helper method for that</span>
+<span class="lnr">105 </span><span class="Special">      </span><span class="Identifier">var</span><span class="Special"> raw_template = $</span>(<span class="Constant">'#simple-template'</span>)<span class="Special">.html</span>()<span class="Special">;</span>
+<span class="lnr">106 </span><span class="Special">      </span><span class="Comment">// Compile that into an handlebars template</span>
+<span class="lnr">107 </span><span class="Special">      </span><span class="Identifier">var</span><span class="Special"> template = Handlebars.compile</span>(<span class="Special">raw_template</span>)<span class="Special">;</span>
+<span class="lnr">108 </span><span class="Special">      </span><span class="Comment">// Define some data to populate the template, the object keys must match the template variables</span>
+<span class="lnr">109 </span><span class="Special">      </span><span class="Identifier">var</span><span class="Special"> data = </span><span class="Identifier">{</span><span class="Special">title: </span><span class="Constant">&quot;First Post&quot;</span><span class="Special">, entry: </span><span class="Constant">&quot;Life is change, change is stability.&quot;</span><span class="Identifier">}</span><span class="Special">;</span>
+<span class="lnr">110 </span><span class="Special">      </span><span class="Comment">// Render the template to html</span>
+<span class="lnr">111 </span><span class="Special">      </span><span class="Identifier">var</span><span class="Special"> html = template</span>(<span class="Special">data</span>)<span class="Special">;</span>
+<span class="lnr">112 </span><span class="Special">      </span><span class="Comment">// Use the main div placeholder to output the html</span>
+<span class="lnr">113 </span><span class="Special">      $</span>(<span class="Constant">'#main'</span>)<span class="Special">.append</span>(<span class="Special">html</span>)<span class="Special">;</span>
+<span class="lnr">114 </span><span class="Special">      </span><span class="Comment">// We can easily reuse the templates with new data </span>
+<span class="lnr">115 </span><span class="Special">      </span><span class="Identifier">var</span><span class="Special"> new_post = </span><span class="Identifier">{</span><span class="Special">author: </span><span class="Constant">&quot;Alice Warlow&quot;</span><span class="Special">,</span>
+<span class="lnr">116 </span><span class="Special">                      title: </span><span class="Constant">&quot;Second Post&quot;</span><span class="Special">, </span>
+<span class="lnr">117 </span><span class="Special">                      entry: </span><span class="Constant">&quot;It is the power of the mind to be unconquerable.&quot;</span><span class="Special">, </span>
+<span class="lnr">118 </span><span class="Special">                      </span><span class="Type">date</span><span class="Special">: </span><span class="Statement">new</span><span class="Special"> </span><span class="Type">Date</span>(<span class="Type">Date</span><span class="Special">.now</span>())<span class="Identifier">}</span><span class="Special">;</span>
+<span class="lnr">119 </span><span class="Special">      </span><span class="Comment">// Render the second post to html</span>
+<span class="lnr">120 </span><span class="Special">      </span><span class="Identifier">var</span><span class="Special"> new_post_html = template</span>(<span class="Special">new_post</span>)<span class="Special">;</span>
+<span class="lnr">121 </span><span class="Special">      </span><span class="Comment">// Append the second post</span>
+<span class="lnr">122 </span><span class="Special">      $</span>(<span class="Constant">'#main'</span>)<span class="Special">.append</span>(<span class="Special">new_post_html</span>)<span class="Special">;</span>
+<span class="lnr">123 </span>
+<span class="lnr">124 </span><span class="Special">      </span><span class="Comment">// handlerbars.js block helper</span>
+<span class="lnr">125 </span><span class="Special">      </span><span class="Identifier">var</span><span class="Special"> block_template_text = $</span>(<span class="Constant">'#block-template'</span>)<span class="Special">.html</span>()<span class="Special">;</span>
+<span class="lnr">126 </span><span class="Special">      </span><span class="Identifier">var</span><span class="Special"> block_template = Handlebars.compile</span>(<span class="Special">block_template_text</span>)<span class="Special">;</span>
+<span class="lnr">127 </span><span class="Special">      </span><span class="Identifier">var</span><span class="Special"> block_html = block_template</span>(<span class="Special">contextObj_4block</span>)<span class="Special">;</span>
+<span class="lnr">128 </span><span class="Special">      $</span>(<span class="Constant">'#block-helper-template-here'</span>)<span class="Special">.append</span>(<span class="Special">block_html</span>)<span class="Special">;</span>
+<span class="lnr">129 </span><span class="Special">    </span><span class="Identifier">}</span>)<span class="Special">;</span>
+<span class="lnr">130 </span><span class="Special">  </span><span class="Identifier">&lt;/</span><span class="Statement">script</span><span class="Identifier">&gt;</span>
+<span class="lnr">131 </span><span class="Identifier">&lt;/</span><span class="Statement">head</span><span class="Identifier">&gt;</span>
+<span class="lnr">132 </span>
+<span class="lnr">133 </span><span class="Identifier">&lt;</span><span class="Statement">body</span><span class="Identifier">&gt;</span>
+<span class="lnr">134 </span><span class="Comment">&lt;!</span><span class="Comment">-- Insertion point for handlebars template --</span><span class="Comment">&gt;</span>
+<span class="lnr">135 </span><span class="Identifier">&lt;</span><span class="Statement">h1</span><span class="Identifier">&gt;</span><span class="Title"> Contents get by helper function: </span><span class="Identifier">&lt;/</span><span class="Statement">h1</span><span class="Identifier">&gt;</span>
+<span class="lnr">136 </span><span class="Identifier">&lt;</span><span class="Statement">div</span><span class="Identifier"> </span><span class="Type">id</span><span class="Identifier">=</span><span class="Constant">&quot;main&quot;</span><span class="Identifier"> </span><span class="Type">style</span><span class="Identifier">=</span><span class="Constant">&quot;margin-left:100px&quot;</span><span class="Identifier">&gt;</span> <span class="Identifier">&lt;/</span><span class="Statement">div</span><span class="Identifier">&gt;</span>
+<span class="lnr">137 </span><span class="Identifier">&lt;</span><span class="Statement">hr</span><span class="Identifier"> /&gt;</span>
+<span class="lnr">138 </span><span class="Identifier">&lt;</span><span class="Statement">h1</span><span class="Identifier">&gt;</span><span class="Title"> Contents get by </span><span class="Identifier">&lt;</span><span class="Statement">i</span><span class="Identifier">&gt;</span><span class="Title">block</span><span class="Identifier">&lt;/</span><span class="Statement">i</span><span class="Identifier">&gt;</span><span class="Title"> helper: </span><span class="Identifier">&lt;/</span><span class="Statement">h1</span><span class="Identifier">&gt;</span>
+<span class="lnr">139 </span><span class="Identifier">&lt;</span><span class="Statement">div</span><span class="Identifier"> </span><span class="Type">id</span><span class="Identifier">=</span><span class="Constant">&quot;block-helper-template-here&quot;</span><span class="Identifier"> </span><span class="Type">style</span><span class="Identifier">=</span><span class="Constant">&quot;margin-left:100px&quot;</span><span class="Identifier">&gt;</span> <span class="Identifier">&lt;/</span><span class="Statement">div</span><span class="Identifier">&gt;</span>
+<span class="lnr">140 </span>
+<span class="lnr">141 </span><span class="Identifier">&lt;/</span><span class="Statement">body</span><span class="Identifier">&gt;</span>
+<span class="lnr">142 </span><span class="Comment">&lt;!</span><span class="Comment">-- vim&#0058; set et ts=2 sw=2: --</span><span class="Comment">&gt;</span>
+<span class="lnr">143 </span><span class="Identifier">&lt;/</span><span class="Statement">html</span><span class="Identifier">&gt;</span>
+</pre>
+</body>
+</html>
