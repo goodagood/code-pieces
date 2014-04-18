@@ -1,0 +1,58 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<!--
+<script type="text/javascript" src="http://static.jstree.com/v.1.0rc2/jquery.js"></script>
+<script type="text/javascript" src="http://static.jstree.com/v.1.0rc2/jquery.jstree.js"></script>
+-->
+<script type="text/javascript" src="../bower_components/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="../bower_components/jstree/dist/jstree.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $(function () {
+        $("#tree").jstree({ 
+            "core" : {
+                "data" : [
+                    { 
+                        "data" : "parent", 
+                        "text" : "aa aa",
+                        "id" : "root.id",
+                        "state" : {opened:true},
+                        "attr" : { "id" : "root.id" }, 
+                        "children" : [ { "data" : "child1",
+                                         "attr" : { "id" : "child1_id" },
+                                         "id" : "child1_id",
+                                         "text" : "child1_id",
+                                         "children" : [ ] }
+                                     ]
+                    },
+                ]
+            },
+            "plugins" : [ "themes", "json_data", "crrm" ]
+        });
+    });
+    $("#add").click(function() {
+        alert("try add");
+        //$("#tree").jstree("create", $("#child1_id"), "inside",  
+        $.jstree.create( $("#child1_id"), 
+            {"core": { 
+                "date" : [{ 
+                    "name" : "child2",
+                    "text" : "child2",
+                    "parent" : "#"
+                },]
+            }
+        });
+    });
+});
+</script>
+</head>
+
+<body>
+
+<div id="tree" name="tree"></div>
+
+<input type="button" id="add" value="add" />
+</body>
+</html>
