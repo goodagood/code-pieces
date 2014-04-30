@@ -1,0 +1,16 @@
+<script type="text/javascript" src="/home/za/workspace/code-pieces/js/async/node_modules/async/lib/async.js">
+</script>
+<script type="text/javascript">
+    var data = [1,2,3];
+    var asyncProcess = function(number, callback){ 
+        var a = number + 2;
+        setTimeout(function(){
+            callback(null, a);
+        }, 200);
+    };
+
+    async.map(data, asyncProcess, function(err, results){
+        alert(results);
+    });
+
+</script>

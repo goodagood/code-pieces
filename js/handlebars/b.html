@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>How to render html with Handlebars.js</title>
+  <!-- Load handlerbars.js  -->
+  <script src="handlebars.js"></script>
+  <!-- Load Jquery from CDN  for easy DOM manipulations 
+  <script src="http://code.jquery.com/jquery-latest.min.js"    type="text/javascript"></script>
+    -->
+  <script src="../bower_components/jquery/dist/jquery.min.js"    type="text/javascript"></script>
+
+  <!-- Handlebars template for a blog post, inside {{variable}} are variables
+  we can afect with JS objects 
+        formatDate is a custom helper defined by us
+    -->
+  <script id="simple-template" type="text/x-handlebars-template">
+      <h1>{{title}} published at {{formatDate date}}</h1>
+      {{prettyAuthor author}}
+      <p>
+        {{entry}}
+      </p>
+  </script>
+  
+  <script type="text/javascript">
+    // This registers a new helper method on the Handlebars template
+    Handlebars.registerHelper("formatDate", function(date){
+      // This guard is needed to support Blog Posts without date
+      // the takeway point is that custom helpers parameters must be present on the context used to render the templates
+      // or JS error will be launched
+      if (typeof(date) == "undefined") {
+        return "Unknown";
+      }
+      // These methods need to return a String
+      return date.getDay() + "/" + date.getMonth() + "/" + date.getFullYear();
+    });
+    
+    // New helper method for Handlebars tempaltes that outputs HTML
+    // By default handlebars escapes special chars like < or > to have your helper outputing
+    // strings unescaped wrap the return values with Handlebars.SafeString
+    Handlebars.registerHelper("prettyAuthor", function(author){
+      author = author || "John Doe"
+      return new Handlebars.SafeString("<h2>Written by " + author + " :-) </h2>");
+    });
+  
+    //wait for page to load
+    $(document).ready(function(){
+      // Extract the text from the template .html() is the jquery helper method for that
+      var raw_template = $('#simple-template').html();
+      // Compile that into an handlebars template
+      var template = Handlebars.compile(raw_template);
+      // Define some data to populate the template, the object keys must match the template variables
+      var data = {title: "First Post", entry: "Life is change, change is stability."};
+      // Render the template to html
+      var html = template(data);
+      // Use the main div placeholder to output the html
+      $('#main').append(html);
+      // We can easily reuse the templates with new data 
+      var new_post = {author: "Alice Warlow",
+                      title: "Second Post", 
+                      entry: "It is the power of the mind to be unconquerable.", 
+                      date: new Date(Date.now())};
+      // Render the second post to html
+      var new_post_html = template(new_post);
+      // Append the second post
+      $('#main').append(new_post_html);
+    });
+  </script>
+</head>
+  
+<body>
+<!-- Insertion point for handlebars template -->
+<div id="main" style="margin-left:100px">
+</div>
+</body> 
+</html>

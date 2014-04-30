@@ -11,8 +11,8 @@ What does `this` refer to in the function doSomething()?
   }
 
 
-`this` is commonly used in object oriented programming, such as in C++, Ruby,
-Python, and more. 
+Concept of `this` is commonly used in object oriented programming, such as in
+C++, Ruby, Python, and more. 
 
 Javascript makes it harder by letting `this` refers to different objects
 according to conditions.
@@ -23,22 +23,21 @@ defined in global context, `this` can refer to `window`.
 But when it's event handler, this can refer to the HTML element where the event
 is targeted. 
 
-Knowing the above clear can be good help when play with Javascript.
 
+  ------------ window --------------------------------------
+  |                                          / \           |
+  |                                           |            |
+  |                                          this          |
+  |   ----------------                        |            |
+  |   | HTML element | <-- this         -----------------  |
+  |   ----------------      |           | doSomething() |  |
+  |               |         |           -----------------  |
+  |          --------------------                          |
+  |          | onclick property |                          |
+  |          --------------------                          |
+  |                                                        |
+  ----------------------------------------------------------
 
------------- window --------------------------------------
-|                                          / \           |
-|                                           |            |
-|                                          this          |
-|   ----------------                        |            |
-|   | HTML element | <-- this         -----------------  |
-|   ----------------      |           | doSomething() |  |
-|               |         |           -----------------  |
-|          --------------------                          |
-|          | onclick property |                          |
-|          --------------------                          |
-|                                                        |
-----------------------------------------------------------
 
 If we execute doSomething() without any more preparation the this keyword
 refers to the window and the function tries to change the style.color of the
