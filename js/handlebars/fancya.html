@@ -1,0 +1,79 @@
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <!-- Include jQuery and jQuery UI 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js" type="text/javascript"></script>
+
+  Include Fancytree skin and library
+
+  <link href="fancytree/skin-win8/ui.fancytree.min.css" rel="stylesheet" type="text/css">
+  <link href="../bower_components/fancytree/dist/skin-awesome/ui.fancytree.min.css"  
+
+    /home/za/workspace/code-pieces/js/bower_components/fancytree/dist/skin-awesome/ui.fancytree.min.css
+  <script src="fancytree/jquery.fancytree-all.min.js" type="text/javascript"></script>
+  -->
+  <script src="../bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+  <script src="../bower_components/jquery-ui/ui/jquery-ui.js" type="text/javascript"></script>
+  <!-- Include Fancytree skin and library -->
+  <link href="../bower_components/fancytree/dist/skin-win7/ui.fancytree.min.css"  
+    rel="stylesheet" type="text/css">
+
+  <script src="../bower_components/fancytree/dist/jquery.fancytree-all.min.js" 
+    type="text/javascript"></script>
+
+  <!-- Initialize the tree when page is loaded -->
+  <script type="text/javascript">
+    $(function(){
+      // Create the tree inside the <div id="tree"> element.
+      function init_tree(){
+        $("#tree").fancytree({  
+        source: [ {title: "Node 1", key: "1"},
+              {title: "Node 1", key: "1"},
+          {title: "Folder 2", key: "2", folder: true, children: [
+          {title: "Node 2.1", key: "3"},
+          {title: "Node 2.2", key: "4"}
+          ]}
+          ],
+        });
+      }
+
+      init_tree();
+
+      $("#aa").click(function(){
+        //alert('aa clicked');
+        var tree = $("#tree").fancytree("getTree");
+        tree.destroy();
+        //alert(tree.data);
+        //tree.data = 
+        //tree.reload({  
+        $("#tree").fancytree({  
+          source: [ {title: "Node 1 reload", key: "1"},
+                    {title: "Node a reload", key: "1"},
+                    {title: "Folder 2 reload", key: "2", folder: true, children: [
+                        {title: "Node 2.1 reload", key: "3"},
+                        {title: "Node 2.2", key: "4"}
+                        ]}
+                ],
+            });
+        tree = $("#tree").fancytree("getTree");
+        tree.reload();
+      });
+    });
+  </script>
+</head>
+<body>
+  <div>
+    <p><button id="aa"> Button AA </button></p>
+  </div>
+  <h1> fancytree.js </h1>
+  <!-- Define where the tree should appear -->
+  <div id="tree"></div>
+
+  <!-- the rest is missed out and why? -->
+  <br style="clear:all" />
+  <div>
+  <p> more ... </p>
+  </div>
+</body>
+<!-- vim: set et sw=2 ts=2 -->
+</html> 

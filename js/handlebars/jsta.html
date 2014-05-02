@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+
+<!--
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://code.jquery.com/jquery.min.js"></script>
+-->
+
+<link rel="stylesheet" href="../bower_components/jstree/dist/themes/default/style.min.css" />
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/jstree/dist/jstree.min.js"></script>
+<script>
+$(function() {
+    $('#jst_container').jstree(/* optional config object here */);
+
+    $('#jst_container').on('changed.jstree', function (e, data) {
+        console.log(data.selected);
+    });
+
+    //$('#jst_container').jstree(true).select_node('child_node1');
+
+});
+</script>
+
+<script>
+    //$( document ).ready(function() {
+    //    console.log( (this == $ ? 'yes' : 'no'); );
+    //    //$.inspect(this, 'window');
+    //});
+</script>
+
+<title> test jstree </title>
+</head>
+<body>
+
+<h1> test jstree, 0417, 1740pm </h1>
+
+<div id="jst_container">
+    <ul>
+        <li>Root node
+        <ul>
+            <li id="child_node1">Child node one</li>
+            <ul>
+                <li id="sub_node1">sub node one</li>
+                <li id="sub_node2">sub node two</li>
+            </ul>
+
+            <li id="child_node2">Child node two</li>
+        </ul>
+        </li>
+    </ul>
+</div>
+</body>
+<!-- vim: et ts=2 sw=2: -->
+</html>
+
+
+
+
+
