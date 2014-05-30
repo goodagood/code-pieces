@@ -1,0 +1,7 @@
+
+To make thumbnails of all the JPGs in a directory with a width of 100 pixels:
+Code:
+
+cd /path/to/image_directory
+for i in $(ls *.jpg); do convert -scale 100 $i th-$i; done
+
