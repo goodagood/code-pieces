@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+
+<title> bind and this </title>
+<!--
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+-->
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="../jquery.inspect.js"></script>
+</head>
+<body>
+
+<h1> bind this </h1>
+
+
+
+
+<button>Get Random Person</button>
+<input type="text">
+
+<script>
+$( document ).ready(function() {
+    //console.log( "document loaded" );
+
+    function ok(){
+          var data        = [
+              {name:"T. Woods", age:37},
+              {name:"P. Mickelson", age:43}
+          ];
+
+          var clickHandler=function (event) {
+              var randomNum = ((Math.random () * 2 | 0) + 1) - 1; // random number between 0 and 1
+              //$.inspect(this);
+
+              //$ ("input").val (Date());
+
+              // This line is adding a random person from the data array to the text field
+              $ ("input").val (data[randomNum].name + " " + data[randomNum].age);
+          };
+
+          return clickHandler;
+
+    }
+
+    // Assign an eventHandler to the button's click event
+    $ ("button").click (ok());
+
+    //$ ("button").click (function(){user.clickHandler();});
+
+});
+</script>
+<script>
+
+</script>
+
+</body>
+<!-- vim: et ts=2 sw=2
+-->
+</html>
