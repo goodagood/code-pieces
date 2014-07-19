@@ -1,0 +1,27 @@
+
+To make thumbnails of all the JPGs in a directory with a width of 100 pixels:
+Code:
+
+cd /path/to/image_directory
+for i in $(ls *.jpg); do convert -scale 100 $i th-$i; done
+
+
+
+Fill Area Flag ('^' flag)
+As of IM v6.3.8-3 IM now has a new geometry option flag '^' which is used to resize the image based on the smallest fitting dimension. That is, the image is resized to completely fill (and even overflow) the pixel area given.
+
+
+  convert dragon.gif    -resize 64x64^  fill_dragon.gif
+  convert terminal.gif  -resize 64x64^  fill_terminal.gif
+
+[IM Output] ==> [IM Output] [IM Output] ==> [IM Output]
+
+As it stands this option does not seem very useful, but when combined with either a centered (or uncentered) "-crop" or "-extent" to remove the excess parts of the image, you can fit the image so as to completely fill the area specified. Both the resize and the final image size arguments should be the same values.
+
+Though the "-crop" is most logical, it may require an extra "+repage" to remove virtual canvas layering information. The "-extent" does not require this cleanup, but still allows the use of "-gravity" for positioning. See Cutting and Bordering for more information.
+
+
+  convert dragon.gif      -resize 64x64^ \
+          -gravity center -extent 64x64  fill_crop_dragon.gif
+  convert terminal.gif    -resize 64x64^ \
+          -gravity center -extent 64x64  fill_crop_terminal.gif
