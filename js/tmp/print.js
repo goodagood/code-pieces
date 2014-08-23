@@ -41,7 +41,7 @@ function simple_date(){
 }
 
 
-function seconds_today(){
+function seconds_past_today(){
     //
     // Return a string of seconds past today
     //
