@@ -1,0 +1,9 @@
+require 'net/http'
+
+url = 'http://www.goodagood.com'
+url = 'http://www.cliki.com'
+url = 'http://www.jquery.com'
+res = Net::HTTP.get_response(URI.parse(url))
+
+p res
+text = res.body
