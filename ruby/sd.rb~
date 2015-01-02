@@ -9,20 +9,27 @@ require 'aws-sdk'
 
 require 'json'
 
-s3_old = AWS::S3.new
-s3 = AWS::S3::Client.new(region: 'ap-northeast-1')
+s3 = AWS::S3.new
+
+#s3 = AWS::S3::Client.new(region: 'ap-northeast-1')
 
 #puts s3.methods.sort
 
-#puts s3.list_buckets
 
-#puts s3.buckets.methods
+#puts s3.buckets
+#
 
-#puts s3_old.buckets
+ggfsb = s3.buckets['ggfsb']
+puts ggfsa.methods.sort
+puts ggfsa.with_prefix('.gg')
+#puts ggfsa.objects.each do |o|
+#    puts o.name
+#end
 
-s3_old.buckets.each do |bucket|
-  puts bucket.name
-end
+
+#puts ggfsa.objects.with_prefix('.gg.folder')
+    
+
 
 #s3.buckets.each do |bucket|
 #  puts bucket.name

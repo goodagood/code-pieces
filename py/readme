@@ -1,0 +1,4 @@
+
+workon http
+
+pip install  boto

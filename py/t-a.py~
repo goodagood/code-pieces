@@ -1,0 +1,4 @@
+
+from config import config
+
+print config["IamFile"]  = 'I-am-goodagood-file.2014-0625.'
