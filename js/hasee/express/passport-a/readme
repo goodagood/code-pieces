@@ -1,0 +1,13 @@
+
+# The project to test passport
+
+    express -e passport-a
+    # -e means: using ejs template
+
+2015, 0303.
+
+
+## dir
+
+    pp : for passport things
+

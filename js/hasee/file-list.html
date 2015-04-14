@@ -1,0 +1,164 @@
+
+<link rel="stylesheet" href="./css/font-awesome.min.css">
+<style type="text/css">
+
+
+* {margin: 0;padding: 0;}
+body {font: 100%/1.5 Arial, Helvetica, sans-serif; background: #eee;}
+.clr {clear: both;}
+
+.container {
+   margin: 0 auto 50px;
+   width: 750px;
+   padding: 40px;
+   border: 1px solid #ddd;
+   background: #fff;
+   border-radius: 10px;
+}
+.container:after {
+   content: "";
+   display: block;
+   clear: both;
+   line-height: 0;
+   visibility: hidden;
+   height: 0;
+}
+h1 {text-transform: uppercase; font-size: 40px; margin: 20px 0;}
+h2 {margin-bottom: 10px;}
+p {margin-bottom: 20px;}
+ul {margin: 20px 0;} /* In the video I accidentally put margin-bottom instead of just margin, oops. */
+li {margin: 0 0 5px 20px;}
+i {color:#000;}
+.section {
+   width: 210px;
+   float: left;
+   padding: 20px;
+   outline: 1px solid #eee;
+   margin-bottom: 20px;
+}
+.section p {margin-bottom: 0;}
+
+
+
+/*** custom checkboxes ***/
+.clear { clear:all; }
+
+/* for file list */
+
+div#file_list ul li.file input[type=checkbox] {
+  /*display: none;*/ }
+
+div#file_list ul li.file:before {
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f096\f046";
+  letter-spacing: 10px; }
+
+
+div#file_list ul li.file input[type=checkbox] a:before {
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f096";
+  letter-spacing: 10px; }
+
+
+div#file_list ul li.file input[type=checkbox]:checked + a:before {
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f046";
+  letter-spacing: 8px; }
+
+div#file_list ul li.file input[type=checkbox]:checked + span.extra:after {
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f217";
+  }
+
+div#file_list ul li.file input[type=checkbox]:checked + span.extra:after {
+  letter-spacing: 8px; }
+
+/*# sourceMappingURL=a.css.map */
+
+
+p#explain span:before{
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f096";
+  letter-spacing: 10px; }
+
+</style>
+
+<div class="container">
+    <p id="explain">  <span>can</span> this work <i class="fa fa-question"></i>
+    <i class="fa fa-star"></i>
+    </p>
+
+<div id="right-file" class="col-sm-9 col-md-10"> 
+    
+    <div>
+        <section id="demonstration" role="main" class="span12">
+
+
+        <div id="file_list" class="tree">
+            <ul class="folder-list list-unstyled"><li class="folder"><span class="glyphicon glyphicon-folder-close"> </span>&nbsp;&nbsp;<a href="/ls/tmpab/goodagood" >goodagood</a></li>
+                <li class="folder"><span class="glyphicon glyphicon-folder-close"> </span>&nbsp;&nbsp;<a href="/ls/tmpab/public" >public</a></li>
+                <li class="file"><input type="checkbox" name="filepath[]" value="tmpab/5069d9d8-f737-4fd3-90fe-3ae6b69cc3f9" />
+                &nbsp;
+                <a href="/ss/.gg.file/tmpab/5069d9d8-f737-4fd3-90fe-3ae6b69cc3f9"> du55</a>&nbsp;
+                <ul class="list-unstyled file-info"><li>
+                    <a href="/viewtxt/tmpab/5069d9d8-f737-4fd3-90fe-3ae6b69cc3f9">
+                        <span class="glyphicon glyphicon-zoom-in"> </span>Read
+                    </a>&nbsp;
+                    <a href="/fileinfo-pathuuid/tmpab/5069d9d8-f737-4fd3-90fe-3ae6b69cc3f9"> <span class="glyphicon glyphicon-info-sign"> </span>Info.</a>&nbsp;
+                    <a href="/del/tmpab/5069d9d8-f737-4fd3-90fe-3ae6b69cc3f9"> <span class="glyphicon glyphicon-remove"></span>Delete</a>&nbsp;
+                    </li></ul></li>
+                    
+                    <li class="file"><input type="checkbox" name="filepath[]" value="tmpab/b4465e10-1ec4-40ab-aae6-a388f3854a1b" />
+                    &nbsp;
+                    <span class="extra"></span>
+                    <a href="/ss/.gg.file/tmpab/b4465e10-1ec4-40ab-aae6-a388f3854a1b"> ports.md</a>&nbsp;
+                    <span class="glyphicon glyphicon-star"></span>&nbsp;
+                    <ul class="list-unstyled file-info"><li>
+                        <a class="viewer" href="/viewmd/tmpab/b4465e10-1ec4-40ab-aae6-a388f3854a1b">Viewer</a>&nbsp;
+                        <a class="editor" href="/edit-md/tmpab/b4465e10-1ec4-40ab-aae6-a388f3854a1b">Editor</a>&nbsp;
+                        <a href="/fileinfo-pathuuid/tmpab/b4465e10-1ec4-40ab-aae6-a388f3854a1b"> <span class="glyphicon glyphicon-info-sign"> </span>Info.</a>&nbsp;
+                        <a href="/del/tmpab/b4465e10-1ec4-40ab-aae6-a388f3854a1b"> <span class="glyphicon glyphicon-remove"></span>Delete</a>&nbsp;
+                        <a href="/ss/.gg.file/tmpab/b4465e10-1ec4-40ab-aae6-a388f3854a1b" >ports.md</a>
+                        <a href="/view/tmpab/ports.md" >&nbsp; view</a>
+                        <a href="/del/tmpab/b4465e10-1ec4-40ab-aae6-a388f3854a1b"> <span class="glyphicon glyphicon-remove"> </span></a>
+                        </li></ul></li>
+                        
+                        <li class="file"><input type="checkbox" name="filepath[]" value="tmpab/698f37dd-c1fe-433c-9d22-2b206d8249af" />
+                        &nbsp;
+                        <a href="/ss/.gg.file/tmpab/698f37dd-c1fe-433c-9d22-2b206d8249af"> md-syntax.md</a>&nbsp;
+                        <span class="glyphicon glyphicon-star"></span>&nbsp;
+                        <ul class="list-unstyled file-info"><li>
+                            <a class="viewer" href="/viewmd/tmpab/698f37dd-c1fe-433c-9d22-2b206d8249af">Viewer</a>&nbsp;
+                            <a class="editor" href="/edit-md/tmpab/698f37dd-c1fe-433c-9d22-2b206d8249af">Editor</a>&nbsp;
+                            <a href="/fileinfo-pathuuid/tmpab/698f37dd-c1fe-433c-9d22-2b206d8249af"> <span class="glyphicon glyphicon-info-sign"> </span>Info.</a>&nbsp;
+                            <a href="/del/tmpab/698f37dd-c1fe-433c-9d22-2b206d8249af"> <span class="glyphicon glyphicon-remove"></span>Delete</a>&nbsp;
+                            <a href="/ss/.gg.file/tmpab/698f37dd-c1fe-433c-9d22-2b206d8249af" >md-syntax.md</a>
+                            <a href="/view/tmpab/md-syntax.md" >&nbsp; view</a>
+                            <a href="/del/tmpab/698f37dd-c1fe-433c-9d22-2b206d8249af"> <span class="glyphicon glyphicon-remove"> </span></a>
+                            </li></ul></li><li class="file"><input type="checkbox" name="filepath[]" value="tmpab/058ab003-8bd3-4126-90de-78fde8ad7553" />
+                            &nbsp;
+                            <a href="/ss/.gg.file/tmpab/058ab003-8bd3-4126-90de-78fde8ad7553"> highlight.md</a>&nbsp;
+                            <span class="glyphicon glyphicon-star"></span>&nbsp;
+                            <ul class="list-unstyled file-info"><li>
+                                <a class="viewer" href="/viewmd/tmpab/058ab003-8bd3-4126-90de-78fde8ad7553">Viewer</a>&nbsp;
+                                <a class="editor" href="/edit-md/tmpab/058ab003-8bd3-4126-90de-78fde8ad7553">Editor</a>&nbsp;
+                                <a href="/fileinfo-pathuuid/tmpab/058ab003-8bd3-4126-90de-78fde8ad7553"> <span class="glyphicon glyphicon-info-sign"> </span>Info.</a>&nbsp;
+                                <a href="/del/tmpab/058ab003-8bd3-4126-90de-78fde8ad7553"> <span class="glyphicon glyphicon-remove"></span>Delete</a>&nbsp;
+                                <a href="/ss/.gg.file/tmpab/058ab003-8bd3-4126-90de-78fde8ad7553" >highlight.md</a>
+                                <a href="/view/tmpab/highlight.md" >&nbsp; view</a>
+                                <a href="/del/tmpab/058ab003-8bd3-4126-90de-78fde8ad7553"> <span class="glyphicon glyphicon-remove"> </span></a>
+                                </li></ul></li></ul>
+                            </div>
+                            </section>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>

@@ -1,0 +1,14 @@
+{
+  "name": "CSS-Slide-Transition",
+  "homepage": "https://github.com/tpryan/CSS-Slide-Transition",
+  "_release": "a552b1daa8",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "a552b1daa899b8262cb334d1d1bf5056d501e857"
+  },
+  "_source": "https://github.com/tpryan/CSS-Slide-Transition.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/tpryan/CSS-Slide-Transition.git",
+  "_direct": true
+}

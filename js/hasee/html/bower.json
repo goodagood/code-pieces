@@ -1,0 +1,21 @@
+{
+  "name": "html",
+  "version": "0.0.0",
+  "homepage": "https://github.com/goodagood/code-pieces",
+  "authors": [
+    "Andrew <Andrew@hasee>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendors",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-mobile": "~1.4.5",
+    "jquery": "~2.1.3"
+  }
+}

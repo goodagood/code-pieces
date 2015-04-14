@@ -1,0 +1,136 @@
+
+body {
+  background-color: #e3fbff;
+}
+
+/* Just to center things */
+.center {
+  margin: 100px auto;
+  width: 30px;
+}
+
+/* The element to hover over */
+.qs {
+  background-color: #02bdda;
+  color: #e3fbff;
+  cursor: default;
+  display: inline-block;
+
+  height: 50px;
+  width: 50px;
+  position: relative;
+  text-align: center;
+
+  font-family: 'Helvetica',sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 30px;
+
+  border-radius: 16px;
+}
+
+.qs .popover {
+  background-color: rgba(0, 0, 0, 0.85);
+  border-radius: 5px;
+  bottom: 42px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  display: none;
+  font-size: 12px;
+  font-family: 'Helvetica',sans-serif;
+  left: -95px;
+  padding: 7px 10px;
+  position: absolute;
+  width: 200px;
+  z-index: 4;
+}
+.qs .popover:before {
+  border-top: 7px solid rgba(0, 0, 0, 0.85);
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;
+  bottom: -7px;
+  content: '';
+  display: block;
+  left: 50%;
+  margin-left: -7px;
+  position: absolute;
+}
+
+
+/* some stupid things, animation is ok, but too much lines.
+.qs:hover .popover {
+  display: block;
+  -webkit-animation: fade-in .3s linear 1, move-up .3s linear 1;
+  -moz-animation: fade-in .3s linear 1, move-up .3s linear 1;
+  -ms-animation: fade-in .3s linear 1, move-up .3s linear 1;
+}
+*/
+.qs:hover .popover {
+  display: block;
+
+  animation: fade-in .3s linear 1;
+  /*
+  animation-name: fade-in;
+  animation-duration: .3s;
+  */
+  -webkit-animation: fade-in .3s linear 1;
+  -moz-animation: fade-in .3s linear 1;
+  -ms-animation: fade-in .3s linear 1;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-ms-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes move-up {
+  from {
+    bottom: 30px;
+  }
+  to {
+    bottom: 42px;
+  }
+}
+@-moz-keyframes move-up {
+  from {
+    bottom: 30px;
+  }
+  to {
+    bottom: 42px;
+  }
+}
+@-ms-keyframes move-up {
+  from {
+    bottom: 30px;
+  }
+  to {
+    bottom: 42px;
+  }
+}

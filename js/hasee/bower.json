@@ -1,0 +1,20 @@
+{
+  "name": "hasee",
+  "version": "0.0.0",
+  "homepage": "https://github.com/goodagood/code-pieces",
+  "authors": [
+    "Andrew <Andrew@hasee>"
+  ],
+  "dependencies": {
+    "qunit": "~1.16.0",
+    "underscore": "~1.7.0"
+  },
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

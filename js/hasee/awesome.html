@@ -1,0 +1,147 @@
+
+<!--
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+-->
+<link rel="stylesheet" href="./css/font-awesome.min.css">
+<style type="text/css">
+
+
+* {margin: 0;padding: 0;}
+body {font: 100%/1.5 Arial, Helvetica, sans-serif; background: #eee;}
+.clr {clear: both;}
+.container {
+   margin: 0 auto 50px;
+   width: 750px;
+   padding: 40px;
+   border: 1px solid #ddd;
+   background: #fff;
+   border-radius: 10px;
+}
+.container:after {
+   content: "";
+   display: block;
+   clear: both;
+   line-height: 0;
+   visibility: hidden;
+   height: 0;
+}
+h1 {text-transform: uppercase; font-size: 40px; margin: 20px 0;}
+h2 {margin-bottom: 10px;}
+p {margin-bottom: 20px;}
+ul {margin: 20px 0;} /* In the video I accidentally put margin-bottom instead of just margin, oops. */
+li {margin: 0 0 5px 20px;}
+i {color:#000;}
+.section {
+   width: 210px;
+   float: left;
+   padding: 20px;
+   outline: 1px solid #eee;
+   margin-bottom: 20px;
+}
+.section p {margin-bottom: 0;}
+
+
+/* for checkbox */
+
+/*
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+*/
+
+/*** basic styles
+
+body { margin: 30px; } 
+h1 { font-size: 1.5em; }
+label { font-size: 24px; }
+div { 
+    width: 175px; 
+    margin-left: 20px;
+} 
+***/
+
+/*** custom checkboxes ***/
+.clear { clear:all; }
+/* to hide the checkbox itself */
+input[type=checkbox] { display:none; }
+
+input[type=checkbox] + span.hand-check-box:before {
+    font-family: FontAwesome;
+    display: inline-block;
+}
+input[type=checkbox] + span.hand-check-box:before { content: "\f096&#xf096;"; } /* unchecked icon */
+/* space between checkbox and label */
+input[type=checkbox] + span.hand-check-box:before { letter-spacing: 10px; }
+
+input[type=checkbox]:checked + span.hand-check-box:before { content: "\f046"; } /* checked icon */
+input[type=checkbox]:checked + span.hand-check-box:before { letter-spacing: 5px; } /* allow space for check mark */
+
+
+
+</style>
+
+<h1 align="center">Font awesome Icons <i class="fa fa-smile-o"></i></h1>
+<div class="container">
+
+<div  id="checkbox-test">
+
+    <h1>Custom Checkboxes</h1>
+    <div>
+        <label for="boxa">  
+            <input id="boxa" type="checkbox" />
+            <span class="hand-check-box"></span>
+            Checkbox a
+        </label>
+        <br class="clear" />
+
+        <label for="boxb">  
+            <input id="boxb" type="checkbox" />
+            <span class="hand-check-box"></span>
+            Checkbox b
+        </label>
+        <br class="clear" />
+
+        <label for="boxc">  
+            <input id="boxc" type="checkbox" />
+            <span class="hand-check-box"></span>
+            Checkbox c
+        </label>
+        <br class="clear" />
+
+        <input id="box2" type="checkbox" />
+        <label for="box2">Checkbox 2</label>
+
+        <input id="box3" type="checkbox" />
+        <label for="box3">Checkbox 3</label>
+    </div>
+
+</div>
+
+<hr style="clear:all" />
+
+<div class="section">
+   <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
+   <p><i class="fa fa-cogs pull-left fa-4x"></i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, tenetur, voluptates facere maxime culpa nihil explicabo aspernatur nemo ipsam officiis.</p>
+</div>
+<div class="section">
+   <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
+   <p><i class="fa fa-github-square pull-left fa-4x"></i>Dolorum, consequuntur eveniet ipsa magnam id est quisquam harum doloribus cupiditate numquam beatae possimus ipsum sunt minus commodi unde incidunt?</p>
+</div>
+<div class="section">
+   <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
+   <p><i class="fa fa-cloud-download pull-left fa-4x"></i>Ab, eligendi, quae, amet iste cupiditate illo odio in suscipit nostrum veritatis laborum quam adipisci consequuntur asperiores incidunt. Minus, quidem.</p>
+</div>
+<p><i class="fa fa-quote-left fa-3x pull-left fa-border"></i><i class="fa fa-quote-right fa-3x pull-right fa-border"></i>Dolorum, consequuntur eveniet ipsa magnam id est quisquam harum doloribus cupiditate numquam beatae possimus ipsum sunt minus commodi unde incidunt?</p>
+<i class="fa fa-spinner fa-spin fa-5x"></i> <br>
+<ul class="fa-ul">
+   <li><i class="fa-li fa fa-check-square"></i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, incidunt.</li>
+   <li><i class="fa-li fa fa-check-square"></i>Doloribus exercitationem error quibusdam impedit provident dolores repellat laudantium cumque.</li>
+   <li><i class="fa-li fa fa-check-square"></i>Nobis fugiat ducimus ullam voluptas voluptates perspiciatis totam nisi quia!</li>
+   <li><i class="fa-li fa fa-check-square"></i>Doloribus, facere distinctio officiis ullam eaque laborum voluptates dicta quidem.</li>
+   <li><i class="fa-li fa fa-check-square"></i>Perferendis culpa ducimus eligendi laudantium earum ipsa similique ut minima.</li>
+   <li><i class="fa-li fa fa-check-square"></i>Fugiat, architecto aliquid eligendi laboriosam incidunt vel magnam maiores consectetur.</li>
+   <li><i class="fa-li fa fa-check-square"></i>Quis, nam fugit error in nostrum aspernatur totam dolor porro!</li>
+   <li><i class="fa-li fa fa-check-square"></i>Obcaecati, doloremque, sit placeat veniam aspernatur possimus iste assumenda temporibus!</li>
+   <li><i class="fa-li fa fa-check-square"></i>Labore, minima ea quod harum doloremque necessitatibus fugiat assumenda vel?</li>
+   <li><i class="fa-li fa fa-check-square"></i>Est, iste iure laboriosam eos quaerat eum ad esse illo.</li>
+</ul>
+</div>
+

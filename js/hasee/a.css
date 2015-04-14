@@ -1,0 +1,14 @@
+div#file-list ul li.file input[type=checkbox] {
+  display: none; }
+
+div#file-list ul li.file input[type=checkbox] a:before {
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "";
+  letter-spacing: 10px; }
+
+div#file-list ul li.file input[type=checkbox]:checked a:before {
+  content: "";
+  letter-spacing: 5px; }
+
+/*# sourceMappingURL=a.css.map */

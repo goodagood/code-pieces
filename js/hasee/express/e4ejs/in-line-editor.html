@@ -1,0 +1,57 @@
+
+<style>
+/* Making look nice */
+body { padding: 1em; font-family: Arial; font-size: 14px; }
+input[type="text"] { padding: 0.4em; font-family: Arial; }
+
+/* Inline Edit */
+p.hover { background: #fffbe1; }
+</style>
+
+
+<form>
+    <input type="hidden" name="hiddenField" />
+</form>
+
+<p>Please edit me...</p>
+
+<script type="text/javascript">
+var replaceWith = $('<input name="temp" type="text" />'),
+    connectWith = $('input[name="hiddenField"]');
+
+$('p').inlineEdit(replaceWith, connectWith);
+</script>
+
+
+<script>
+$.fn.inlineEdit = function(replaceWith, connectWith) {
+
+    $(this).hover(function() {
+        $(this).addClass('hover');
+    }, function() {
+        $(this).removeClass('hover');
+    });
+
+    $(this).click(function() {
+
+        var elem = $(this);
+
+        elem.hide();
+        elem.after(replaceWith);
+        replaceWith.focus();
+
+        replaceWith.blur(function() {
+
+            if ($(this).val() != "") {
+                connectWith.val($(this).val()).change();
+                elem.text($(this).val());
+            }
+
+            $(this).remove();
+            elem.show();
+        });
+    });
+};
+</script>
+
+
