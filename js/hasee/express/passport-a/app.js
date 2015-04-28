@@ -20,12 +20,27 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 //app.use(express.session({ secret: 'keyboard cat' }));
+
+// file session:
+
+//var session = require('express-session');
+var session = require('./session-copy');
+var FileStore = require('./file-session-copy')(session);
+
+app.use(session({
+    store: new FileStore({path: './store-file-session'}),
+    resave: false,
+    saveUninitialized: false,
+    secret: 'keyboard cat'
+}));
+
 
 //var passport = require ('passport');
 var passport = require ('./pp/name-pass.js').passport;
 app.use(passport.initialize());
-//app.use(passport.session());
+app.use(passport.session());
 
 var routes = require('./routes/index');
 var users = require('./routes/users');

@@ -18,9 +18,9 @@ var p = console.log;
 
 //passport.use(new LocalStrategy
 passport.use( new LocalStrategy(
-            function(username, password, done){
-                check_passwd(username, password, done);
-            }
+    function(username, password, done){
+        check_passwd(username, password, done);
+    }
 ));
 
 var name_pass = {
