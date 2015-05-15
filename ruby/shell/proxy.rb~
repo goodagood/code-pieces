@@ -15,8 +15,8 @@ lines = psreg.split("\n")
 
 s = ''
 lines.each { |l|
-    #if l =~ /.+\s9999\s.+/
-    if l.include? what
+    #if l.include? what
+    if l =~ /.+\s9999\s.+/
         s = l
     end
 }
@@ -28,7 +28,8 @@ if s != ''
     #puts parts[0,3]
     if parts[1] =~ /\d+/
         puts "going to kill, it might be: #{parts[1]}"
-        #`kill #{parts[1]}`
+        `kill #{parts[1]}`
+        `autossh -i ~/.ssh/ec2tokyo_kp.pem  -D 9999 -C ubuntu@54.250.18.75`
     end
 end
 

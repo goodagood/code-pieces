@@ -1,5 +1,8 @@
 #!/usr/bin/ruby
 #
+# cp from psreg.rb, to kill autossh process
+#
+
 
 #puts ARGV
 what = ARGV[0]
@@ -16,7 +19,7 @@ lines = psreg.split("\n")
 s = ''
 lines.each { |l|
     #if l =~ /.+\s9999\s.+/
-    if l.include? what
+    if l.include? what and not l.include? "ruby"
         s = l
     end
 }
@@ -28,7 +31,9 @@ if s != ''
     #puts parts[0,3]
     if parts[1] =~ /\d+/
         puts "going to kill, it might be: #{parts[1]}"
-        #`kill #{parts[1]}`
+        puts "command: kill #{parts[1]}"
+        `kill #{parts[1]}`
     end
 end
+
 

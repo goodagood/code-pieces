@@ -1,31 +1,19 @@
 #!/usr/bin/ruby
 #
 
-puts ARGV
+#puts ARGV
 
-psreg = `ps aux | grep autossh`
+#ARGV.chomp!
 
-# 88.149 is the node.js ec2 ip
-#
+puts 'is array?'
+puts ARGV.kind_of?(Array)
 
-lines = psreg.split("\n")
-puts lines
+a = ARGV[0]
 
-s = ''
-lines.each { |l|
-    if l =~ /.+\s9999\s.+/
-        s = l
-    end
-}
-
-puts s
-
-if s != ''
-    parts = s.split(" ")
-    #puts parts[0,3]
-    if parts[1] =~ /\d+/
-        puts "going to kill, it might be: #{parts[1]}"
-        `kill #{parts[1]}`
-    end
+if a == '9999'
+    puts 'got 9999'
+elsif a == 9999
+    puts 'number: ', a
+else
+    puts 'it is?: ', a
 end
-
