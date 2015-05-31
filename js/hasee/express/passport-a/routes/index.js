@@ -28,4 +28,17 @@ router.post('/login',
                  failureFlash: true })  // should return a function fun(req, res, next)
 );
 
+
+var locale = require("locale");
+router.get('/langs', function(req, res){
+    res.header("Content-Type", "text/plain");
+    res.send(
+        "You asked for: " + req.headers["accept-language"] + "\n" +
+        //"We support: " + supported + "\n" +
+        "Our default is: " + locale.Locale["default"] + "\n" +
+        "The best match is: " + req.locale + "\n"
+        );
+});
+
+
 module.exports = router;

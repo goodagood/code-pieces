@@ -1,0 +1,11 @@
+#!/usr/bin/expect 
+
+spawn node
+expect ">"
+send ".load request-a.js\r"
+#expect ">"
+
+expect "ok start interact"
+
+interact
+

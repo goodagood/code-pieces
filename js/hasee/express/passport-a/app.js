@@ -42,6 +42,14 @@ var passport = require ('./pp/name-pass.js').passport;
 app.use(passport.initialize());
 app.use(passport.session());
 
+
+// Try to guess user languages, limited to English/Chinese.
+var locale = require("locale");
+var our_langs = ['en', 'zh'];  
+app.use(locale(our_langs));
+// tested at lang-test
+
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 app.use('/', routes);
@@ -78,5 +86,14 @@ app.use(function(err, req, res, next) {
     });
 });
 
+app.get('/langs-a', function(req, res){
+    res.header("Content-Type", "text/plain");
+    res.send(
+        "You asked for: " + req.headers["accept-language"] + "\n" +
+        "We support: " + our_langs + "\n" +
+        "Our default is: " + locale.Locale["default"] + "\n" +
+        "The best match is: " + req.locale + "\n"
+        );
+});
 
 module.exports = app;
