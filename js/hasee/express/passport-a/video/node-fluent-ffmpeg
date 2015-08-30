@@ -1,0 +1,2418 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=1020">
+    
+    
+    <title>fluent-ffmpeg/node-fluent-ffmpeg · GitHub</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-144.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144.png">
+    <meta property="fb:app_id" content="1401488693436528">
+
+      <meta content="@github" name="twitter:site" /><meta content="summary" name="twitter:card" /><meta content="fluent-ffmpeg/node-fluent-ffmpeg" name="twitter:title" /><meta content="node-fluent-ffmpeg - A fluent API to FFMPEG (http://www.ffmpeg.org)" name="twitter:description" /><meta content="https://avatars2.githubusercontent.com/u/7461466?v=3&amp;s=400" name="twitter:image:src" />
+      <meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="https://avatars2.githubusercontent.com/u/7461466?v=3&amp;s=400" property="og:image" /><meta content="fluent-ffmpeg/node-fluent-ffmpeg" property="og:title" /><meta content="https://github.com/fluent-ffmpeg/node-fluent-ffmpeg" property="og:url" /><meta content="node-fluent-ffmpeg - A fluent API to FFMPEG (http://www.ffmpeg.org)" property="og:description" />
+      <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+    <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+    <link rel="assets" href="https://assets-cdn.github.com/">
+    
+    <meta name="pjax-timeout" content="1000">
+    
+
+    <meta name="msapplication-TileImage" content="/windows-tile.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="selected-link" value="repo_source" data-pjax-transient>
+
+        <meta name="google-analytics" content="UA-3769691-2">
+
+    <meta content="collector.githubapp.com" name="octolytics-host" /><meta content="collector-cdn.github.com" name="octolytics-script-host" /><meta content="github" name="octolytics-app-id" /><meta content="7176F544:65B5:A1AEB66:55C15E62" name="octolytics-dimension-request_id" />
+    
+    <meta content="Rails, view, files#disambiguate" data-pjax-transient="true" name="analytics-event" />
+    <meta class="js-ga-set" name="dimension1" content="Logged Out">
+      <meta class="js-ga-set" name="dimension4" content="Current repo nav">
+    <meta name="is-dotcom" content="true">
+        <meta name="hostname" content="github.com">
+    <meta name="user-login" content="">
+
+      <link rel="icon" sizes="any" mask href="https://assets-cdn.github.com/pinned-octocat.svg">
+      <meta name="theme-color" content="#4078c0">
+      <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+
+    <!-- </textarea> --><!-- '"` --><meta content="authenticity_token" name="csrf-param" />
+<meta content="zXbDze2kc43pknFK/EbCfSeysjRpXlZdZgaUPmJmzpOO7r8Vw2ZYwV0iSyTuZ+OiRWMICzYvDbO0KngBBDBFFA==" name="csrf-token" />
+    
+
+    <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github/index-a6099c44cba81e3cc01a25d5aad205f2dd86c56ad656d0ee72761a3db28828c5.css" media="all" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github2/index-e7262cad01eef2691501230e7d70c976a8e97c8a96842f0f29a1f20f658a315d.css" media="all" rel="stylesheet" />
+    
+    
+
+
+    <meta http-equiv="x-pjax-version" content="7b3fb0c762b1609124fa6ce9de586ac0">
+
+      
+  <meta name="description" content="node-fluent-ffmpeg - A fluent API to FFMPEG (http://www.ffmpeg.org)">
+  <meta name="go-import" content="github.com/fluent-ffmpeg/node-fluent-ffmpeg git https://github.com/fluent-ffmpeg/node-fluent-ffmpeg.git">
+
+  <meta content="7461466" name="octolytics-dimension-user_id" /><meta content="fluent-ffmpeg" name="octolytics-dimension-user_login" /><meta content="1602811" name="octolytics-dimension-repository_id" /><meta content="fluent-ffmpeg/node-fluent-ffmpeg" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="1602811" name="octolytics-dimension-repository_network_root_id" /><meta content="fluent-ffmpeg/node-fluent-ffmpeg" name="octolytics-dimension-repository_network_root_nwo" />
+  <link href="https://github.com/fluent-ffmpeg/node-fluent-ffmpeg/commits/master.atom" rel="alternate" title="Recent Commits to node-fluent-ffmpeg:master" type="application/atom+xml">
+
+  </head>
+
+
+  <body class="logged_out  env-production  vis-public">
+    <a href="#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+    <div class="wrapper">
+      
+      
+      
+
+
+
+        
+        <div class="header header-logged-out" role="banner">
+  <div class="container clearfix">
+
+    <a class="header-logo-wordmark" href="https://github.com/" data-ga-click="(Logged out) Header, go to homepage, icon:logo-wordmark">
+      <span class="mega-octicon octicon-logo-github"></span>
+    </a>
+
+    <div class="header-actions" role="navigation">
+        <a class="btn btn-primary" href="/join" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">Sign up</a>
+      <a class="btn" href="/login?return_to=%2Ffluent-ffmpeg%2Fnode-fluent-ffmpeg" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign in</a>
+    </div>
+
+    <div class="site-search repo-scope js-site-search" role="search">
+      <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/fluent-ffmpeg/node-fluent-ffmpeg/search" class="js-site-search-form" data-global-search-url="/search" data-repo-search-url="/fluent-ffmpeg/node-fluent-ffmpeg/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+  <label class="js-chromeless-input-container form-control">
+    <div class="scope-badge">This repository</div>
+    <input type="text"
+      class="js-site-search-focus js-site-search-field is-clearable chromeless-input"
+      data-hotkey="s"
+      name="q"
+      placeholder="Search"
+      aria-label="Search this repository"
+      data-global-scope-placeholder="Search GitHub"
+      data-repo-scope-placeholder="Search"
+      tabindex="1"
+      autocapitalize="off">
+  </label>
+</form>
+    </div>
+
+      <ul class="header-nav left" role="navigation">
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="/explore" data-ga-click="(Logged out) Header, go to explore, text:explore">Explore</a>
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="/features" data-ga-click="(Logged out) Header, go to features, text:features">Features</a>
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="https://enterprise.github.com/" data-ga-click="(Logged out) Header, go to enterprise, text:enterprise">Enterprise</a>
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="/blog" data-ga-click="(Logged out) Header, go to blog, text:blog">Blog</a>
+          </li>
+      </ul>
+
+  </div>
+</div>
+
+
+
+      <div id="start-of-content" class="accessibility-aid"></div>
+          <div class="site" itemscope itemtype="http://schema.org/WebPage">
+    <div id="js-flash-container">
+      
+    </div>
+    <div class="pagehead repohead instapaper_ignore readability-menu ">
+      <div class="container">
+
+        <div class="clearfix">
+          
+<ul class="pagehead-actions">
+
+  <li>
+      <a href="/login?return_to=%2Ffluent-ffmpeg%2Fnode-fluent-ffmpeg"
+    class="btn btn-sm btn-with-count tooltipped tooltipped-n"
+    aria-label="You must be signed in to watch a repository" rel="nofollow">
+    <span class="octicon octicon-eye"></span>
+    Watch
+  </a>
+  <a class="social-count" href="/fluent-ffmpeg/node-fluent-ffmpeg/watchers">
+    65
+  </a>
+
+  </li>
+
+  <li>
+      <a href="/login?return_to=%2Ffluent-ffmpeg%2Fnode-fluent-ffmpeg"
+    class="btn btn-sm btn-with-count tooltipped tooltipped-n"
+    aria-label="You must be signed in to star a repository" rel="nofollow">
+    <span class="octicon octicon-star"></span>
+    Star
+  </a>
+
+    <a class="social-count js-social-count" href="/fluent-ffmpeg/node-fluent-ffmpeg/stargazers">
+      1,052
+    </a>
+
+  </li>
+
+    <li>
+      <a href="/login?return_to=%2Ffluent-ffmpeg%2Fnode-fluent-ffmpeg"
+        class="btn btn-sm btn-with-count tooltipped tooltipped-n"
+        aria-label="You must be signed in to fork a repository" rel="nofollow">
+        <span class="octicon octicon-repo-forked"></span>
+        Fork
+      </a>
+      <a href="/fluent-ffmpeg/node-fluent-ffmpeg/network" class="social-count">
+        221
+      </a>
+    </li>
+</ul>
+
+          <h1 itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public ">
+            <span class="mega-octicon octicon-repo"></span>
+            <span class="author"><a href="/fluent-ffmpeg" class="url fn" itemprop="url" rel="author"><span itemprop="title">fluent-ffmpeg</span></a></span><!--
+         --><span class="path-divider">/</span><!--
+         --><strong><a href="/fluent-ffmpeg/node-fluent-ffmpeg" data-pjax="#js-repo-pjax-container">node-fluent-ffmpeg</a></strong>
+
+            <span class="page-context-loader">
+              <img alt="" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+            </span>
+
+          </h1>
+        </div>
+
+      </div>
+    </div>
+
+      <div class="container">
+        <div class="repository-with-sidebar repo-container new-discussion-timeline with-full-navigation">
+          <div class="repository-sidebar clearfix">
+              
+
+<nav class="sunken-menu repo-nav js-repo-nav js-sidenav-container-pjax js-octicon-loaders"
+     role="navigation"
+     data-pjax="#js-repo-pjax-container"
+     data-issue-count-url="/fluent-ffmpeg/node-fluent-ffmpeg/issues/counts">
+  <ul class="sunken-menu-group">
+    <li class="tooltipped tooltipped-w" aria-label="Code">
+      <a href="/fluent-ffmpeg/node-fluent-ffmpeg" aria-label="Code" aria-selected="true" class="js-selected-navigation-item selected sunken-menu-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /fluent-ffmpeg/node-fluent-ffmpeg">
+        <span class="octicon octicon-code"></span> <span class="full-word">Code</span>
+        <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>    </li>
+
+      <li class="tooltipped tooltipped-w" aria-label="Issues">
+        <a href="/fluent-ffmpeg/node-fluent-ffmpeg/issues" aria-label="Issues" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /fluent-ffmpeg/node-fluent-ffmpeg/issues">
+          <span class="octicon octicon-issue-opened"></span> <span class="full-word">Issues</span>
+          <span class="js-issue-replace-counter"></span>
+          <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>      </li>
+
+    <li class="tooltipped tooltipped-w" aria-label="Pull requests">
+      <a href="/fluent-ffmpeg/node-fluent-ffmpeg/pulls" aria-label="Pull requests" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g p" data-selected-links="repo_pulls /fluent-ffmpeg/node-fluent-ffmpeg/pulls">
+          <span class="octicon octicon-git-pull-request"></span> <span class="full-word">Pull requests</span>
+          <span class="js-pull-replace-counter"></span>
+          <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>    </li>
+
+      <li class="tooltipped tooltipped-w" aria-label="Wiki">
+        <a href="/fluent-ffmpeg/node-fluent-ffmpeg/wiki" aria-label="Wiki" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g w" data-selected-links="repo_wiki /fluent-ffmpeg/node-fluent-ffmpeg/wiki">
+          <span class="octicon octicon-book"></span> <span class="full-word">Wiki</span>
+          <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>      </li>
+  </ul>
+  <div class="sunken-menu-separator"></div>
+  <ul class="sunken-menu-group">
+
+    <li class="tooltipped tooltipped-w" aria-label="Pulse">
+      <a href="/fluent-ffmpeg/node-fluent-ffmpeg/pulse" aria-label="Pulse" class="js-selected-navigation-item sunken-menu-item" data-selected-links="pulse /fluent-ffmpeg/node-fluent-ffmpeg/pulse">
+        <span class="octicon octicon-pulse"></span> <span class="full-word">Pulse</span>
+        <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>    </li>
+
+    <li class="tooltipped tooltipped-w" aria-label="Graphs">
+      <a href="/fluent-ffmpeg/node-fluent-ffmpeg/graphs" aria-label="Graphs" class="js-selected-navigation-item sunken-menu-item" data-selected-links="repo_graphs repo_contributors /fluent-ffmpeg/node-fluent-ffmpeg/graphs">
+        <span class="octicon octicon-graph"></span> <span class="full-word">Graphs</span>
+        <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>    </li>
+  </ul>
+
+
+</nav>
+
+                <div class="only-with-full-nav">
+                    
+<div class="js-clone-url clone-url open"
+  data-protocol-type="http">
+  <h3><span class="text-emphasized">HTTPS</span> clone URL</h3>
+  <div class="input-group js-zeroclipboard-container">
+    <input type="text" class="input-mini input-monospace js-url-field js-zeroclipboard-target"
+           value="https://github.com/fluent-ffmpeg/node-fluent-ffmpeg.git" readonly="readonly" aria-label="HTTPS clone URL">
+    <span class="input-group-button">
+      <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+    </span>
+  </div>
+</div>
+
+  
+<div class="js-clone-url clone-url "
+  data-protocol-type="subversion">
+  <h3><span class="text-emphasized">Subversion</span> checkout URL</h3>
+  <div class="input-group js-zeroclipboard-container">
+    <input type="text" class="input-mini input-monospace js-url-field js-zeroclipboard-target"
+           value="https://github.com/fluent-ffmpeg/node-fluent-ffmpeg" readonly="readonly" aria-label="Subversion checkout URL">
+    <span class="input-group-button">
+      <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+    </span>
+  </div>
+</div>
+
+
+
+  <div class="clone-options">You can clone with
+    <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/users/set_protocol?protocol_selector=http&amp;protocol_type=clone" class="inline-form js-clone-selector-form " data-form-nonce="3263531ad5cb905aea910a57280c837dc1f000b6" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="1LPGOx2bkJ0lMcyN1iWROBpRav+oMrFrtZNl1ZWkNWk4ZMtVnX+aLfI5aCs1OoZTfuz9TbqqW0YiWlI9DHDFow==" /></div><button class="btn-link js-clone-selector" data-protocol="http" type="submit">HTTPS</button></form> or <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/users/set_protocol?protocol_selector=subversion&amp;protocol_type=clone" class="inline-form js-clone-selector-form " data-form-nonce="3263531ad5cb905aea910a57280c837dc1f000b6" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="7dtKAlvKCf0gYPdYO50rjeO94xr/SlIZ289JECJKQJEsj8vnQoTYjBVroonFwT4xD7s9EtigShAsd2f9Ht3Zhw==" /></div><button class="btn-link js-clone-selector" data-protocol="subversion" type="submit">Subversion</button></form>.
+    <a href="https://help.github.com/articles/which-remote-url-should-i-use" class="help tooltipped tooltipped-n" aria-label="Get help on which URL is right for you.">
+      <span class="octicon octicon-question"></span>
+    </a>
+  </div>
+
+                  <a href="/fluent-ffmpeg/node-fluent-ffmpeg/archive/master.zip"
+                     class="btn btn-sm sidebar-button"
+                     aria-label="Download the contents of fluent-ffmpeg/node-fluent-ffmpeg as a zip file"
+                     title="Download the contents of fluent-ffmpeg/node-fluent-ffmpeg as a zip file"
+                     rel="nofollow">
+                    <span class="octicon octicon-cloud-download"></span>
+                    Download ZIP
+                  </a>
+                </div>
+          </div>
+          <div id="js-repo-pjax-container" class="repository-content context-loader-container" data-pjax-container>
+
+            
+<span id="js-show-full-navigation"></span>
+
+  <div class="repository-meta js-details-container ">
+    <div class="repository-description">
+      A fluent API to FFMPEG (<a href="http://www.ffmpeg.org">http://www.ffmpeg.org</a>)
+    </div>
+
+
+</div>
+
+
+<div class="overall-summary overall-summary-bottomless">
+
+  <div class="stats-switcher-viewport js-stats-switcher-viewport">
+    <div class="stats-switcher-wrapper">
+    <ul class="numbers-summary">
+      <li class="commits">
+        <a data-pjax href="/fluent-ffmpeg/node-fluent-ffmpeg/commits/master">
+            <span class="octicon octicon-history"></span>
+            <span class="num text-emphasized">
+              642
+            </span>
+            commits
+        </a>
+      </li>
+      <li>
+        <a data-pjax href="/fluent-ffmpeg/node-fluent-ffmpeg/branches">
+          <span class="octicon octicon-git-branch"></span>
+          <span class="num text-emphasized">
+            5
+          </span>
+          branches
+        </a>
+      </li>
+
+      <li>
+        <a data-pjax href="/fluent-ffmpeg/node-fluent-ffmpeg/releases">
+          <span class="octicon octicon-tag"></span>
+          <span class="num text-emphasized">
+            12
+          </span>
+          releases
+        </a>
+      </li>
+
+      <li>
+        
+  <a href="/fluent-ffmpeg/node-fluent-ffmpeg/graphs/contributors">
+    <span class="octicon octicon-organization"></span>
+    <span class="num text-emphasized">
+      58
+    </span>
+    contributors
+  </a>
+      </li>
+    </ul>
+
+      <div class="repository-lang-stats">
+        <ol class="repository-lang-stats-numbers">
+          <li>
+              <a href="/fluent-ffmpeg/node-fluent-ffmpeg/search?l=html">
+                <span class="color-block language-color" style="background-color:#e44b23;"></span>
+                <span class="lang">HTML</span>
+                <span class="percent">61.5%</span>
+              </a>
+          </li>
+          <li>
+              <a href="/fluent-ffmpeg/node-fluent-ffmpeg/search?l=javascript">
+                <span class="color-block language-color" style="background-color:#f1e05a;"></span>
+                <span class="lang">JavaScript</span>
+                <span class="percent">38.4%</span>
+              </a>
+          </li>
+          <li>
+              <span class="other">
+                <span class="color-block language-color" style="background-color:#ededed;"></span>
+                <span class="lang">Other</span>
+                <span class="percent">0.1%</span>
+              </span>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  <div class="repository-lang-stats-graph js-toggle-lang-stats" title="Click for language details">
+    <span class="language-color" aria-label="HTML 61.5%" style="width:61.5%; background-color:#e44b23;" itemprop="keywords">HTML</span>
+    <span class="language-color" aria-label="JavaScript 38.4%" style="width:38.4%; background-color:#f1e05a;" itemprop="keywords">JavaScript</span>
+    <span class="language-color" aria-label="Other 0.1%" style="width:0.1%; background-color:#ededed;" itemprop="keywords">Other</span>
+  </div>
+
+<include-fragment src="/fluent-ffmpeg/node-fluent-ffmpeg/show_partial?partial=tree%2Frecently_touched_branches_list"></include-fragment>
+
+  <div class="file-navigation in-mid-page">
+  <a href="/fluent-ffmpeg/node-fluent-ffmpeg/find/master"
+        class="js-show-file-finder btn btn-sm empty-icon tooltipped tooltipped-s right"
+        data-pjax
+        data-hotkey="t"
+        aria-label="Quickly jump between files"
+        data-ga-click="Repository, find file, location:repo overview">
+    <span class="octicon octicon-list-unordered"></span>
+  </a>
+    <a href="/fluent-ffmpeg/node-fluent-ffmpeg/compare" aria-label="Compare, review, create a pull request" class="btn btn-sm btn-primary tooltipped tooltipped-se left compare-button" aria-label="Compare &amp; review" data-pjax data-ga-click="Repository, go to compare view, location:repo overview; icon:git-compare">
+      <span class="octicon octicon-git-compare"></span>
+    </a>
+
+  
+<div class="select-menu js-menu-container js-select-menu left">
+  <span class="btn btn-sm select-menu-button js-menu-target css-truncate" data-hotkey="w"
+    data-ref="master"
+    title="master"
+    role="button" aria-label="Switch branches or tags" tabindex="0" aria-haspopup="true">
+    <i>Branch:</i>
+    <span class="js-select-button css-truncate-target">master</span>
+  </span>
+
+  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax aria-hidden="true">
+
+    <div class="select-menu-modal">
+      <div class="select-menu-header">
+        <span class="select-menu-title">Switch branches/tags</span>
+        <span class="octicon octicon-x js-menu-close" role="button" aria-label="Close"></span>
+      </div>
+
+      <div class="select-menu-filters">
+        <div class="select-menu-text-filter">
+          <input type="text" aria-label="Filter branches/tags" id="context-commitish-filter-field" class="js-filterable-field js-navigation-enable" placeholder="Filter branches/tags">
+        </div>
+        <div class="select-menu-tabs">
+          <ul>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="branches" data-filter-placeholder="Filter branches/tags" class="js-select-menu-tab" role="tab">Branches</a>
+            </li>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="tags" data-filter-placeholder="Find a tag…" class="js-select-menu-tab" role="tab">Tags</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches" role="menu">
+
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/fluent-ffmpeg/node-fluent-ffmpeg/tree/1.x"
+               data-name="1.x"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="1.x">
+                1.x
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/fluent-ffmpeg/node-fluent-ffmpeg/tree/feature/coverage-tracking"
+               data-name="feature/coverage-tracking"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="feature/coverage-tracking">
+                feature/coverage-tracking
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/fluent-ffmpeg/node-fluent-ffmpeg/tree/fix-issue-89"
+               data-name="fix-issue-89"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="fix-issue-89">
+                fix-issue-89
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open selected"
+               href="/fluent-ffmpeg/node-fluent-ffmpeg/tree/master"
+               data-name="master"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="master">
+                master
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/fluent-ffmpeg/node-fluent-ffmpeg/tree/restriction-rules"
+               data-name="restriction-rules"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="restriction-rules">
+                restriction-rules
+              </span>
+            </a>
+        </div>
+
+          <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/fluent-ffmpeg/node-fluent-ffmpeg/tree/v2.0.1"
+                 data-name="v2.0.1"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="v2.0.1">v2.0.1</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/fluent-ffmpeg/node-fluent-ffmpeg/tree/v1.7.2"
+                 data-name="v1.7.2"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="v1.7.2">v1.7.2</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/fluent-ffmpeg/node-fluent-ffmpeg/tree/v1.7.1"
+                 data-name="v1.7.1"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="v1.7.1">v1.7.1</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/fluent-ffmpeg/node-fluent-ffmpeg/tree/v1.7.0"
+                 data-name="v1.7.0"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="v1.7.0">v1.7.0</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/fluent-ffmpeg/node-fluent-ffmpeg/tree/v1.6.0"
+                 data-name="v1.6.0"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="v1.6.0">v1.6.0</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/fluent-ffmpeg/node-fluent-ffmpeg/tree/v1.5.2"
+                 data-name="v1.5.2"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="v1.5.2">v1.5.2</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/fluent-ffmpeg/node-fluent-ffmpeg/tree/npm-1.5.1"
+                 data-name="npm-1.5.1"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="npm-1.5.1">npm-1.5.1</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/fluent-ffmpeg/node-fluent-ffmpeg/tree/npm-1.5.0"
+                 data-name="npm-1.5.0"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="npm-1.5.0">npm-1.5.0</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/fluent-ffmpeg/node-fluent-ffmpeg/tree/2.0.1"
+                 data-name="2.0.1"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="2.0.1">2.0.1</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/fluent-ffmpeg/node-fluent-ffmpeg/tree/2.0.0-rc3"
+                 data-name="2.0.0-rc3"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="2.0.0-rc3">2.0.0-rc3</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/fluent-ffmpeg/node-fluent-ffmpeg/tree/2.0.0-rc2"
+                 data-name="2.0.0-rc2"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="2.0.0-rc2">2.0.0-rc2</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/fluent-ffmpeg/node-fluent-ffmpeg/tree/2.0.0"
+                 data-name="2.0.0"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="2.0.0">2.0.0</a>
+            </div>
+        </div>
+
+        <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+  <div class="breadcrumb"><span class="repo-root js-repo-root"><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/fluent-ffmpeg/node-fluent-ffmpeg" class="" data-branch="master" data-pjax="true" itemscope="url"><span itemprop="title">node-fluent-ffmpeg</span></a></span></span><span class="separator">/</span>
+    <a class="btn-link disabled tooltipped tooltipped-e" href="#" aria-label="You must be signed in to make or propose changes">
+      <span class="octicon octicon-plus"></span>
+    </a>
+</div>
+</div>
+
+
+
+
+
+  <div class="commit commit-tease js-details-container" >
+    <p class="commit-title ">
+        <a href="/fluent-ffmpeg/node-fluent-ffmpeg/commit/c41367c0c0097ca849746dc4785a52ee3aa5055c" class="message" data-pjax="true" title="Add link to FAQ in contribution guidelines">Add link to FAQ in contribution guidelines</a>
+        
+    </p>
+    <div class="commit-meta">
+      <button aria-label="Copy SHA" class="js-zeroclipboard zeroclipboard-link tooltipped tooltipped-s" data-clipboard-text="c41367c0c0097ca849746dc4785a52ee3aa5055c" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+      <a href="/fluent-ffmpeg/node-fluent-ffmpeg/commit/c41367c0c0097ca849746dc4785a52ee3aa5055c" class="sha-block" data-pjax>latest commit <span class="sha">c41367c0c0</span></a>
+
+      <div class="authorship">
+        <img alt="@njoyard" class="avatar" height="20" src="https://avatars0.githubusercontent.com/u/127842?v=3&amp;s=40" width="20" />
+        <span class="author-name"><a href="/njoyard" rel="contributor">njoyard</a></span>
+        authored <time class="updated" datetime="2015-06-25T15:33:29Z" is="relative-time">Jun 25, 2015</time>
+
+      </div>
+    </div>
+  </div>
+
+
+<div class="file-wrap">
+  <a href="/fluent-ffmpeg/node-fluent-ffmpeg/tree/c41367c0c0097ca849746dc4785a52ee3aa5055c" class="hidden js-permalink-shortcut" data-hotkey="y">Permalink</a>
+
+  <table class="files" data-pjax>
+
+
+    <tbody>
+      <tr class="warning include-fragment-error">
+        <td class="icon"><span class="octicon octicon-alert"></span></td>
+        <td class="content" colspan="3">Failed to load latest commit information.</td>
+      </tr>
+
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-directory"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/fluent-ffmpeg/node-fluent-ffmpeg/tree/master/doc" class="js-directory-link" id="9a09b4dfda82e3e665e31092d1c3ec8d-f6df8336356421c0a6e6c2b7edd1dafbcc3e4f24" title="doc">doc</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/fluent-ffmpeg/node-fluent-ffmpeg/commit/33d8251d28f35a87259063378aa34c42cd175404" class="message" data-pjax="true" title="Add README TOC to JSDoc nav; update JSDoc">Add README TOC to JSDoc nav; update JSDoc</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2014-07-08T19:25:48Z" is="time-ago">Jul 8, 2014</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-directory"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/fluent-ffmpeg/node-fluent-ffmpeg/tree/master/examples" class="js-directory-link" id="bfebe34154a0dfd9fc7b447fc9ed74e9-95247409a891be25e66a015d885afbc8526b719e" title="examples">examples</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/fluent-ffmpeg/node-fluent-ffmpeg/commit/5614110ce2bd7f6c4b2677d8558a12ea6887229a" class="message" data-pjax="true" title="Update README and examples, commit jsdoc">Update README and examples, commit jsdoc</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2014-05-03T18:16:42Z" is="time-ago">May 3, 2014</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-directory"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/fluent-ffmpeg/node-fluent-ffmpeg/tree/master/lib" class="js-directory-link" id="e8acc63b1e238f3255c900eed37254b8-4ff1401b74e535df02aa457f18978029b36c9385" title="lib">lib</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/fluent-ffmpeg/node-fluent-ffmpeg/commit/38ae67a18bddd7302274955d1b14cc3c6bd979cb" class="message" data-pjax="true" title="Update processor.js
+
+Fixes old call to this.options.logger in processor">Update processor.js</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2014-12-14T18:59:53Z" is="time-ago">Dec 14, 2014</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-directory"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/fluent-ffmpeg/node-fluent-ffmpeg/tree/master/test" class="js-directory-link" id="098f6bcd4621d373cade4e832627b4f6-623b4b62fc72a4e68375a92506ecfe62b3d34ee1" title="test">test</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/fluent-ffmpeg/node-fluent-ffmpeg/commit/4fc5f6c6c974854568994dfb1ec15d1a82160adc" class="message" data-pjax="true" title="Add error logging helper to processor tests">Add error logging helper to processor tests</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2014-10-31T07:44:48Z" is="time-ago">Oct 31, 2014</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-directory"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/fluent-ffmpeg/node-fluent-ffmpeg/tree/master/tools" class="js-directory-link" id="4a931512ce65bdc9ca6808adf92d8783-1bccf680c949e783ae37d3fc38f9eefe7201c358" title="tools">tools</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/fluent-ffmpeg/node-fluent-ffmpeg/commit/33d8251d28f35a87259063378aa34c42cd175404" class="message" data-pjax="true" title="Add README TOC to JSDoc nav; update JSDoc">Add README TOC to JSDoc nav; update JSDoc</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2014-07-08T19:25:48Z" is="time-ago">Jul 8, 2014</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/fluent-ffmpeg/node-fluent-ffmpeg/blob/master/.gitignore" class="js-directory-link" id="a084b794bc0759e7a6b77810e01874f2-1cc5826d22809d9fa113ddf578779cde2861440b" title=".gitignore">.gitignore</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/fluent-ffmpeg/node-fluent-ffmpeg/commit/d21a309d3b608c7f2b0d363835d866efc5e6343d" class="message" data-pjax="true" title="options added to the mergeToFile process with addOption are applied on the intermediate files">options added to the mergeToFile process with addOption are applied o…</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2013-10-19T09:47:43Z" is="time-ago">Oct 19, 2013</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/fluent-ffmpeg/node-fluent-ffmpeg/blob/master/.npmignore" class="js-directory-link" id="0fd4ef892d9d4990033701887c2f9bcc-bb1c3b14513b45d2b755eef1b4a8ed2f52e24a2f" title=".npmignore">.npmignore</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/fluent-ffmpeg/node-fluent-ffmpeg/commit/da619f2db435166e11edf2f5480d021ea45e89a5" class="message" data-pjax="true" title="implemented auto-calculation of video dimensions (see readme)">implemented auto-calculation of video dimensions (see readme)</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2011-04-15T15:24:50Z" is="time-ago">Apr 15, 2011</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/fluent-ffmpeg/node-fluent-ffmpeg/blob/master/.travis.yml" class="js-directory-link" id="354f30a63fb0907d4ad57269548329e3-cfb78746ff8b279a9fa99d49562ca8642095a60d" title=".travis.yml">.travis.yml</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/fluent-ffmpeg/node-fluent-ffmpeg/commit/134a3d9eb2617bf5188c55c36a497f0a4f1ecfbe" class="message" data-pjax="true" title="Enable tests on OSX">Enable tests on OSX</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2014-05-08T15:49:04Z" is="time-ago">May 8, 2014</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/fluent-ffmpeg/node-fluent-ffmpeg/blob/master/CONTRIBUTING.md" class="js-directory-link" id="6a3371457528722a734f3c51d9238c13-c0fde412f1117d6fab3519e1795bcc26611f691a" title="CONTRIBUTING.md">CONTRIBUTING.md</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/fluent-ffmpeg/node-fluent-ffmpeg/commit/c41367c0c0097ca849746dc4785a52ee3aa5055c" class="message" data-pjax="true" title="Add link to FAQ in contribution guidelines">Add link to FAQ in contribution guidelines</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-06-25T15:33:29Z" is="time-ago">Jun 25, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/fluent-ffmpeg/node-fluent-ffmpeg/blob/master/Gruntfile.js" class="js-directory-link" id="35b4a816e0441e6a375cd925af50752c-813dc7969b9eb30897e636c89c331d7144de9e14" title="Gruntfile.js">Gruntfile.js</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/fluent-ffmpeg/node-fluent-ffmpeg/commit/38062b04898dadd61454a069aca3a5891bcd7b64" class="message" data-pjax="true" title="updated fork">updated fork</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2013-06-28T11:01:20Z" is="time-ago">Jun 28, 2013</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/fluent-ffmpeg/node-fluent-ffmpeg/blob/master/LICENSE" class="js-directory-link" id="9879d6db96fd29134fc802214163b95a-03acc1d22948bb986260f3b0d88aaf4093b393a6" title="LICENSE">LICENSE</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/fluent-ffmpeg/node-fluent-ffmpeg/commit/da619f2db435166e11edf2f5480d021ea45e89a5" class="message" data-pjax="true" title="implemented auto-calculation of video dimensions (see readme)">implemented auto-calculation of video dimensions (see readme)</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2011-04-15T15:24:50Z" is="time-ago">Apr 15, 2011</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/fluent-ffmpeg/node-fluent-ffmpeg/blob/master/Makefile" class="js-directory-link" id="b67911656ef5d18c4ae36cb6741b7965-26e1b143b76429fc75f17579938df23663297792" title="Makefile">Makefile</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/fluent-ffmpeg/node-fluent-ffmpeg/commit/3065d66a4d605c6f8ceb54004d15ae8e2c8c253e" class="message" data-pjax="true" title="Fix coverage generation">Fix coverage generation</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2014-06-05T05:58:32Z" is="time-ago">Jun 5, 2014</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/fluent-ffmpeg/node-fluent-ffmpeg/blob/master/README.md" class="js-directory-link" id="04c6e90faac2675aa89e2176d2eec7d8-e1a8fff94f4d8f014cfad295ba7c35e9106a3a10" title="README.md">README.md</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/fluent-ffmpeg/node-fluent-ffmpeg/commit/3dbdbcbb56e6f532f6a970d8fcd73fc465d21516" class="message" data-pjax="true" title="Release 2.0.0">Release 2.0.0</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-04-29T06:36:32Z" is="time-ago">Apr 29, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/fluent-ffmpeg/node-fluent-ffmpeg/blob/master/build.bat" class="js-directory-link" id="12de9bf95f13935db3eff91909008cc4-8f689803e552777971812c1a4016e161c81dfde7" title="build.bat">build.bat</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/fluent-ffmpeg/node-fluent-ffmpeg/commit/eef4eba2405ca81d097d0c5a94dc91127aeb530c" class="message" data-pjax="true" title="fixed env in build.bat">fixed env in build.bat</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2012-11-28T15:45:16Z" is="time-ago">Nov 28, 2012</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/fluent-ffmpeg/node-fluent-ffmpeg/blob/master/index.js" class="js-directory-link" id="168726dbe96b3ce427e7fedce31bb0bc-04e594c12fcf56fe767f0ec71910ab797b90491f" title="index.js">index.js</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/fluent-ffmpeg/node-fluent-ffmpeg/commit/908b3391f44c1945103c50895128baaf8f996125" class="message" data-pjax="true" title="fixed package.json reference to index.js">fixed package.json reference to index.js</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2012-06-05T02:10:39Z" is="time-ago">Jun 4, 2012</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/fluent-ffmpeg/node-fluent-ffmpeg/blob/master/package.json" class="js-directory-link" id="b9cfc7f2cdf78a7f4b91a753d10865a2-aacda0946078705bb003b1491729712bccb0efbb" title="package.json">package.json</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/fluent-ffmpeg/node-fluent-ffmpeg/commit/88500343ecdac3dffb482a9d72c8d13af47c8d12" class="message" data-pjax="true" title="Add license attribute
+
+https://docs.npmjs.com/files/package.json#license
+http://npm1k.org/">Add license attribute</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-05-28T18:47:17Z" is="time-ago">May 28, 2015</time></span>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+</div>
+
+
+  <div id="readme" class="boxed-group flush clearfix announce instapaper_body md">
+    <h3>
+      <span class="octicon octicon-book"></span>
+      README.md
+    </h3>
+
+    <article class="markdown-body entry-content" itemprop="mainContentOfPage"><h1><a id="user-content-fluent-ffmpeg-api-for-nodejs-" class="anchor" href="#fluent-ffmpeg-api-for-nodejs-" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fluent ffmpeg-API for node.js <a href="http://travis-ci.org/fluent-ffmpeg/node-fluent-ffmpeg"><img src="https://camo.githubusercontent.com/8fbdac1d596f227bd3b56a20f1a26a6cd2875f3c/68747470733a2f2f7365637572652e7472617669732d63692e6f72672f666c75656e742d66666d7065672f6e6f64652d666c75656e742d66666d7065672e7376673f6272616e63683d6d6173746572" alt="Build Status" data-canonical-src="https://secure.travis-ci.org/fluent-ffmpeg/node-fluent-ffmpeg.svg?branch=master" style="max-width:100%;"></a></h1>
+
+<p>This library abstracts the complex command-line usage of ffmpeg into a fluent, easy to use node.js module. In order to be able to use this module, make sure you have <a href="http://www.ffmpeg.org">ffmpeg</a> installed on your system (including all necessary encoding libraries like libmp3lame or libx264).</p>
+
+<blockquote>
+<h4><a id="user-content-this-is-the-documentation-for-fluent-ffmpeg-2x" class="anchor" href="#this-is-the-documentation-for-fluent-ffmpeg-2x" aria-hidden="true"><span class="octicon octicon-link"></span></a>This is the documentation for fluent-ffmpeg 2.x</h4>
+
+<p>A major 2.0 version has been released. This release features lots of API cleanup and a cleaner syntax for most methods.</p>
+
+<p>It has been designed to be mostly compatible with the previous fluent-ffmpeg version, but there are some incompatibilities, mainly because deprecated APIs in 1.x have been removed.  See <a href="https://github.com/fluent-ffmpeg/node-fluent-ffmpeg/wiki/Migrating-from-fluent-ffmpeg-1.x">the 2.x migration wiki page</a> for information on how to migrate.</p>
+
+<p>Please take care to update your package.json files if you want to keep using version 1.x:</p>
+
+<div class="highlight highlight-js"><pre>{
+  <span class="pl-s"><span class="pl-pds">"</span>dependencies<span class="pl-pds">"</span></span><span class="pl-k">:</span> {
+    <span class="pl-s"><span class="pl-pds">"</span>fluent-ffmpeg<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>~1.7<span class="pl-pds">"</span></span>
+  }
+}</pre></div>
+
+<p>You can still access the code and documentation for fluent-ffmpeg 1.7 <a href="https://github.com/fluent-ffmpeg/node-fluent-ffmpeg/tree/1.x">here</a>.</p>
+</blockquote>
+
+<h2><a id="user-content-installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Via npm:</p>
+
+<div class="highlight highlight-sh"><pre>$ npm install fluent-ffmpeg</pre></div>
+
+<p>Or as a submodule:</p>
+
+<div class="highlight highlight-sh"><pre>$ git submodule add git://github.com/schaermu/node-fluent-ffmpeg.git vendor/fluent-ffmpeg</pre></div>
+
+<h2><a id="user-content-usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>You will find a lot of usage examples (including a real-time streaming example using <a href="http://www.flowplayer.org">flowplayer</a> and <a href="https://github.com/visionmedia/express">express</a>!) in the <code>examples</code> folder.</p>
+
+<h3><a id="user-content-prerequisites" class="anchor" href="#prerequisites" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prerequisites</h3>
+
+<h4><a id="user-content-ffmpeg-and-ffprobe" class="anchor" href="#ffmpeg-and-ffprobe" aria-hidden="true"><span class="octicon octicon-link"></span></a>ffmpeg and ffprobe</h4>
+
+<p>fluent-ffmpeg requires ffmpeg &gt;= 0.9 to work.  It may work with previous versions but several features won't be available (and the library is not tested with lower versions anylonger).</p>
+
+<p>If the <code>FFMPEG_PATH</code> environment variable is set, fluent-ffmpeg will use it as the full path to the <code>ffmpeg</code> executable.  Otherwise, it will attempt to call <code>ffmpeg</code> directly (so it should be in your <code>PATH</code>).  You must also have ffprobe installed (it comes with ffmpeg in most distributions).  Similarly, fluent-ffmpeg will use the <code>FFPROBE_PATH</code> environment variable if it is set, otherwise it will attempt to call it in the <code>PATH</code>.</p>
+
+<p>Most features should work when using avconv and avprobe instead of ffmpeg and ffprobe, but they are not officially supported at the moment.</p>
+
+<p><strong>Windows users</strong>: most probably ffmpeg and ffprobe will <em>not</em> be in your <code>%PATH</code>, so you <em>must</em> set <code>%FFMPEG_PATH</code> and <code>%FFPROBE_PATH</code>.</p>
+
+<p><strong>Debian/Ubuntu users</strong>: the official repositories have the ffmpeg/ffprobe executable in the <code>libav-tools</code> package, and they are actually rebranded avconv/avprobe executables (avconv is a fork of ffmpeg).  They should be mostly compatible, but should you encounter any issue, you may want to use the real ffmpeg instead.  You can either compile it from source or find a pre-built .deb package at <a href="https://ffmpeg.org/download.html">https://ffmpeg.org/download.html</a> (For Ubuntu, the <code>ppa:jon-severinsson/ffmpeg</code> PPA provides recent builds).</p>
+
+<h4><a id="user-content-flvtool2-or-flvmeta" class="anchor" href="#flvtool2-or-flvmeta" aria-hidden="true"><span class="octicon octicon-link"></span></a>flvtool2 or flvmeta</h4>
+
+<p>If you intend to encode FLV videos, you must have either flvtool2 or flvmeta installed and in your <code>PATH</code> or fluent-ffmpeg won't be able to produce streamable output files.  If you set either the <code>FLVTOOL2_PATH</code> or <code>FLVMETA_PATH</code>, fluent-ffmpeg will try to use it instead of searching in the <code>PATH</code>.</p>
+
+<h4><a id="user-content-setting-binary-paths-manually" class="anchor" href="#setting-binary-paths-manually" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting binary paths manually</h4>
+
+<p>Alternatively, you may set the ffmpeg, ffprobe and flvtool2/flvmeta binary paths manually by using the following API commands:</p>
+
+<ul>
+<li><strong>Ffmpeg.setFfmpegPath(path)</strong> Argument <code>path</code> is a string with the full path to the ffmpeg binary.</li>
+<li><strong>Ffmpeg.setFfprobePath(path)</strong> Argument <code>path</code> is a string with the full path to the ffprobe binary.</li>
+<li><strong>Ffmpeg.setFlvtoolPath(path)</strong> Argument <code>path</code> is a string with the full path to the flvtool2 or flvmeta binary.</li>
+</ul>
+
+<h3><a id="user-content-creating-an-ffmpeg-command" class="anchor" href="#creating-an-ffmpeg-command" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating an FFmpeg command</h3>
+
+<p>The fluent-ffmpeg module returns a constructor that you can use to instanciate FFmpeg commands.</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-k">var</span> FfmpegCommand <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>fluent-ffmpeg<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> command <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">FfmpegCommand</span>();</pre></div>
+
+<p>You can also use the constructor without the <code>new</code> operator.</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-k">var</span> ffmpeg <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>fluent-ffmpeg<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> command <span class="pl-k">=</span> ffmpeg();</pre></div>
+
+<p>You may pass an input file name or readable stream, a configuration object, or both to the constructor.</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-k">var</span> command <span class="pl-k">=</span> ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> command <span class="pl-k">=</span> ffmpeg(fs.createReadStream(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>));
+<span class="pl-k">var</span> command <span class="pl-k">=</span> ffmpeg({ option<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>value<span class="pl-pds">"</span></span>, ... });
+<span class="pl-k">var</span> command <span class="pl-k">=</span> ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>, { option<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>value<span class="pl-pds">"</span></span>, ... });</pre></div>
+
+<p>The following options are available:</p>
+
+<ul>
+<li><code>source</code>: input file name or readable stream (ignored if an input file is passed to the constructor)</li>
+<li><code>timeout</code>: ffmpeg timeout in seconds (defaults to no timeout)</li>
+<li><code>preset</code> or <code>presets</code>: directory to load module presets from (defaults to the <code>lib/presets</code> directory in fluent-ffmpeg tree)</li>
+<li><code>niceness</code> or <code>priority</code>: ffmpeg niceness value, between -20 and 20; ignored on Windows platforms (defaults to 0)</li>
+<li><code>logger</code>: logger object with <code>debug()</code>, <code>info()</code>, <code>warn()</code> and <code>error()</code> methods (defaults to no logging)</li>
+</ul>
+
+<h3><a id="user-content-specifying-inputs" class="anchor" href="#specifying-inputs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Specifying inputs</h3>
+
+<p>You can add any number of inputs to an Ffmpeg command.  An input can be:</p>
+
+<ul>
+<li>a file name (eg. <code>/path/to/file.avi</code>);</li>
+<li>an image pattern (eg. <code>/path/to/frame%03d.png</code>);</li>
+<li>a readable stream; only one input stream may be used for a command, but you can use both an input stream and one or several file names.</li>
+</ul>
+
+<div class="highlight highlight-js"><pre><span class="pl-c">// Note that all fluent-ffmpeg methods are chainable</span>
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/input1.avi<span class="pl-pds">'</span></span>)
+  .<span class="pl-c1">input</span>(<span class="pl-s"><span class="pl-pds">'</span>/path/to/input2.avi<span class="pl-pds">'</span></span>)
+  .<span class="pl-c1">input</span>(fs.createReadStream(<span class="pl-s"><span class="pl-pds">'</span>/path/to/input3.avi<span class="pl-pds">'</span></span>));
+
+<span class="pl-c">// Passing an input to the constructor is the same as calling .input()</span>
+ffmpeg()
+  .<span class="pl-c1">input</span>(<span class="pl-s"><span class="pl-pds">'</span>/path/to/input1.avi<span class="pl-pds">'</span></span>)
+  .<span class="pl-c1">input</span>(<span class="pl-s"><span class="pl-pds">'</span>/path/to/input2.avi<span class="pl-pds">'</span></span>);
+
+<span class="pl-c">// Most methods have several aliases, here you may use addInput or mergeAdd instead</span>
+ffmpeg()
+  .addInput(<span class="pl-s"><span class="pl-pds">'</span>/path/to/frame%02d.png<span class="pl-pds">'</span></span>)
+  .addInput(<span class="pl-s"><span class="pl-pds">'</span>/path/to/soundtrack.mp3<span class="pl-pds">'</span></span>);
+
+ffmpeg()
+  .mergeAdd(<span class="pl-s"><span class="pl-pds">'</span>/path/to/input1.avi<span class="pl-pds">'</span></span>)
+  .mergeAdd(<span class="pl-s"><span class="pl-pds">'</span>/path/to/input2.avi<span class="pl-pds">'</span></span>);</pre></div>
+
+<h3><a id="user-content-input-options" class="anchor" href="#input-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Input options</h3>
+
+<p>The following methods enable passing input-related options to ffmpeg.  Each of these methods apply on the last input added (including the one passed to the constructor, if any).  You must add an input before calling those, or an error will be thrown.</p>
+
+<h4><a id="user-content-inputformatformat-specify-input-format" class="anchor" href="#inputformatformat-specify-input-format" aria-hidden="true"><span class="octicon octicon-link"></span></a>inputFormat(format): specify input format</h4>
+
+<p><strong>Aliases</strong>: <code>fromFormat()</code>, <code>withInputFormat()</code>.</p>
+
+<p>This is only useful for raw inputs, as ffmpeg can determine the input format automatically.</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg()
+  .<span class="pl-c1">input</span>(<span class="pl-s"><span class="pl-pds">'</span>/dev/video0<span class="pl-pds">'</span></span>)
+  .inputFormat(<span class="pl-s"><span class="pl-pds">'</span>mov<span class="pl-pds">'</span></span>)
+  .<span class="pl-c1">input</span>(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>)
+  .inputFormat(<span class="pl-s"><span class="pl-pds">'</span>avi<span class="pl-pds">'</span></span>);</pre></div>
+
+<p>Fluent-ffmpeg checks for format availability before actually running the command, and throws an error when a specified input format is not available.</p>
+
+<h4><a id="user-content-inputfpsfps-specify-input-framerate" class="anchor" href="#inputfpsfps-specify-input-framerate" aria-hidden="true"><span class="octicon octicon-link"></span></a>inputFPS(fps): specify input framerate</h4>
+
+<p><strong>Aliases</strong>: <code>withInputFps()</code>, <code>withInputFPS()</code>, <code>withFpsInput()</code>, <code>withFPSInput()</code>, <code>inputFps()</code>, <code>fpsInput()</code>, <code>FPSInput()</code>.</p>
+
+<p>This is only valid for raw inputs, as ffmpeg can determine the input framerate automatically.</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/dev/video0<span class="pl-pds">'</span></span>).inputFPS(<span class="pl-c1">29.7</span>);</pre></div>
+
+<h4><a id="user-content-native-read-input-at-native-framerate" class="anchor" href="#native-read-input-at-native-framerate" aria-hidden="true"><span class="octicon octicon-link"></span></a>native(): read input at native framerate</h4>
+
+<p><strong>Aliases</strong>: <code>nativeFramerate()</code>, <code>withNativeFramerate()</code>.</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).native();</pre></div>
+
+<h4><a id="user-content-seekinputtime-set-input-start-time" class="anchor" href="#seekinputtime-set-input-start-time" aria-hidden="true"><span class="octicon octicon-link"></span></a>seekInput(time): set input start time</h4>
+
+<p><strong>Alias</strong>: <code>setStartTime()</code>.</p>
+
+<p>Seeks an input and only start decoding at given time offset.  The <code>time</code> argument may be a number (in seconds) or a timestamp string (with format <code>[[hh:]mm:]ss[.xxx]</code>).</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).seekInput(<span class="pl-c1">134.5</span>);
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).seekInput(<span class="pl-s"><span class="pl-pds">'</span>2:14.500<span class="pl-pds">'</span></span>);</pre></div>
+
+<h4><a id="user-content-loopduration-loop-over-input" class="anchor" href="#loopduration-loop-over-input" aria-hidden="true"><span class="octicon octicon-link"></span></a>loop([duration]): loop over input</h4>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).loop();
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).loop(<span class="pl-c1">134.5</span>);
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).loop(<span class="pl-s"><span class="pl-pds">'</span>2:14.500<span class="pl-pds">'</span></span>);</pre></div>
+
+<h4><a id="user-content-inputoptionsoption-add-custom-input-options" class="anchor" href="#inputoptionsoption-add-custom-input-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>inputOptions(option...): add custom input options</h4>
+
+<p><strong>Aliases</strong>: <code>inputOption()</code>, <code>addInputOption()</code>, <code>addInputOptions()</code>, <code>withInputOption()</code>, <code>withInputOptions()</code>.</p>
+
+<p>This method allows passing any input-related option to ffmpeg.  You can call it with a single argument to pass a single option, optionnaly with a space-separated parameter:</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-c">/* Single option */</span>
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).inputOptions(<span class="pl-s"><span class="pl-pds">'</span>-someOption<span class="pl-pds">'</span></span>);
+
+<span class="pl-c">/* Single option with parameter */</span>
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/dev/video0<span class="pl-pds">'</span></span>).inputOptions(<span class="pl-s"><span class="pl-pds">'</span>-r 24<span class="pl-pds">'</span></span>);</pre></div>
+
+<p>You may also pass multiple options at once by passing an array to the method:</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).inputOptions([
+  <span class="pl-s"><span class="pl-pds">'</span>-option1<span class="pl-pds">'</span></span>,
+  <span class="pl-s"><span class="pl-pds">'</span>-option2 param2<span class="pl-pds">'</span></span>,
+  <span class="pl-s"><span class="pl-pds">'</span>-option3<span class="pl-pds">'</span></span>,
+  <span class="pl-s"><span class="pl-pds">'</span>-option4 param4<span class="pl-pds">'</span></span>
+]);</pre></div>
+
+<p>Finally, you may also directly pass command line tokens as separate arguments to the method:</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).inputOptions(
+  <span class="pl-s"><span class="pl-pds">'</span>-option1<span class="pl-pds">'</span></span>,
+  <span class="pl-s"><span class="pl-pds">'</span>-option2<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>param2<span class="pl-pds">'</span></span>,
+  <span class="pl-s"><span class="pl-pds">'</span>-option3<span class="pl-pds">'</span></span>,
+  <span class="pl-s"><span class="pl-pds">'</span>-option4<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>param4<span class="pl-pds">'</span></span>
+);</pre></div>
+
+<h3><a id="user-content-audio-options" class="anchor" href="#audio-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Audio options</h3>
+
+<p>The following methods change the audio stream(s) in the produced output.</p>
+
+<h4><a id="user-content-noaudio-disable-audio-altogether" class="anchor" href="#noaudio-disable-audio-altogether" aria-hidden="true"><span class="octicon octicon-link"></span></a>noAudio(): disable audio altogether</h4>
+
+<p><strong>Aliases</strong>: <code>withNoAudio()</code>.</p>
+
+<p>Disables audio in the output and remove any previously set audio option.</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).noAudio();</pre></div>
+
+<h4><a id="user-content-audiocodeccodec-set-audio-codec" class="anchor" href="#audiocodeccodec-set-audio-codec" aria-hidden="true"><span class="octicon octicon-link"></span></a>audioCodec(codec): set audio codec</h4>
+
+<p><strong>Aliases</strong>: <code>withAudioCodec()</code>.</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).audioCodec(<span class="pl-s"><span class="pl-pds">'</span>libmp3lame<span class="pl-pds">'</span></span>);</pre></div>
+
+<p>Fluent-ffmpeg checks for codec availability before actually running the command, and throws an error when a specified audio codec is not available.</p>
+
+<h4><a id="user-content-audiobitratebitrate-set-audio-bitrate" class="anchor" href="#audiobitratebitrate-set-audio-bitrate" aria-hidden="true"><span class="octicon octicon-link"></span></a>audioBitrate(bitrate): set audio bitrate</h4>
+
+<p><strong>Aliases</strong>: <code>withAudioBitrate()</code>.</p>
+
+<p>Sets the audio bitrate in kbps.  The <code>bitrate</code> parameter may be a number or a string with an optional <code>k</code> suffix.  This method is used to enforce a constant bitrate; use <code>audioQuality()</code> to encode using a variable bitrate.</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).audioBitrate(<span class="pl-c1">128</span>);
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).audioBitrate(<span class="pl-s"><span class="pl-pds">'</span>128<span class="pl-pds">'</span></span>);
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).audioBitrate(<span class="pl-s"><span class="pl-pds">'</span>128k<span class="pl-pds">'</span></span>);</pre></div>
+
+<h4><a id="user-content-audiochannelscount-set-audio-channel-count" class="anchor" href="#audiochannelscount-set-audio-channel-count" aria-hidden="true"><span class="octicon octicon-link"></span></a>audioChannels(count): set audio channel count</h4>
+
+<p><strong>Aliases</strong>: <code>withAudioChannels()</code>.</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).audioChannels(<span class="pl-c1">2</span>);</pre></div>
+
+<h4><a id="user-content-audiofrequencyfreq-set-audio-frequency" class="anchor" href="#audiofrequencyfreq-set-audio-frequency" aria-hidden="true"><span class="octicon octicon-link"></span></a>audioFrequency(freq): set audio frequency</h4>
+
+<p><strong>Aliases</strong>: <code>withAudioFrequency()</code>.</p>
+
+<p>The <code>freq</code> parameter specifies the audio frequency in Hz.</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).audioFrequency(<span class="pl-c1">22050</span>);</pre></div>
+
+<h4><a id="user-content-audioqualityquality-set-audio-quality" class="anchor" href="#audioqualityquality-set-audio-quality" aria-hidden="true"><span class="octicon octicon-link"></span></a>audioQuality(quality): set audio quality</h4>
+
+<p><strong>Aliases</strong>: <code>withAudioQuality()</code>.</p>
+
+<p>This method fixes a quality factor for the audio codec (VBR encoding).  The quality scale depends on the actual codec used.</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>)
+  .audioCodec(<span class="pl-s"><span class="pl-pds">'</span>libmp3lame<span class="pl-pds">'</span></span>)
+  .audioQuality(<span class="pl-c1">0</span>);</pre></div>
+
+<h4><a id="user-content-audiofiltersfilter-add-custom-audio-filters" class="anchor" href="#audiofiltersfilter-add-custom-audio-filters" aria-hidden="true"><span class="octicon octicon-link"></span></a>audioFilters(filter...): add custom audio filters</h4>
+
+<p><strong>Aliases</strong>: <code>audioFilter()</code>, <code>withAudioFilter()</code>, <code>withAudioFilters()</code>.</p>
+
+<p>This method enables adding custom audio filters.  You may add multiple filters at once by passing either several arguments or an array.  See the Ffmpeg documentation for available filters and their syntax.</p>
+
+<p>Each filter pased to this method can be either a filter string (eg. <code>volume=0.5</code>) or a filter specification object with the following keys:</p>
+
+<ul>
+<li><code>filter</code>: filter name</li>
+<li><code>options</code>: optional; either an option string for the filter (eg. <code>n=-50dB:d=5</code>), an options array for unnamed options (eg. <code>['-50dB', 5]</code>) or an object mapping option names to values (eg. <code>{ n: '-50dB', d: 5 }</code>).  When <code>options</code> is not specified, the filter will be added without any options.</li>
+</ul>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>)
+  .audioFilters(<span class="pl-s"><span class="pl-pds">'</span>volume=0.5<span class="pl-pds">'</span></span>)
+  .audioFilters(<span class="pl-s"><span class="pl-pds">'</span>silencedetect=n=-50dB:d=5<span class="pl-pds">'</span></span>);
+
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>)
+  .audioFilters(<span class="pl-s"><span class="pl-pds">'</span>volume=0.5<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>silencedetect=n=-50dB:d=5<span class="pl-pds">'</span></span>);
+
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>)
+  .audioFilters([<span class="pl-s"><span class="pl-pds">'</span>volume=0.5<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>silencedetect=n=-50dB:d=5<span class="pl-pds">'</span></span>]);
+
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>)
+  .audioFilters([
+    {
+      filter<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>volume<span class="pl-pds">'</span></span>,
+      options<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>0.5<span class="pl-pds">'</span></span>
+    },
+    {
+      filter<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>silencedetect<span class="pl-pds">'</span></span>,
+      options<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>n=-50dB:d=5<span class="pl-pds">'</span></span>
+    }
+  ]);
+
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>)
+  .audioFilters(
+    {
+      filter<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>volume<span class="pl-pds">'</span></span>,
+      options<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>0.5<span class="pl-pds">'</span></span>]
+    },
+    {
+      filter<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>silencedetect<span class="pl-pds">'</span></span>,
+      options<span class="pl-k">:</span> { n<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>-50dB<span class="pl-pds">'</span></span>, d<span class="pl-k">:</span> <span class="pl-c1">5</span> }
+    }
+  ]);</pre></div>
+
+<h3><a id="user-content-video-options" class="anchor" href="#video-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Video options</h3>
+
+<p>The following methods change the video stream(s) in the produced output.</p>
+
+<h4><a id="user-content-novideo-disable-video-altogether" class="anchor" href="#novideo-disable-video-altogether" aria-hidden="true"><span class="octicon octicon-link"></span></a>noVideo(): disable video altogether</h4>
+
+<p><strong>Aliases</strong>: <code>withNoVideo()</code>.</p>
+
+<p>This method disables video output and removes any previously set video option.</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).noVideo();</pre></div>
+
+<h4><a id="user-content-videocodeccodec-set-video-codec" class="anchor" href="#videocodeccodec-set-video-codec" aria-hidden="true"><span class="octicon octicon-link"></span></a>videoCodec(codec): set video codec</h4>
+
+<p><strong>Aliases</strong>: <code>withVideoCodec()</code>.</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).videoCodec(<span class="pl-s"><span class="pl-pds">'</span>libx264<span class="pl-pds">'</span></span>);</pre></div>
+
+<p>Fluent-ffmpeg checks for codec availability before actually running the command, and throws an error when a specified video codec is not available.</p>
+
+<h4><a id="user-content-videobitratebitrate-constantfalse-set-video-bitrate" class="anchor" href="#videobitratebitrate-constantfalse-set-video-bitrate" aria-hidden="true"><span class="octicon octicon-link"></span></a>videoBitrate(bitrate[, constant=false]): set video bitrate</h4>
+
+<p><strong>Aliases</strong>: <code>withVideoBitrate()</code>.</p>
+
+<p>Sets the target video bitrate in kbps.  The <code>bitrate</code> argument may be a number or a string with an optional <code>k</code> suffix.  The <code>constant</code> argument specifies whether a constant bitrate should be enforced (defaults to false).</p>
+
+<p>Keep in mind that, depending on the codec used, enforcing a constant bitrate often comes at the cost of quality.  The best way to have a constant video bitrate without losing too much quality is to use 2-pass encoding (see Fffmpeg documentation).</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).videoBitrate(<span class="pl-c1">1000</span>);
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).videoBitrate(<span class="pl-s"><span class="pl-pds">'</span>1000<span class="pl-pds">'</span></span>);
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).videoBitrate(<span class="pl-s"><span class="pl-pds">'</span>1000k<span class="pl-pds">'</span></span>);
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).videoBitrate(<span class="pl-s"><span class="pl-pds">'</span>1000k<span class="pl-pds">'</span></span>, <span class="pl-c1">true</span>);</pre></div>
+
+<h4><a id="user-content-videofiltersfilter-add-custom-video-filters" class="anchor" href="#videofiltersfilter-add-custom-video-filters" aria-hidden="true"><span class="octicon octicon-link"></span></a>videoFilters(filter...): add custom video filters</h4>
+
+<p><strong>Aliases</strong>: <code>videoFilter()</code>, <code>withVideoFilter()</code>, <code>withVideoFilters()</code>.</p>
+
+<p>This method enables adding custom video filters.  You may add multiple filters at once by passing either several arguments or an array.  See the Ffmpeg documentation for available filters and their syntax.</p>
+
+<p>Each filter pased to this method can be either a filter string (eg. <code>fade=in:0:30</code>) or a filter specification object with the following keys:</p>
+
+<ul>
+<li><code>filter</code>: filter name</li>
+<li><code>options</code>: optional; either an option string for the filter (eg. <code>in:0:30</code>), an options array for unnamed options (eg. <code>['in', 0, 30]</code>) or an object mapping option names to values (eg. <code>{ t: 'in', s: 0, n: 30 }</code>).  When <code>options</code> is not specified, the filter will be added without any options.</li>
+</ul>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>)
+  .videoFilters(<span class="pl-s"><span class="pl-pds">'</span>fade=in:0:30<span class="pl-pds">'</span></span>)
+  .videoFilters(<span class="pl-s"><span class="pl-pds">'</span>pad=640:480:0:40:violet<span class="pl-pds">'</span></span>);
+
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>)
+  .videoFilters(<span class="pl-s"><span class="pl-pds">'</span>fade=in:0:30<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>pad=640:480:0:40:violet<span class="pl-pds">'</span></span>);
+
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>)
+  .videoFilters([<span class="pl-s"><span class="pl-pds">'</span>fade=in:0:30<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>pad=640:480:0:40:violet<span class="pl-pds">'</span></span>]);
+
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>)
+  .videoFilters([
+    {
+      filter<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>fade<span class="pl-pds">'</span></span>,
+      options<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>in:0:30<span class="pl-pds">'</span></span>
+    },
+    {
+      filter<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>pad<span class="pl-pds">'</span></span>,
+      options<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>640:480:0:40:violet<span class="pl-pds">'</span></span>
+    }
+  ]);
+
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>)
+    .videoFilters(
+    {
+      filter<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>fade<span class="pl-pds">'</span></span>,
+      options<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>in<span class="pl-pds">'</span></span>, <span class="pl-c1">0</span>, <span class="pl-c1">30</span>]
+    },
+    {
+      filter<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>filter2<span class="pl-pds">'</span></span>,
+      options<span class="pl-k">:</span> { w<span class="pl-k">:</span> <span class="pl-c1">640</span>, h<span class="pl-k">:</span> <span class="pl-c1">480</span>, x<span class="pl-k">:</span> <span class="pl-c1">0</span>, y<span class="pl-k">:</span> <span class="pl-c1">40</span>, color<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>violet<span class="pl-pds">'</span></span> }
+    }
+  );</pre></div>
+
+<h4><a id="user-content-fpsfps-set-output-framerate" class="anchor" href="#fpsfps-set-output-framerate" aria-hidden="true"><span class="octicon octicon-link"></span></a>fps(fps): set output framerate</h4>
+
+<p><strong>Aliases</strong>: <code>withOutputFps()</code>, <code>withOutputFPS()</code>, <code>withFpsOutput()</code>, <code>withFPSOutput()</code>, <code>withFps()</code>, <code>withFPS()</code>, <code>outputFPS()</code>, <code>outputFps()</code>, <code>fpsOutput()</code>, <code>FPSOutput()</code>, <code>FPS()</code>.</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).fps(<span class="pl-c1">29.7</span>);</pre></div>
+
+<h4><a id="user-content-framescount-specify-frame-count" class="anchor" href="#framescount-specify-frame-count" aria-hidden="true"><span class="octicon octicon-link"></span></a>frames(count): specify frame count</h4>
+
+<p><strong>Aliases</strong>: <code>takeFrames()</code>, <code>withFrames()</code>.</p>
+
+<p>Set ffmpeg to only encode a certain number of frames.</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).<span class="pl-c1">frames</span>(<span class="pl-c1">240</span>);</pre></div>
+
+<h3><a id="user-content-video-frame-size-options" class="anchor" href="#video-frame-size-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Video frame size options</h3>
+
+<p>The following methods enable resizing the output video frame size.  They all work together to generate the appropriate video filters.</p>
+
+<h4><a id="user-content-sizesize-set-output-frame-size" class="anchor" href="#sizesize-set-output-frame-size" aria-hidden="true"><span class="octicon octicon-link"></span></a>size(size): set output frame size</h4>
+
+<p><strong>Aliases</strong>: <code>videoSize()</code>, <code>withSize()</code>.</p>
+
+<p>This method sets the output frame size.  The <code>size</code> argument may have one of the following formats:</p>
+
+<ul>
+<li><code>640x480</code>: set a fixed output frame size.  Unless <code>autopad()</code> is called, this may result in the video being stretched or squeezed to fit the requested size.</li>
+<li><code>640x?</code>: set a fixed width and compute height automatically.  If <code>aspect()</code> is also called, it is used to compute video height; otherwise it is computed so that the input aspect ratio is preserved.</li>
+<li><code>?x480</code>: set a fixed height and compute width automatically.  If <code>aspect()</code> is also called, it is used to compute video width; otherwise it is computed so that the input aspect ratio is preserved.</li>
+<li><code>50%</code>: rescale both width and height to the given percentage.  Aspect ratio is always preserved.</li>
+</ul>
+
+<p>Note that for compatibility with some codecs, computed dimensions are always rounded down to multiples of 2.</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).<span class="pl-c1">size</span>(<span class="pl-s"><span class="pl-pds">'</span>640x480<span class="pl-pds">'</span></span>);
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).<span class="pl-c1">size</span>(<span class="pl-s"><span class="pl-pds">'</span>640x?<span class="pl-pds">'</span></span>);
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).<span class="pl-c1">size</span>(<span class="pl-s"><span class="pl-pds">'</span>640x?<span class="pl-pds">'</span></span>).aspect(<span class="pl-s"><span class="pl-pds">'</span>4:3<span class="pl-pds">'</span></span>);
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).<span class="pl-c1">size</span>(<span class="pl-s"><span class="pl-pds">'</span>50%<span class="pl-pds">'</span></span>);</pre></div>
+
+<h4><a id="user-content-aspectaspect-set-output-frame-aspect-ratio" class="anchor" href="#aspectaspect-set-output-frame-aspect-ratio" aria-hidden="true"><span class="octicon octicon-link"></span></a>aspect(aspect): set output frame aspect ratio</h4>
+
+<p><strong>Aliases</strong>: <code>withAspect()</code>, <code>withAspectRatio()</code>, <code>setAspect()</code>, <code>setAspectRatio()</code>, <code>aspectRatio()</code>.</p>
+
+<p>This method enforces a specific output aspect ratio.  The <code>aspect</code> argument may either be a number or a <code>X:Y</code> string.</p>
+
+<p>Note that calls to <code>aspect()</code> are ignored when <code>size()</code> has been called with a fixed width and height or a percentage, and also when <code>size()</code> has not been called at all.</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).<span class="pl-c1">size</span>(<span class="pl-s"><span class="pl-pds">'</span>640x?<span class="pl-pds">'</span></span>).aspect(<span class="pl-s"><span class="pl-pds">'</span>4:3<span class="pl-pds">'</span></span>);
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).<span class="pl-c1">size</span>(<span class="pl-s"><span class="pl-pds">'</span>640x?<span class="pl-pds">'</span></span>).aspect(<span class="pl-c1">1.33333</span>);</pre></div>
+
+<h4><a id="user-content-autopadcolorblack-enable-auto-padding-the-output-video" class="anchor" href="#autopadcolorblack-enable-auto-padding-the-output-video" aria-hidden="true"><span class="octicon octicon-link"></span></a>autopad([color='black']): enable auto-padding the output video</h4>
+
+<p><strong>Aliases</strong>: <code>applyAutopadding()</code>, <code>applyAutoPadding()</code>, <code>applyAutopad()</code>, <code>applyAutoPad()</code>, <code>withAutopadding()</code>, <code>withAutoPadding()</code>, <code>withAutopad()</code>, <code>withAutoPad()</code>, <code>autoPad()</code>.</p>
+
+<p>This method enables applying auto-padding to the output video.  The <code>color</code> parameter specifies which color to use for padding, and must be a color code or name supported by ffmpeg (defaults to 'black').</p>
+
+<p>The behaviour of this method depends on calls made to other video size methods:</p>
+
+<ul>
+<li>when <code>size()</code> has been called with a percentage or has not been called, it is ignored;</li>
+<li>when <code>size()</code> has been called with <code>WxH</code>, it adds padding so that the input aspect ratio is kept;</li>
+<li>when <code>size()</code> has been called with either <code>Wx?</code> or <code>?xH</code>, padding is only added if <code>aspect()</code> was called (otherwise the output dimensions are computed from the input aspect ratio and padding is not needed).</li>
+</ul>
+
+<div class="highlight highlight-js"><pre><span class="pl-c">// No size specified, autopad() is ignored</span>
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).autopad();
+
+<span class="pl-c">// Adds padding to keep original aspect ratio.</span>
+<span class="pl-c">// - with a 640x400 input, 40 pixels of padding are added on both sides</span>
+<span class="pl-c">// - with a 600x480 input, 20 pixels of padding are added on top and bottom</span>
+<span class="pl-c">// - with a 320x200 input, video is scaled up to 640x400 and 40px of padding</span>
+<span class="pl-c">//   is added on both sides</span>
+<span class="pl-c">// - with a 320x240 input, video is scaled up to 640x480 and and no padding</span>
+<span class="pl-c">//   is needed</span>
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).<span class="pl-c1">size</span>(<span class="pl-s"><span class="pl-pds">'</span>640x480<span class="pl-pds">'</span></span>).autopad();
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).<span class="pl-c1">size</span>(<span class="pl-s"><span class="pl-pds">'</span>640x480<span class="pl-pds">'</span></span>).autopad(<span class="pl-s"><span class="pl-pds">'</span>white<span class="pl-pds">'</span></span>);
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).<span class="pl-c1">size</span>(<span class="pl-s"><span class="pl-pds">'</span>640x480<span class="pl-pds">'</span></span>).autopad(<span class="pl-s"><span class="pl-pds">'</span>#35A5FF<span class="pl-pds">'</span></span>);
+
+<span class="pl-c">// Size computed from input, autopad() is ignored</span>
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).<span class="pl-c1">size</span>(<span class="pl-s"><span class="pl-pds">'</span>50%<span class="pl-pds">'</span></span>).autopad();
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).<span class="pl-c1">size</span>(<span class="pl-s"><span class="pl-pds">'</span>640x?<span class="pl-pds">'</span></span>).autopad();
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).<span class="pl-c1">size</span>(<span class="pl-s"><span class="pl-pds">'</span>?x480<span class="pl-pds">'</span></span>).autopad();
+
+<span class="pl-c">// Calling .size('640x?').aspect('4:3') is similar to calling .size('640x480')</span>
+<span class="pl-c">// - with a 640x400 input, 40 pixels of padding are added on both sides</span>
+<span class="pl-c">// - with a 600x480 input, 20 pixels of padding are added on top and bottom</span>
+<span class="pl-c">// - with a 320x200 input, video is scaled up to 640x400 and 40px of padding</span>
+<span class="pl-c">//   is added on both sides</span>
+<span class="pl-c">// - with a 320x240 input, video is scaled up to 640x480 and and no padding</span>
+<span class="pl-c">//   is needed</span>
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).<span class="pl-c1">size</span>(<span class="pl-s"><span class="pl-pds">'</span>640x?<span class="pl-pds">'</span></span>).aspect(<span class="pl-s"><span class="pl-pds">'</span>4:3<span class="pl-pds">'</span></span>).autopad();
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).<span class="pl-c1">size</span>(<span class="pl-s"><span class="pl-pds">'</span>640x?<span class="pl-pds">'</span></span>).aspect(<span class="pl-s"><span class="pl-pds">'</span>4:3<span class="pl-pds">'</span></span>).autopad(<span class="pl-s"><span class="pl-pds">'</span>white<span class="pl-pds">'</span></span>);
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).<span class="pl-c1">size</span>(<span class="pl-s"><span class="pl-pds">'</span>640x?<span class="pl-pds">'</span></span>).aspect(<span class="pl-s"><span class="pl-pds">'</span>4:3<span class="pl-pds">'</span></span>).autopad(<span class="pl-s"><span class="pl-pds">'</span>#35A5FF<span class="pl-pds">'</span></span>);
+
+<span class="pl-c">// Calling .size('?x480').aspect('4:3') is similar to calling .size('640x480')</span>
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).<span class="pl-c1">size</span>(<span class="pl-s"><span class="pl-pds">'</span>?x480<span class="pl-pds">'</span></span>).aspect(<span class="pl-s"><span class="pl-pds">'</span>4:3<span class="pl-pds">'</span></span>).autopad();
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).<span class="pl-c1">size</span>(<span class="pl-s"><span class="pl-pds">'</span>?x480<span class="pl-pds">'</span></span>).aspect(<span class="pl-s"><span class="pl-pds">'</span>4:3<span class="pl-pds">'</span></span>).autopad(<span class="pl-s"><span class="pl-pds">'</span>white<span class="pl-pds">'</span></span>);
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).<span class="pl-c1">size</span>(<span class="pl-s"><span class="pl-pds">'</span>?x480<span class="pl-pds">'</span></span>).aspect(<span class="pl-s"><span class="pl-pds">'</span>4:3<span class="pl-pds">'</span></span>).autopad(<span class="pl-s"><span class="pl-pds">'</span>#35A5FF<span class="pl-pds">'</span></span>);</pre></div>
+
+<p>For compatibility with previous fluent-ffmpeg versions, this method also accepts an additional boolean first argument, which specifies whether to apply auto-padding.</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).<span class="pl-c1">size</span>(<span class="pl-s"><span class="pl-pds">'</span>640x480<span class="pl-pds">'</span></span>).autopad(<span class="pl-c1">true</span>);
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).<span class="pl-c1">size</span>(<span class="pl-s"><span class="pl-pds">'</span>640x480<span class="pl-pds">'</span></span>).autopad(<span class="pl-c1">true</span>, <span class="pl-s"><span class="pl-pds">'</span>pink<span class="pl-pds">'</span></span>);</pre></div>
+
+<h4><a id="user-content-keepdar-force-keeping-display-aspect-ratio" class="anchor" href="#keepdar-force-keeping-display-aspect-ratio" aria-hidden="true"><span class="octicon octicon-link"></span></a>keepDAR(): force keeping display aspect ratio</h4>
+
+<p><strong>Aliases</strong>: <code>keepPixelAspect()</code>, <code>keepDisplayAspect()</code>, <code>keepDisplayAspectRatio()</code>.</p>
+
+<p>This method is useful when converting an input with non-square pixels to an output format that does not support non-square pixels (eg. most image formats).  It rescales the input so that the display aspect ratio is the same.</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).keepDAR();</pre></div>
+
+<h3><a id="user-content-specifying-multiple-outputs" class="anchor" href="#specifying-multiple-outputs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Specifying multiple outputs</h3>
+
+<h4><a id="user-content-outputtarget-options-add-an-output-to-the-command" class="anchor" href="#outputtarget-options-add-an-output-to-the-command" aria-hidden="true"><span class="octicon octicon-link"></span></a>output(target[, options]): add an output to the command</h4>
+
+<p><strong>Aliases</strong>: <code>addOutput()</code>.</p>
+
+<p>Adds an output to the command.  The <code>target</code> argument may be an output filename or a writable stream (but at most one output stream may be used with a single command).</p>
+
+<p>When <code>target</code> is a stream, an additional <code>options</code> object may be passed.  If it is present, it will be passed ffmpeg output stream <code>pipe()</code> method.</p>
+
+<p>Adding an output switches the "current output" of the command, so that any fluent-ffmpeg method that applies to an output is indeed applied to the last output added.  For backwards compatibility reasons, you may as well call those methods <em>before</em> adding the first output (in which case they will apply to the first output when it is added).  Methods that apply to an output are all non-input-related methods, except for <code>complexFilter()</code>, which is global.</p>
+
+<p>Also note that when calling <code>output()</code>, you should not use the <code>save()</code> or <code>stream()</code> (formerly <code>saveToFile()</code> and <code>writeToStream()</code>) methods, as they already add an output.  Use the <code>run()</code> method to start processing.</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-k">var</span> stream  <span class="pl-k">=</span> fs.createWriteStream(<span class="pl-s"><span class="pl-pds">'</span>outputfile.divx<span class="pl-pds">'</span></span>);
+
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>)
+  .output(<span class="pl-s"><span class="pl-pds">'</span>outputfile.mp4<span class="pl-pds">'</span></span>)
+  .output(stream);
+
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>)
+  <span class="pl-c">// You may pass a pipe() options object when using a stream</span>
+  .output(stream, { end<span class="pl-k">:</span><span class="pl-c1">true</span> });
+
+<span class="pl-c">// Output-related methods apply to the last output added</span>
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>)
+
+  .output(<span class="pl-s"><span class="pl-pds">'</span>outputfile.mp4<span class="pl-pds">'</span></span>)
+  .audioCodec(<span class="pl-s"><span class="pl-pds">'</span>libfaac<span class="pl-pds">'</span></span>)
+  .videoCodec(<span class="pl-s"><span class="pl-pds">'</span>libx264<span class="pl-pds">'</span></span>)
+  .<span class="pl-c1">size</span>(<span class="pl-s"><span class="pl-pds">'</span>320x200<span class="pl-pds">'</span></span>)
+
+  .output(stream)
+  .preset(<span class="pl-s"><span class="pl-pds">'</span>divx<span class="pl-pds">'</span></span>)
+  .<span class="pl-c1">size</span>(<span class="pl-s"><span class="pl-pds">'</span>640x480<span class="pl-pds">'</span></span>);
+
+<span class="pl-c">// Use the run() method to run commands with multiple outputs</span>
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>)
+  .output(<span class="pl-s"><span class="pl-pds">'</span>outputfile.mp4<span class="pl-pds">'</span></span>)
+  .output(stream)
+  .on(<span class="pl-s"><span class="pl-pds">'</span>end<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>() {
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>Finished processing<span class="pl-pds">'</span></span>);
+  })
+  .run();</pre></div>
+
+<h3><a id="user-content-output-options" class="anchor" href="#output-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Output options</h3>
+
+<h4><a id="user-content-durationtime-set-output-duration" class="anchor" href="#durationtime-set-output-duration" aria-hidden="true"><span class="octicon octicon-link"></span></a>duration(time): set output duration</h4>
+
+<p><strong>Aliases</strong>: <code>withDuration()</code>, <code>setDuration()</code>.</p>
+
+<p>Forces ffmpeg to stop transcoding after a specific output duration.  The <code>time</code> parameter may be a number (in seconds) or a timestamp string (with format <code>[[hh:]mm:]ss[.xxx]</code>).</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).duration(<span class="pl-c1">134.5</span>);
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).duration(<span class="pl-s"><span class="pl-pds">'</span>2:14.500<span class="pl-pds">'</span></span>);</pre></div>
+
+<h4><a id="user-content-seektime-seek-output" class="anchor" href="#seektime-seek-output" aria-hidden="true"><span class="octicon octicon-link"></span></a>seek(time): seek output</h4>
+
+<p><strong>Aliases</strong>: <code>seekOutput()</code>.</p>
+
+<p>Seeks streams before encoding them into the output.  This is different from calling <code>seekInput()</code> in that the offset will only apply to one output.  This is also slower, as skipped frames will still be decoded (but dropped).</p>
+
+<p>The <code>time</code> argument may be a number (in seconds) or a timestamp string (with format <code>[[hh:]mm:]ss[.xxx]</code>).</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>)
+  .seekInput(<span class="pl-s"><span class="pl-pds">'</span>1:00<span class="pl-pds">'</span></span>)
+
+  .output(<span class="pl-s"><span class="pl-pds">'</span>from-1m30s.avi<span class="pl-pds">'</span></span>)
+  .seek(<span class="pl-c1">30</span>)
+
+  .output(<span class="pl-s"><span class="pl-pds">'</span>from-1m40s.avi<span class="pl-pds">'</span></span>)
+  .seek(<span class="pl-s"><span class="pl-pds">'</span>0:40<span class="pl-pds">'</span></span>);</pre></div>
+
+<h4><a id="user-content-formatformat-set-output-format" class="anchor" href="#formatformat-set-output-format" aria-hidden="true"><span class="octicon octicon-link"></span></a>format(format): set output format</h4>
+
+<p><strong>Aliases</strong>: <code>withOutputFormat()</code>, <code>toFormat()</code>, <code>outputFormat()</code>.</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).format(<span class="pl-s"><span class="pl-pds">'</span>flv<span class="pl-pds">'</span></span>);</pre></div>
+
+<h4><a id="user-content-flvmeta-update-flv-metadata-after-transcoding" class="anchor" href="#flvmeta-update-flv-metadata-after-transcoding" aria-hidden="true"><span class="octicon octicon-link"></span></a>flvmeta(): update FLV metadata after transcoding</h4>
+
+<p><strong>Aliases</strong>: <code>updateFlvMetadata()</code>.</p>
+
+<p>Calling this method makes fluent-ffmpeg run <code>flvmeta</code> or <code>flvtool2</code> on the output file to add FLV metadata and make files streamable.  It does not work when outputting to a stream, and is only useful when outputting to FLV format.</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).flvmeta().format(<span class="pl-s"><span class="pl-pds">'</span>flv<span class="pl-pds">'</span></span>);</pre></div>
+
+<h4><a id="user-content-outputoptionsoption-add-custom-output-options" class="anchor" href="#outputoptionsoption-add-custom-output-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>outputOptions(option...): add custom output options</h4>
+
+<p><strong>Aliases</strong>: <code>outputOption()</code>, <code>addOutputOption()</code>, <code>addOutputOptions()</code>, <code>withOutputOption()</code>, <code>withOutputOptions()</code>, <code>addOption()</code>, <code>addOptions()</code>.</p>
+
+<p>This method allows passing any output-related option to ffmpeg.  You can call it with a single argument to pass a single option, optionnaly with a space-separated parameter:</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-c">/* Single option */</span>
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).outputOptions(<span class="pl-s"><span class="pl-pds">'</span>-someOption<span class="pl-pds">'</span></span>);
+
+<span class="pl-c">/* Single option with parameter */</span>
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/dev/video0<span class="pl-pds">'</span></span>).outputOptions(<span class="pl-s"><span class="pl-pds">'</span>-r 24<span class="pl-pds">'</span></span>);</pre></div>
+
+<p>You may also pass multiple options at once by passing an array to the method:</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).outputOptions([
+  <span class="pl-s"><span class="pl-pds">'</span>-option1<span class="pl-pds">'</span></span>,
+  <span class="pl-s"><span class="pl-pds">'</span>-option2 param2<span class="pl-pds">'</span></span>,
+  <span class="pl-s"><span class="pl-pds">'</span>-option3<span class="pl-pds">'</span></span>,
+  <span class="pl-s"><span class="pl-pds">'</span>-option4 param4<span class="pl-pds">'</span></span>
+]);</pre></div>
+
+<p>Finally, you may also directly pass command line tokens as separate arguments to the method:</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).outputOptions(
+  <span class="pl-s"><span class="pl-pds">'</span>-option1<span class="pl-pds">'</span></span>,
+  <span class="pl-s"><span class="pl-pds">'</span>-option2<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>param2<span class="pl-pds">'</span></span>,
+  <span class="pl-s"><span class="pl-pds">'</span>-option3<span class="pl-pds">'</span></span>,
+  <span class="pl-s"><span class="pl-pds">'</span>-option4<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>param4<span class="pl-pds">'</span></span>
+);</pre></div>
+
+<h3><a id="user-content-miscellaneous-options" class="anchor" href="#miscellaneous-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Miscellaneous options</h3>
+
+<h4><a id="user-content-presetpreset-use-fluent-ffmpeg-preset" class="anchor" href="#presetpreset-use-fluent-ffmpeg-preset" aria-hidden="true"><span class="octicon octicon-link"></span></a>preset(preset): use fluent-ffmpeg preset</h4>
+
+<p><strong>Aliases</strong>: <code>usingPreset()</code>.</p>
+
+<p>There are two kinds of presets supported by fluent-ffmpeg.  The first one is preset modules; to use those, pass the preset name as the <code>preset</code> argument.  Preset modules are loaded from the directory specified by the <code>presets</code> constructor option (defaults to the <code>lib/presets</code> fluent-ffmpeg subdirectory).</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-c">// Uses &lt;path-to-fluent-ffmpeg&gt;/lib/presets/divx.js</span>
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).preset(<span class="pl-s"><span class="pl-pds">'</span>divx<span class="pl-pds">'</span></span>);
+
+<span class="pl-c">// Uses /my/presets/foo.js</span>
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>, { presets<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>/my/presets<span class="pl-pds">'</span></span> }).preset(<span class="pl-s"><span class="pl-pds">'</span>foo<span class="pl-pds">'</span></span>);</pre></div>
+
+<p>Preset modules must export a <code>load()</code> function that takes an FfmpegCommand as an argument.   fluent-ffmpeg comes with the following preset modules preinstalled:</p>
+
+<ul>
+<li><code>divx</code></li>
+<li><code>flashvideo</code></li>
+<li><code>podcast</code></li>
+</ul>
+
+<p>Here is the code from the included <code>divx</code> preset as an example:</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-c1">exports</span>.<span class="pl-en">load</span> <span class="pl-k">=</span> <span class="pl-k">function</span>(<span class="pl-smi">ffmpeg</span>) {
+  ffmpeg
+    .format(<span class="pl-s"><span class="pl-pds">'</span>avi<span class="pl-pds">'</span></span>)
+    .videoBitrate(<span class="pl-s"><span class="pl-pds">'</span>1024k<span class="pl-pds">'</span></span>)
+    .videoCodec(<span class="pl-s"><span class="pl-pds">'</span>mpeg4<span class="pl-pds">'</span></span>)
+    .<span class="pl-c1">size</span>(<span class="pl-s"><span class="pl-pds">'</span>720x?<span class="pl-pds">'</span></span>)
+    .audioBitrate(<span class="pl-s"><span class="pl-pds">'</span>128k<span class="pl-pds">'</span></span>)
+    .audioChannels(<span class="pl-c1">2</span>)
+    .audioCodec(<span class="pl-s"><span class="pl-pds">'</span>libmp3lame<span class="pl-pds">'</span></span>)
+    .outputOptions([<span class="pl-s"><span class="pl-pds">'</span>-vtag DIVX<span class="pl-pds">'</span></span>]);
+};</pre></div>
+
+<p>The second kind of preset is preset functions.  To use those, pass a function which takes an FfmpegCommand as a parameter.</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-k">function</span> <span class="pl-en">myPreset</span>(<span class="pl-smi">command</span>) {
+  command.format(<span class="pl-s"><span class="pl-pds">'</span>avi<span class="pl-pds">'</span></span>).<span class="pl-c1">size</span>(<span class="pl-s"><span class="pl-pds">'</span>720x?<span class="pl-pds">'</span></span>);
+}
+
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>).preset(myPreset);</pre></div>
+
+<h4><a id="user-content-complexfilterfilters-map-set-complex-filtergraph" class="anchor" href="#complexfilterfilters-map-set-complex-filtergraph" aria-hidden="true"><span class="octicon octicon-link"></span></a>complexFilter(filters[, map]): set complex filtergraph</h4>
+
+<p><strong>Aliases</strong>: <code>filterGraph()</code></p>
+
+<p>The <code>complexFilter()</code> method enables setting a complex filtergraph for a command.  It expects a filter specification (or a filter specification array) and an optional output mapping parameter as arguments.</p>
+
+<p>Filter specifications may be either plain ffmpeg filter strings (eg. <code>split=3[a][b][c]</code>) or objects with the following keys:</p>
+
+<ul>
+<li><code>filter</code>: filter name</li>
+<li><code>options</code>: optional; either an option string for the filter (eg. <code>in:0:30</code>), an options array for unnamed options (eg. <code>['in', 0, 30]</code>) or an object mapping option names to values (eg. <code>{ t: 'in', s: 0, n: 30 }</code>).  When <code>options</code> is not specified, the filter will be added without any options.</li>
+<li><code>inputs</code>: optional; input stream specifier(s) for the filter.  The value may be either a single stream specifier string or an array of stream specifiers.  Each specifier can be optionally enclosed in square brackets.  When input streams are not specified, ffmpeg will use the first unused streams of the correct type.</li>
+<li><code>outputs</code>: optional; output stream specifier(s) for the filter.  The value may be either a single stream specifier string or an array of stream specifiers.  Each specifier can be optionally enclosed in square brackets.</li>
+</ul>
+
+<p>The output mapping parameter specifies which stream(s) to include in the output from the filtergraph.  It may be either a single stream specifier string or an array of stream specifiers.  Each specifier can be optionally enclosed in square brackets.  When this parameter is not present, ffmpeg will default to saving all unused outputs to the output file.</p>
+
+<p>Note that only one complex filtergraph may be set on a given command.  Calling <code>complexFilter()</code> again will override any previously set filtergraph, but you can set as many filters as needed in a single call.</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>)
+  .complexFilter([
+    <span class="pl-c">// Rescale input stream into stream 'rescaled'</span>
+    <span class="pl-s"><span class="pl-pds">'</span>scale=640:480[rescaled]<span class="pl-pds">'</span></span>,
+
+    <span class="pl-c">// Duplicate rescaled stream 3 times into streams a, b, and c</span>
+    {
+      filter<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>split<span class="pl-pds">'</span></span>, options<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>3<span class="pl-pds">'</span></span>,
+      inputs<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>rescaled<span class="pl-pds">'</span></span>, outputs<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>a<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>b<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>c<span class="pl-pds">'</span></span>]
+    },
+
+    <span class="pl-c">// Create stream 'red' by removing green and blue channels from stream 'a'</span>
+    {
+      filter<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>lutrgb<span class="pl-pds">'</span></span>, options<span class="pl-k">:</span> { g<span class="pl-k">:</span> <span class="pl-c1">0</span>, b<span class="pl-k">:</span> <span class="pl-c1">0</span> },
+      inputs<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>a<span class="pl-pds">'</span></span>, outputs<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>red<span class="pl-pds">'</span></span>
+    },
+
+    <span class="pl-c">// Create stream 'green' by removing red and blue channels from stream 'b'</span>
+    {
+      filter<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>lutrgb<span class="pl-pds">'</span></span>, options<span class="pl-k">:</span> { r<span class="pl-k">:</span> <span class="pl-c1">0</span>, b<span class="pl-k">:</span> <span class="pl-c1">0</span> },
+      inputs<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>b<span class="pl-pds">'</span></span>, outputs<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>green<span class="pl-pds">'</span></span>
+    },
+
+    <span class="pl-c">// Create stream 'blue' by removing red and green channels from stream 'c'</span>
+    {
+      filter<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>lutrgb<span class="pl-pds">'</span></span>, options<span class="pl-k">:</span> { r<span class="pl-k">:</span> <span class="pl-c1">0</span>, g<span class="pl-k">:</span> <span class="pl-c1">0</span> },
+      inputs<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>c<span class="pl-pds">'</span></span>, outputs<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>blue<span class="pl-pds">'</span></span>
+    },
+
+    <span class="pl-c">// Pad stream 'red' to 3x width, keeping the video on the left,</span>
+    <span class="pl-c">// and name output 'padded'</span>
+    {
+      filter<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>pad<span class="pl-pds">'</span></span>, options<span class="pl-k">:</span> { w<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>iw*3<span class="pl-pds">'</span></span>, h<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>ih<span class="pl-pds">'</span></span> },
+      inputs<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>red<span class="pl-pds">'</span></span>, outputs<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>padded<span class="pl-pds">'</span></span>
+    },
+
+    <span class="pl-c">// Overlay 'green' onto 'padded', moving it to the center,</span>
+    <span class="pl-c">// and name output 'redgreen'</span>
+    {
+      filter<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>overlay<span class="pl-pds">'</span></span>, options<span class="pl-k">:</span> { x<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>w<span class="pl-pds">'</span></span>, y<span class="pl-k">:</span> <span class="pl-c1">0</span> },
+      inputs<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>padded<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>green<span class="pl-pds">'</span></span>], outputs<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>redgreen<span class="pl-pds">'</span></span>
+    },
+
+    <span class="pl-c">// Overlay 'blue' onto 'redgreen', moving it to the right</span>
+    {
+      filter<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>overlay<span class="pl-pds">'</span></span>, options<span class="pl-k">:</span> { x<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>2*w<span class="pl-pds">'</span></span>, y<span class="pl-k">:</span> <span class="pl-c1">0</span> },
+      inputs<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>redgreen<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>blue<span class="pl-pds">'</span></span>], outputs<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>output<span class="pl-pds">'</span></span>
+    },
+  ], <span class="pl-s"><span class="pl-pds">'</span>output<span class="pl-pds">'</span></span>);</pre></div>
+
+<h3><a id="user-content-setting-event-handlers" class="anchor" href="#setting-event-handlers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting event handlers</h3>
+
+<p>Before actually running a command, you may want to set event listeners on it to be notified when it's done.  The following events are available:</p>
+
+<h4><a id="user-content-start-ffmpeg-process-started" class="anchor" href="#start-ffmpeg-process-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>'start': ffmpeg process started</h4>
+
+<p>The <code>start</code> event is emitted just after ffmpeg has been spawned.  It is emitted with the full command line used as an argument.</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>)
+  .on(<span class="pl-s"><span class="pl-pds">'</span>start<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">commandLine</span>) {
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>Spawned Ffmpeg with command: <span class="pl-pds">'</span></span> <span class="pl-k">+</span> commandLine);
+  });</pre></div>
+
+<h4><a id="user-content-codecdata-input-codec-data-available" class="anchor" href="#codecdata-input-codec-data-available" aria-hidden="true"><span class="octicon octicon-link"></span></a>'codecData': input codec data available</h4>
+
+<p>The <code>codecData</code> event is emitted when ffmpeg outputs codec information about its input streams.  It is emitted with an object argument with the following keys:</p>
+
+<ul>
+<li><code>format</code>: input format</li>
+<li><code>duration</code>: input duration</li>
+<li><code>audio</code>: audio codec</li>
+<li><code>audio_details</code>: audio encoding details</li>
+<li><code>video</code>: video codec</li>
+<li><code>video_details</code>: video encoding details</li>
+</ul>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>)
+  .on(<span class="pl-s"><span class="pl-pds">'</span>codecData<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">data</span>) {
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>Input is <span class="pl-pds">'</span></span> <span class="pl-k">+</span> data.audio <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span> audio <span class="pl-pds">'</span></span> <span class="pl-k">+</span>
+      <span class="pl-s"><span class="pl-pds">'</span>with <span class="pl-pds">'</span></span> <span class="pl-k">+</span> data.video <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span> video<span class="pl-pds">'</span></span>);
+  });</pre></div>
+
+<h4><a id="user-content-progress-transcoding-progress-information" class="anchor" href="#progress-transcoding-progress-information" aria-hidden="true"><span class="octicon octicon-link"></span></a>'progress': transcoding progress information</h4>
+
+<p>The <code>progress</code> event is emitted every time ffmpeg reports progress information.  It is emitted with an object argument with the following keys:</p>
+
+<ul>
+<li><code>frames</code>: total processed frame count</li>
+<li><code>currentFps</code>: framerate at which FFmpeg is currently processing</li>
+<li><code>currentKbps</code>: throughput at which FFmpeg is currently processing</li>
+<li><code>targetSize</code>: current size of the target file in kilobytes</li>
+<li><code>timemark</code>: the timestamp of the current frame in seconds</li>
+<li><code>percent</code>: an estimation of the progress percentage</li>
+</ul>
+
+<p>Note that <code>percent</code> can be (very) inaccurate, as the only progress information fluent-ffmpeg gets from ffmpeg is the total number of frames written (and the corresponding duration).  To estimate percentage, fluent-ffmpeg has to guess what the total output duration will be, and uses the first input added to the command to do so.  In particular:</p>
+
+<ul>
+<li>percentage is not available when using an input stream</li>
+<li>percentage may be wrong when using multiple inputs with different durations and the first one is not the longest</li>
+</ul>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>)
+  .on(<span class="pl-s"><span class="pl-pds">'</span>progress<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">progress</span>) {
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>Processing: <span class="pl-pds">'</span></span> <span class="pl-k">+</span> progress.percent <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span>% done<span class="pl-pds">'</span></span>);
+  });</pre></div>
+
+<h4><a id="user-content-error-transcoding-error" class="anchor" href="#error-transcoding-error" aria-hidden="true"><span class="octicon octicon-link"></span></a>'error': transcoding error</h4>
+
+<p>The <code>error</code> event is emitted when an error occurs when running ffmpeg or when preparing its execution.  It is emitted with an error object as an argument.  If the error happened during ffmpeg execution, listeners will also receive two additional arguments containing ffmpegs stdout and stderr.</p>
+
+<p><strong>Warning</strong>: you should <em>always</em> set a handler for the <code>error</code> event, as node's default behaviour when an <code>error</code> event without any listeners is emitted is to output the error to the console and <em>terminate the program</em>.</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>)
+  .on(<span class="pl-s"><span class="pl-pds">'</span>error<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">err</span>, <span class="pl-smi">stdout</span>, <span class="pl-smi">stderr</span>) {
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>Cannot process video: <span class="pl-pds">'</span></span> <span class="pl-k">+</span> err.message);
+  });</pre></div>
+
+<h4><a id="user-content-end-processing-finished" class="anchor" href="#end-processing-finished" aria-hidden="true"><span class="octicon octicon-link"></span></a>'end': processing finished</h4>
+
+<p>The <code>end</code> event is emitted when processing has finished.  Listeners receive no arguments, except when generating thumbnails (see below), in which case they receive an array of the generated filenames.</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>)
+  .on(<span class="pl-s"><span class="pl-pds">'</span>end<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>() {
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>Transcoding succeeded !<span class="pl-pds">'</span></span>);
+  });</pre></div>
+
+<h3><a id="user-content-starting-ffmpeg-processing" class="anchor" href="#starting-ffmpeg-processing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Starting FFmpeg processing</h3>
+
+<h4><a id="user-content-savefilename-save-the-output-to-a-file" class="anchor" href="#savefilename-save-the-output-to-a-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>save(filename): save the output to a file</h4>
+
+<p><strong>Aliases</strong>: <code>saveToFile()</code></p>
+
+<p>Starts ffmpeg processing and saves the output to a file.</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>)
+  .videoCodec(<span class="pl-s"><span class="pl-pds">'</span>libx264<span class="pl-pds">'</span></span>)
+  .audioCodec(<span class="pl-s"><span class="pl-pds">'</span>libmp3lame<span class="pl-pds">'</span></span>)
+  .<span class="pl-c1">size</span>(<span class="pl-s"><span class="pl-pds">'</span>320x240<span class="pl-pds">'</span></span>)
+  .on(<span class="pl-s"><span class="pl-pds">'</span>error<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">err</span>) {
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>An error occurred: <span class="pl-pds">'</span></span> <span class="pl-k">+</span> err.message);
+  })
+  .on(<span class="pl-s"><span class="pl-pds">'</span>end<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>() {
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>Processing finished !<span class="pl-pds">'</span></span>);
+  })
+  .save(<span class="pl-s"><span class="pl-pds">'</span>/path/to/output.mp4<span class="pl-pds">'</span></span>);</pre></div>
+
+<p>Note: the <code>save()</code> method is actually syntactic sugar for calling both <code>output()</code> and <code>run()</code>.</p>
+
+<h4><a id="user-content-pipestream-options-pipe-the-output-to-a-writable-stream" class="anchor" href="#pipestream-options-pipe-the-output-to-a-writable-stream" aria-hidden="true"><span class="octicon octicon-link"></span></a>pipe([stream], [options]): pipe the output to a writable stream</h4>
+
+<p><strong>Aliases</strong>: <code>stream()</code>, <code>writeToStream()</code>.</p>
+
+<p>Starts processing and pipes ffmpeg output to a writable stream.  The <code>options</code> argument, if present, is passed to ffmpeg output stream's <code>pipe()</code> method (see nodejs documentation).</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-k">var</span> outStream <span class="pl-k">=</span> fs.createWriteStream(<span class="pl-s"><span class="pl-pds">'</span>/path/to/output.mp4<span class="pl-pds">'</span></span>);
+
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>)
+  .videoCodec(<span class="pl-s"><span class="pl-pds">'</span>libx264<span class="pl-pds">'</span></span>)
+  .audioCodec(<span class="pl-s"><span class="pl-pds">'</span>libmp3lame<span class="pl-pds">'</span></span>)
+  .<span class="pl-c1">size</span>(<span class="pl-s"><span class="pl-pds">'</span>320x240<span class="pl-pds">'</span></span>)
+  .on(<span class="pl-s"><span class="pl-pds">'</span>error<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">err</span>) {
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>An error occurred: <span class="pl-pds">'</span></span> <span class="pl-k">+</span> err.message);
+  })
+  .on(<span class="pl-s"><span class="pl-pds">'</span>end<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>() {
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>Processing finished !<span class="pl-pds">'</span></span>);
+  })
+  .pipe(outStream, { end<span class="pl-k">:</span> <span class="pl-c1">true</span> });</pre></div>
+
+<p>When no <code>stream</code> argument is present, the <code>pipe()</code> method returns a PassThrough stream, which you can pipe to somewhere else (or just listen to events on).</p>
+
+<p><strong>Note</strong>: this is only available with node &gt;= 0.10.</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-k">var</span> command <span class="pl-k">=</span> ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>)
+  .videoCodec(<span class="pl-s"><span class="pl-pds">'</span>libx264<span class="pl-pds">'</span></span>)
+  .audioCodec(<span class="pl-s"><span class="pl-pds">'</span>libmp3lame<span class="pl-pds">'</span></span>)
+  .<span class="pl-c1">size</span>(<span class="pl-s"><span class="pl-pds">'</span>320x240<span class="pl-pds">'</span></span>)
+  .on(<span class="pl-s"><span class="pl-pds">'</span>error<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">err</span>) {
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>An error occurred: <span class="pl-pds">'</span></span> <span class="pl-k">+</span> err.message);
+  })
+  .on(<span class="pl-s"><span class="pl-pds">'</span>end<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>() {
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>Processing finished !<span class="pl-pds">'</span></span>);
+  });
+
+<span class="pl-k">var</span> ffstream <span class="pl-k">=</span> command.pipe();
+ffstream.on(<span class="pl-s"><span class="pl-pds">'</span>data<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">chunk</span>) {
+  <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>ffmpeg just wrote <span class="pl-pds">'</span></span> <span class="pl-k">+</span> chunk.<span class="pl-c1">length</span> <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span> bytes<span class="pl-pds">'</span></span>);
+});</pre></div>
+
+<p>Note: the <code>stream()</code> method is actually syntactic sugar for calling both <code>output()</code> and <code>run()</code>.</p>
+
+<h4><a id="user-content-run-start-processing" class="anchor" href="#run-start-processing" aria-hidden="true"><span class="octicon octicon-link"></span></a>run(): start processing</h4>
+
+<p><strong>Aliases</strong>: <code>exec()</code>, <code>execute()</code>.</p>
+
+<p>This method is mainly useful when producing multiple outputs (otherwise the <code>save()</code> or <code>stream()</code> methods are more straightforward).  It starts processing with the specified outputs.</p>
+
+<p><strong>Warning</strong>: do not use <code>run()</code> when calling other processing methods (eg. <code>save()</code>, <code>pipe()</code> or <code>screenshots()</code>).</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>)
+  .output(<span class="pl-s"><span class="pl-pds">'</span>screenshot.png<span class="pl-pds">'</span></span>)
+  .noAudio()
+  .seek(<span class="pl-s"><span class="pl-pds">'</span>3:00<span class="pl-pds">'</span></span>)
+
+  .output(<span class="pl-s"><span class="pl-pds">'</span>small.avi<span class="pl-pds">'</span></span>)
+  .audioCodec(<span class="pl-s"><span class="pl-pds">'</span>copy<span class="pl-pds">'</span></span>)
+  .<span class="pl-c1">size</span>(<span class="pl-s"><span class="pl-pds">'</span>320x200<span class="pl-pds">'</span></span>)
+
+  .output(<span class="pl-s"><span class="pl-pds">'</span>big.avi<span class="pl-pds">'</span></span>)
+  .audioCodec(<span class="pl-s"><span class="pl-pds">'</span>copy<span class="pl-pds">'</span></span>)
+  .<span class="pl-c1">size</span>(<span class="pl-s"><span class="pl-pds">'</span>640x480<span class="pl-pds">'</span></span>)
+
+  .on(<span class="pl-s"><span class="pl-pds">'</span>error<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">err</span>) {
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>An error occurred: <span class="pl-pds">'</span></span> <span class="pl-k">+</span> err.message);
+  })
+  .on(<span class="pl-s"><span class="pl-pds">'</span>end<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>() {
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>Processing finished !<span class="pl-pds">'</span></span>);
+  })
+  .run();</pre></div>
+
+<h4><a id="user-content-mergetofilefilename-tmpdir-concatenate-multiple-inputs" class="anchor" href="#mergetofilefilename-tmpdir-concatenate-multiple-inputs" aria-hidden="true"><span class="octicon octicon-link"></span></a>mergeToFile(filename, tmpdir): concatenate multiple inputs</h4>
+
+<p>Use the <code>input</code> and <code>mergeToFile</code> methods on a command to concatenate multiple inputs to a single output file.  The <code>mergeToFile</code> needs a temporary folder as its second argument.</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/part1.avi<span class="pl-pds">'</span></span>)
+  .<span class="pl-c1">input</span>(<span class="pl-s"><span class="pl-pds">'</span>/path/to/part2.avi<span class="pl-pds">'</span></span>)
+  .<span class="pl-c1">input</span>(<span class="pl-s"><span class="pl-pds">'</span>/path/to/part2.avi<span class="pl-pds">'</span></span>)
+  .on(<span class="pl-s"><span class="pl-pds">'</span>error<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">err</span>) {
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>An error occurred: <span class="pl-pds">'</span></span> <span class="pl-k">+</span> err.message);
+  })
+  .on(<span class="pl-s"><span class="pl-pds">'</span>end<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>() {
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>Merging finished !<span class="pl-pds">'</span></span>);
+  })
+  .mergeToFile(<span class="pl-s"><span class="pl-pds">'</span>/path/to/merged.avi<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>/path/to/tempDir<span class="pl-pds">'</span></span>);</pre></div>
+
+<h4><a id="user-content-screenshotsoptions-dirname-generate-thumbnails" class="anchor" href="#screenshotsoptions-dirname-generate-thumbnails" aria-hidden="true"><span class="octicon octicon-link"></span></a>screenshots(options[, dirname]): generate thumbnails</h4>
+
+<p><strong>Aliases</strong>: <code>thumbnail()</code>, <code>thumbnails()</code>, <code>screenshot()</code>, <code>takeScreenshots()</code>.</p>
+
+<p>Use the <code>screenshots</code> method to extract one or several thumbnails and save them as PNG files.  There are a few caveats with this implementation, though:</p>
+
+<ul>
+<li>It will not work on input streams.</li>
+<li>Progress information reported by the <code>progress</code> event is not accurate.</li>
+<li>It doesn't interract well with filters.  In particular, don't use the <code>size()</code> method to resize thumbnails, use the <code>size</code> option instead.</li>
+</ul>
+
+<p>The <code>options</code> argument is an object with the following keys:</p>
+
+<ul>
+<li><code>folder</code>: output folder for generated image files.  Defaults to the current folder.</li>
+<li><code>filename</code>: output filename pattern (see below).  Defaults to "tn.png".</li>
+<li><code>count</code>: specifies how many thumbnails to generate.  When using this option, thumbnails are generated at regular intervals in the video (for example, when requesting 3 thumbnails, at 25%, 50% and 75% of the video length).  <code>count</code> is ignored when <code>timemarks</code> or <code>timestamps</code> is specified.</li>
+<li><code>timemarks</code> or <code>timestamps</code>: specifies an array of timestamps in the video where thumbnails should be taken.  Each timestamp may be a number (in seconds), a percentage string (eg. "50%") or a timestamp string with format "hh:mm:ss.xxx" (where hours, minutes and milliseconds are both optional).</li>
+<li><code>size</code>: specifies a target size for thumbnails (with the same format as the <code>.size()</code> method). <strong>Note:</strong> you should not use the <code>.size()</code> method when generating thumbnails.</li>
+</ul>
+
+<p>The <code>filename</code> option specifies a filename pattern for generated files.  It may contain the following format tokens:</p>
+
+<ul>
+<li>'%s': offset in seconds</li>
+<li>'%w': screenshot width</li>
+<li>'%h': screenshot height</li>
+<li>'%r': screenshot resolution (same as '%wx%h')</li>
+<li>'%f': input filename</li>
+<li>'%b': input basename (filename w/o extension)</li>
+<li>'%i': index of screenshot in timemark array (can be zero-padded by using it like <code>%000i</code>)</li>
+</ul>
+
+<p>If multiple timemarks are passed and no variable format token ('%s' or '%i') is specified in the filename pattern, <code>_%i</code> will be added automatically.</p>
+
+<p>When generating thumbnails, an additional <code>filenames</code> event is dispatched with an array of generated filenames as an argument.</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/video.avi<span class="pl-pds">'</span></span>)
+  .on(<span class="pl-s"><span class="pl-pds">'</span>filenames<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">filenames</span>) {
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>Will generate <span class="pl-pds">'</span></span> <span class="pl-k">+</span> filenames.<span class="pl-c1">join</span>(<span class="pl-s"><span class="pl-pds">'</span>, <span class="pl-pds">'</span></span>))
+  })
+  .on(<span class="pl-s"><span class="pl-pds">'</span>end<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>() {
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>Screenshots taken<span class="pl-pds">'</span></span>);
+  })
+  .screenshots({
+    <span class="pl-c">// Will take screens at 20%, 40%, 60% and 80% of the video</span>
+    count<span class="pl-k">:</span> <span class="pl-c1">4</span>,
+    folder<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>/path/to/output<span class="pl-pds">'</span></span>
+  });
+
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/video.avi<span class="pl-pds">'</span></span>)
+  .screenshots({
+    timestamps<span class="pl-k">:</span> [<span class="pl-c1">30.5</span>, <span class="pl-s"><span class="pl-pds">'</span>50%<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>01:10.123<span class="pl-pds">'</span></span>],
+    filename<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>thumbnail-at-%s-seconds.png<span class="pl-pds">'</span></span>,
+    folder<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>/path/to/output<span class="pl-pds">'</span></span>,
+    size<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>320x240<span class="pl-pds">'</span></span>
+  });</pre></div>
+
+<h3><a id="user-content-controlling-the-ffmpeg-process" class="anchor" href="#controlling-the-ffmpeg-process" aria-hidden="true"><span class="octicon octicon-link"></span></a>Controlling the FFmpeg process</h3>
+
+<h4><a id="user-content-killsignalsigkill-kill-any-running-ffmpeg-process" class="anchor" href="#killsignalsigkill-kill-any-running-ffmpeg-process" aria-hidden="true"><span class="octicon octicon-link"></span></a>kill([signal='SIGKILL']): kill any running ffmpeg process</h4>
+
+<p>This method sends <code>signal</code> (defaults to 'SIGKILL') to the ffmpeg process.  It only has sense when processing has started.  Sending a signal that terminates the process will result in the <code>error</code> event being emitted.</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-k">var</span> command <span class="pl-k">=</span> ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/video.avi<span class="pl-pds">'</span></span>)
+  .videoCodec(<span class="pl-s"><span class="pl-pds">'</span>libx264<span class="pl-pds">'</span></span>)
+  .audioCodec(<span class="pl-s"><span class="pl-pds">'</span>libmp3lame<span class="pl-pds">'</span></span>)
+  .on(<span class="pl-s"><span class="pl-pds">'</span>start<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>() {
+    <span class="pl-c">// Send SIGSTOP to suspend ffmpeg</span>
+    command.kill(<span class="pl-s"><span class="pl-pds">'</span>SIGSTOP<span class="pl-pds">'</span></span>);
+
+    doSomething(<span class="pl-k">function</span>() {
+      <span class="pl-c">// Send SIGCONT to resume ffmpeg</span>
+      command.kill(<span class="pl-s"><span class="pl-pds">'</span>SIGCONT<span class="pl-pds">'</span></span>);
+    });
+  })
+  .save(<span class="pl-s"><span class="pl-pds">'</span>/path/to/output.mp4<span class="pl-pds">'</span></span>);
+
+<span class="pl-c">// Kill ffmpeg after 60 seconds anyway</span>
+<span class="pl-c1">setTimeout</span>(<span class="pl-k">function</span>() {
+  command.on(<span class="pl-s"><span class="pl-pds">'</span>error<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>() {
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>Ffmpeg has been killed<span class="pl-pds">'</span></span>);
+  });
+
+  command.kill();
+}, <span class="pl-c1">60000</span>);</pre></div>
+
+<h4><a id="user-content-reniceniceness0-change-ffmpeg-process-priority" class="anchor" href="#reniceniceness0-change-ffmpeg-process-priority" aria-hidden="true"><span class="octicon octicon-link"></span></a>renice([niceness=0]): change ffmpeg process priority</h4>
+
+<p>This method alters the niceness (priority) value of any running ffmpeg process (if any) and any process spawned in the future.  The <code>niceness</code> parameter may range from -20 (highest priority) to 20 (lowest priority) and defaults to 0 (which is the default process niceness on most *nix systems).</p>
+
+<p><strong>Note</strong>: this method is ineffective on Windows platforms.</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-c">// Set startup niceness</span>
+<span class="pl-k">var</span> command <span class="pl-k">=</span> ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>)
+  .renice(<span class="pl-c1">5</span>)
+  .save(<span class="pl-s"><span class="pl-pds">'</span>/path/to/output.mp4<span class="pl-pds">'</span></span>);
+
+<span class="pl-c">// Command takes too long, raise its priority</span>
+<span class="pl-c1">setTimeout</span>(<span class="pl-k">function</span>() {
+  command.renice(<span class="pl-k">-</span><span class="pl-c1">5</span>);
+}, <span class="pl-c1">60000</span>);</pre></div>
+
+<h3><a id="user-content-reading-video-metadata" class="anchor" href="#reading-video-metadata" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reading video metadata</h3>
+
+<p>You can read metadata from any valid ffmpeg input file with the modules <code>ffprobe</code> method.</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg.ffprobe(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">err</span>, <span class="pl-smi">metadata</span>) {
+    <span class="pl-en">console</span>.<span class="pl-c1">dir</span>(metadata);
+});</pre></div>
+
+<p>You may also call the ffprobe method on an FfmpegCommand to probe one of its input.  You may pass a 0-based input number as a first argument to specify which input to read metadata from, otherwise the method will probe the last added input.</p>
+
+<div class="highlight highlight-js"><pre>ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file1.avi<span class="pl-pds">'</span></span>)
+  .<span class="pl-c1">input</span>(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file2.avi<span class="pl-pds">'</span></span>)
+  .ffprobe(<span class="pl-k">function</span>(<span class="pl-smi">err</span>, <span class="pl-smi">data</span>) {
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>file2 metadata:<span class="pl-pds">'</span></span>);
+    <span class="pl-en">console</span>.<span class="pl-c1">dir</span>(data);
+  });
+
+ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file1.avi<span class="pl-pds">'</span></span>)
+  .<span class="pl-c1">input</span>(<span class="pl-s"><span class="pl-pds">'</span>/path/to/file2.avi<span class="pl-pds">'</span></span>)
+  .ffprobe(<span class="pl-c1">0</span>, <span class="pl-k">function</span>(<span class="pl-smi">err</span>, <span class="pl-smi">data</span>) {
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>file1 metadata:<span class="pl-pds">'</span></span>);
+    <span class="pl-en">console</span>.<span class="pl-c1">dir</span>(data);
+  });</pre></div>
+
+<p>The returned object is the same that is returned by running the following command from your shell (depending on your ffmpeg version you may have to replace <code>-of</code> with <code>-print_format</code>) :</p>
+
+<div class="highlight highlight-sh"><pre>$ ffprobe -of json -show_streams -show_format /path/to/file.avi</pre></div>
+
+<p>It will contain information about the container (as a <code>format</code> key) and an array of streams (as a <code>stream</code> key).  The format object and each stream object also contains metadata tags, depending on the format:</p>
+
+<div class="highlight highlight-js"><pre>{
+  <span class="pl-s"><span class="pl-pds">"</span>streams<span class="pl-pds">"</span></span><span class="pl-k">:</span> [
+    {
+      <span class="pl-s"><span class="pl-pds">"</span>index<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">0</span>,
+      <span class="pl-s"><span class="pl-pds">"</span>codec_name<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>h264<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>codec_long_name<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>profile<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Constrained Baseline<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>codec_type<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>video<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>codec_time_base<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>1/48<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>codec_tag_string<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>avc1<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>codec_tag<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>0x31637661<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>width<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">320</span>,
+      <span class="pl-s"><span class="pl-pds">"</span>height<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">180</span>,
+      <span class="pl-s"><span class="pl-pds">"</span>has_b_frames<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">0</span>,
+      <span class="pl-s"><span class="pl-pds">"</span>sample_aspect_ratio<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>1:1<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>display_aspect_ratio<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>16:9<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>pix_fmt<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>yuv420p<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>level<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">13</span>,
+      <span class="pl-s"><span class="pl-pds">"</span>r_frame_rate<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>24/1<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>avg_frame_rate<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>24/1<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>time_base<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>1/24<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>start_pts<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">0</span>,
+      <span class="pl-s"><span class="pl-pds">"</span>start_time<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>0.000000<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>duration_ts<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">14315</span>,
+      <span class="pl-s"><span class="pl-pds">"</span>duration<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>596.458333<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>bit_rate<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>702655<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>nb_frames<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>14315<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>disposition<span class="pl-pds">"</span></span><span class="pl-k">:</span> {
+        <span class="pl-s"><span class="pl-pds">"</span>default<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">0</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>dub<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">0</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>original<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">0</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>comment<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">0</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>lyrics<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">0</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>karaoke<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">0</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>forced<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">0</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>hearing_impaired<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">0</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>visual_impaired<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">0</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>clean_effects<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">0</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>attached_pic<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">0</span>
+      },
+      <span class="pl-s"><span class="pl-pds">"</span>tags<span class="pl-pds">"</span></span><span class="pl-k">:</span> {
+        <span class="pl-s"><span class="pl-pds">"</span>creation_time<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>1970-01-01 00:00:00<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>language<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>und<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>handler_name<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\f</span>VideoHandler<span class="pl-pds">"</span></span>
+      }
+    },
+    {
+      <span class="pl-s"><span class="pl-pds">"</span>index<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">1</span>,
+      <span class="pl-s"><span class="pl-pds">"</span>codec_name<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>aac<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>codec_long_name<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>AAC (Advanced Audio Coding)<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>codec_type<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>audio<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>codec_time_base<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>1/48000<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>codec_tag_string<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>mp4a<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>codec_tag<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>0x6134706d<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>sample_fmt<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>fltp<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>sample_rate<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>48000<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>channels<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">2</span>,
+      <span class="pl-s"><span class="pl-pds">"</span>bits_per_sample<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">0</span>,
+      <span class="pl-s"><span class="pl-pds">"</span>r_frame_rate<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>0/0<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>avg_frame_rate<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>0/0<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>time_base<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>1/48000<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>start_pts<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">0</span>,
+      <span class="pl-s"><span class="pl-pds">"</span>start_time<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>0.000000<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>duration_ts<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">28619776</span>,
+      <span class="pl-s"><span class="pl-pds">"</span>duration<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>596.245333<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>bit_rate<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>159997<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>nb_frames<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>27949<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>disposition<span class="pl-pds">"</span></span><span class="pl-k">:</span> {
+        <span class="pl-s"><span class="pl-pds">"</span>default<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">0</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>dub<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">0</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>original<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">0</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>comment<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">0</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>lyrics<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">0</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>karaoke<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">0</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>forced<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">0</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>hearing_impaired<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">0</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>visual_impaired<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">0</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>clean_effects<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">0</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>attached_pic<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">0</span>
+      },
+      <span class="pl-s"><span class="pl-pds">"</span>tags<span class="pl-pds">"</span></span><span class="pl-k">:</span> {
+        <span class="pl-s"><span class="pl-pds">"</span>creation_time<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>1970-01-01 00:00:00<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>language<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>und<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>handler_name<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\f</span>SoundHandler<span class="pl-pds">"</span></span>
+      }
+    }
+  ],
+  <span class="pl-s"><span class="pl-pds">"</span>format<span class="pl-pds">"</span></span><span class="pl-k">:</span> {
+    <span class="pl-s"><span class="pl-pds">"</span>filename<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>nb_streams<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>format_name<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>mov,mp4,m4a,3gp,3g2,mj2<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>format_long_name<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>QuickTime / MOV<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>start_time<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>0.000000<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>duration<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>596.459000<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>size<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>64657027<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>bit_rate<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>867211<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>tags<span class="pl-pds">"</span></span><span class="pl-k">:</span> {
+      <span class="pl-s"><span class="pl-pds">"</span>major_brand<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>isom<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>minor_version<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>512<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>compatible_brands<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>mp41<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>creation_time<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>1970-01-01 00:00:00<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>title<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Big Buck Bunny<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>artist<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Blender Foundation<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>composer<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Blender Foundation<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>date<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>2008<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>encoder<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Lavf52.14.0<span class="pl-pds">"</span></span>
+    }
+  }
+}</pre></div>
+
+<h3><a id="user-content-querying-ffmpeg-capabilities" class="anchor" href="#querying-ffmpeg-capabilities" aria-hidden="true"><span class="octicon octicon-link"></span></a>Querying ffmpeg capabilities</h3>
+
+<p>fluent-ffmpeg enables you to query your installed ffmpeg version for supported formats, codecs, encoders and filters.</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-k">var</span> Ffmpeg <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>fluent-ffmpeg<span class="pl-pds">'</span></span>);
+
+Ffmpeg.getAvailableFormats(<span class="pl-k">function</span>(<span class="pl-smi">err</span>, <span class="pl-smi">formats</span>) {
+  <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>Available formats:<span class="pl-pds">'</span></span>);
+  <span class="pl-en">console</span>.<span class="pl-c1">dir</span>(formats);
+});
+
+Ffmpeg.getAvailableCodecs(<span class="pl-k">function</span>(<span class="pl-smi">err</span>, <span class="pl-smi">codecs</span>) {
+  <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>Available codecs:<span class="pl-pds">'</span></span>);
+  <span class="pl-en">console</span>.<span class="pl-c1">dir</span>(codecs);
+});
+
+Ffmpeg.getAvailableEncoders(<span class="pl-k">function</span>(<span class="pl-smi">err</span>, <span class="pl-smi">encoders</span>) {
+  <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>Available encoders:<span class="pl-pds">'</span></span>);
+  <span class="pl-en">console</span>.<span class="pl-c1">dir</span>(encoders);
+});
+
+Ffmpeg.getAvailableFilters(<span class="pl-k">function</span>(<span class="pl-smi">err</span>, <span class="pl-smi">filters</span>) {
+  <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">"</span>Available filters:<span class="pl-pds">"</span></span>);
+  <span class="pl-en">console</span>.<span class="pl-c1">dir</span>(filters);
+});
+
+<span class="pl-c">// Those methods can also be called on commands</span>
+<span class="pl-k">new</span> <span class="pl-en">Ffmpeg</span>({ source<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>/path/to/file.avi<span class="pl-pds">'</span></span> })
+  .getAvailableCodecs(...);</pre></div>
+
+<p>These methods pass an object to their callback with keys for each available format, codec or filter.</p>
+
+<p>The returned object for formats looks like:</p>
+
+<div class="highlight highlight-js"><pre>{
+  ...
+  mp4<span class="pl-k">:</span> {
+    description<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>MP4 (MPEG-4 Part 14)<span class="pl-pds">'</span></span>,
+    canDemux<span class="pl-k">:</span> <span class="pl-c1">false</span>,
+    canMux<span class="pl-k">:</span> <span class="pl-c1">true</span>
+  },
+  ...
+}</pre></div>
+
+<ul>
+<li><code>canDemux</code> indicates whether ffmpeg is able to extract streams from (demux) this format</li>
+<li><code>canMux</code> indicates whether ffmpeg is able to write streams into (mux) this format</li>
+</ul>
+
+<p>The returned object for codecs looks like:</p>
+
+<div class="highlight highlight-js"><pre>{
+  ...
+  mp3<span class="pl-k">:</span> {
+    type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>audio<span class="pl-pds">'</span></span>,
+    description<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>MP3 (MPEG audio layer 3)<span class="pl-pds">'</span></span>,
+    canDecode<span class="pl-k">:</span> <span class="pl-c1">true</span>,
+    canEncode<span class="pl-k">:</span> <span class="pl-c1">true</span>,
+    intraFrameOnly<span class="pl-k">:</span> <span class="pl-c1">false</span>,
+    isLossy<span class="pl-k">:</span> <span class="pl-c1">true</span>,
+    isLossless<span class="pl-k">:</span> <span class="pl-c1">false</span>
+  },
+  ...
+}</pre></div>
+
+<ul>
+<li><code>type</code> indicates the codec type, either "audio", "video" or "subtitle"</li>
+<li><code>canDecode</code> tells whether ffmpeg is able to decode streams using this codec</li>
+<li><code>canEncode</code> tells whether ffmpeg is able to encode streams using this codec</li>
+</ul>
+
+<p>Depending on your ffmpeg version (or if you use avconv instead) other keys may be present, for example:</p>
+
+<ul>
+<li><code>directRendering</code> tells if codec can render directly in GPU RAM; useless for transcoding purposes</li>
+<li><code>intraFrameOnly</code> tells if codec can only work with I-frames</li>
+<li><code>isLossy</code> tells if codec can do lossy encoding/decoding</li>
+<li><code>isLossless</code> tells if codec can do lossless encoding/decoding</li>
+</ul>
+
+<p>With some ffmpeg/avcodec versions, the description includes encoder/decoder mentions in the form "Foo codec (decoders: libdecodefoo) (encoders: libencodefoo)".  In this case you will want to use those encoders/decoders instead (the codecs object returned by <code>getAvailableCodecs</code> will also include them).</p>
+
+<p>The returned object for encoders looks like:</p>
+
+<div class="highlight highlight-js"><pre>{
+  ...
+  libmp3lame<span class="pl-k">:</span> {
+    type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>audio<span class="pl-pds">'</span></span>,
+    description<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>MP3 (MPEG audio layer 3) (codec mp3)<span class="pl-pds">'</span></span>,
+    frameMT<span class="pl-k">:</span> <span class="pl-c1">false</span>,
+    sliceMT<span class="pl-k">:</span> <span class="pl-c1">false</span>,
+    experimental<span class="pl-k">:</span> <span class="pl-c1">false</span>,
+    drawHorizBand<span class="pl-k">:</span> <span class="pl-c1">false</span>,
+    directRendering<span class="pl-k">:</span> <span class="pl-c1">false</span>
+  },
+  ...
+}</pre></div>
+
+<ul>
+<li><code>type</code> indicates the encoder type, either "audio", "video" or "subtitle"</li>
+<li><code>experimental</code> indicates whether the encoder is experimental.  When using such a codec, fluent-ffmpeg automatically adds the '-strict experimental' flag.</li>
+</ul>
+
+<p>The returned object for filters looks like:</p>
+
+<div class="highlight highlight-js"><pre>{
+  ...
+  scale<span class="pl-k">:</span> {
+    description<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Scale the input video to width:height size and/or convert the image format.<span class="pl-pds">'</span></span>,
+    input<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>video<span class="pl-pds">'</span></span>,
+    multipleInputs<span class="pl-k">:</span> <span class="pl-c1">false</span>,
+    output<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>video<span class="pl-pds">'</span></span>,
+    multipleOutputs<span class="pl-k">:</span> <span class="pl-c1">false</span>
+  },
+  ...
+}</pre></div>
+
+<ul>
+<li><code>input</code> tells the input type this filter operates on, one of "audio", "video" or "none".  When "none", the filter likely generates output from nothing</li>
+<li><code>multipleInputs</code> tells whether the filter can accept multiple inputs</li>
+<li><code>output</code> tells the output type this filter generates, one of "audio", "video" or "none".  When "none", the filter has no output (sink only)</li>
+<li><code>multipleInputs</code> tells whether the filter can generate multiple outputs</li>
+</ul>
+
+<h3><a id="user-content-cloning-an-ffmpegcommand" class="anchor" href="#cloning-an-ffmpegcommand" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cloning an FfmpegCommand</h3>
+
+<p>You can create clones of an FfmpegCommand instance by calling the <code>clone()</code> method.  The clone will be an exact copy of the original at the time it has been called (same inputs, same options, same event handlers, etc.).  This is mainly useful when you want to apply different processing options on the same input.</p>
+
+<p>Setting options, adding inputs or event handlers on a clone will not affect the original command.</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-c">// Create a command to convert source.avi to MP4</span>
+<span class="pl-k">var</span> command <span class="pl-k">=</span> ffmpeg(<span class="pl-s"><span class="pl-pds">'</span>/path/to/source.avi<span class="pl-pds">'</span></span>)
+  .audioCodec(<span class="pl-s"><span class="pl-pds">'</span>libfaac<span class="pl-pds">'</span></span>)
+  .videoCodec(<span class="pl-s"><span class="pl-pds">'</span>libx264<span class="pl-pds">'</span></span>)
+  .format(<span class="pl-s"><span class="pl-pds">'</span>mp4<span class="pl-pds">'</span></span>);
+
+<span class="pl-c">// Create a clone to save a small resized version</span>
+command.clone()
+  .<span class="pl-c1">size</span>(<span class="pl-s"><span class="pl-pds">'</span>320x200<span class="pl-pds">'</span></span>)
+  .save(<span class="pl-s"><span class="pl-pds">'</span>/path/to/output-small.mp4<span class="pl-pds">'</span></span>);
+
+<span class="pl-c">// Create a clone to save a medium resized version</span>
+command.clone()
+  .<span class="pl-c1">size</span>(<span class="pl-s"><span class="pl-pds">'</span>640x400<span class="pl-pds">'</span></span>)
+  .save(<span class="pl-s"><span class="pl-pds">'</span>/path/to/output-medium.mp4<span class="pl-pds">'</span></span>);
+
+<span class="pl-c">// Save a converted version with the original size</span>
+command.save(<span class="pl-s"><span class="pl-pds">'</span>/path/to/output-original-size.mp4<span class="pl-pds">'</span></span>);</pre></div>
+
+<h2><a id="user-content-contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h2>
+
+<p>Contributions in any form are highly encouraged and welcome! Be it new or improved presets, optimized streaming code or just some cleanup. So start forking!</p>
+
+<h3><a id="user-content-code-contributions" class="anchor" href="#code-contributions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Code contributions</h3>
+
+<p>If you want to add new features or change the API, please submit an issue first to make sure no one else is already working on the same thing and discuss the implementation and API details with maintainers and users by creating an issue.  When everything is settled down, you can submit a pull request.</p>
+
+<p>When fixing bugs, you can directly submit a pull request.</p>
+
+<p>Make sure to add tests for your features and bugfixes and update the documentation (see below) before submitting your code!</p>
+
+<h3><a id="user-content-documentation-contributions" class="anchor" href="#documentation-contributions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation contributions</h3>
+
+<p>You can directly submit pull requests for documentation changes.  Make sure to regenerate the documentation before submitting (see below).</p>
+
+<h3><a id="user-content-updating-the-documentation" class="anchor" href="#updating-the-documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Updating the documentation</h3>
+
+<p>When contributing API changes (new methods for example), be sure to update the README file and JSDoc comments in the code.  fluent-ffmpeg comes with a plugin that enables two additional JSDoc tags:</p>
+
+<ul>
+<li><code>@aliases</code>: document method aliases</li>
+</ul>
+
+<div class="highlight highlight-js"><pre><span class="pl-c">/**</span>
+<span class="pl-c"> * ...</span>
+<span class="pl-c"> * <span class="pl-k">@method</span> FfmpegCommand#myMethod</span>
+<span class="pl-c"> * @aliases myMethodAlias,myOtherMethodAlias</span>
+<span class="pl-c"> */</span></pre></div>
+
+<ul>
+<li><code>@category</code>: set method category</li>
+</ul>
+
+<div class="highlight highlight-js"><pre><span class="pl-c">/**</span>
+<span class="pl-c"> * ...</span>
+<span class="pl-c"> * @category Audio</span>
+<span class="pl-c"> */</span></pre></div>
+
+<p>You can regenerate the JSDoc documentation by running the following command:</p>
+
+<div class="highlight highlight-sh"><pre>$ make doc</pre></div>
+
+<p>To avoid polluting the commit history, make sure to only commit the regenerated JSDoc once and in a specific commit.</p>
+
+<h3><a id="user-content-running-tests" class="anchor" href="#running-tests" aria-hidden="true"><span class="octicon octicon-link"></span></a>Running tests</h3>
+
+<p>To run unit tests, first make sure you installed npm dependencies (run <code>npm install</code>).</p>
+
+<div class="highlight highlight-sh"><pre>$ make <span class="pl-c1">test</span></pre></div>
+
+<p>If you want to re-generate the test coverage report (filed under test/coverage.html), run</p>
+
+<div class="highlight highlight-sh"><pre>$ make <span class="pl-c1">test</span>-cov</pre></div>
+
+<p>Make sure your ffmpeg installation is up-to-date to prevent strange assertion errors because of missing codecs/bugfixes.</p>
+
+<h2><a id="user-content-main-contributors" class="anchor" href="#main-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Main contributors</h2>
+
+<ul>
+<li><a href="http://github.com/enobrev">enobrev</a></li>
+<li><a href="http://github.com/njoyard">njoyard</a></li>
+<li><a href="http://github.com/sadikzzz">sadikzzz</a></li>
+<li><a href="http://github.com/smremde">smremde</a></li>
+<li><a href="http://github.com/spruce">spruce</a></li>
+<li><a href="http://github.com/tagedieb">tagedieb</a></li>
+<li><a href="http://github.com/tommadema">tommadema</a></li>
+<li><a href="http://github.com/Weltschmerz">Weltschmerz</a></li>
+</ul>
+
+<h2><a id="user-content-license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>(The MIT License)</p>
+
+<p>Copyright (c) 2011 Stefan Schaermeli &lt;<a href="mailto:schaermu@gmail.com">schaermu@gmail.com</a>&gt;</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+</article>
+  </div>
+
+
+          </div>
+        </div>
+        <div class="modal-backdrop"></div>
+      </div>
+  </div>
+
+
+    </div><!-- /.wrapper -->
+
+      <div class="container">
+  <div class="site-footer" role="contentinfo">
+    <ul class="site-footer-links right">
+        <li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+      <li><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
+      <li><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+        <li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
+        <li><a href="https://help.github.com" data-ga-click="Footer, go to help, text:help">Help</a></li>
+
+    </ul>
+
+    <a href="https://github.com" aria-label="Homepage">
+      <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+</a>
+    <ul class="site-footer-links">
+      <li>&copy; 2015 <span title="0.05535s from github-fe128-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+        <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+        <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+        <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
+        <li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact</a></li>
+    </ul>
+  </div>
+</div>
+
+
+    <div class="fullscreen-overlay js-fullscreen-overlay" id="fullscreen_overlay">
+  <div class="fullscreen-container js-suggester-container">
+    <div class="textarea-wrap">
+      <textarea name="fullscreen-contents" id="fullscreen-contents" class="fullscreen-contents js-fullscreen-contents" placeholder="" aria-label=""></textarea>
+      <div class="suggester-container">
+        <div class="suggester fullscreen-suggester js-suggester js-navigation-container"></div>
+      </div>
+    </div>
+  </div>
+  <div class="fullscreen-sidebar">
+    <a href="#" class="exit-fullscreen js-exit-fullscreen tooltipped tooltipped-w" aria-label="Exit Zen Mode">
+      <span class="mega-octicon octicon-screen-normal"></span>
+    </a>
+    <a href="#" class="theme-switcher js-theme-switcher tooltipped tooltipped-w"
+      aria-label="Switch themes">
+      <span class="octicon octicon-color-mode"></span>
+    </a>
+  </div>
+</div>
+
+
+
+    
+    
+    
+
+    <div id="ajax-error-message" class="flash flash-error">
+      <span class="octicon octicon-alert"></span>
+      <a href="#" class="octicon octicon-x flash-close js-ajax-error-dismiss" aria-label="Dismiss error"></a>
+      Something went wrong with that request. Please try again.
+    </div>
+
+
+      <script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/frameworks-60fa9d481f93b9638a55282fc13cd1e893f5da608855190c2259c5b35883105c.js"></script>
+      <script async="async" crossorigin="anonymous" src="https://assets-cdn.github.com/assets/github/index-4864e54542a25a0f1dc884a414b7fee9b624d1717ce4a61500d1e23907a794ac.js"></script>
+      
+      
+  </body>
+</html>
+

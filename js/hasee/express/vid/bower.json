@@ -1,0 +1,31 @@
+{
+  "name": "video client test",
+  "version": "0.0.1",
+  "homepage": "''",
+  "authors": [
+    "andrew <bin1510@gmail.com>"
+  ],
+  "description": "test video.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "andrew",
+    "video",
+    "test"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "jquery": "~2.1.4",
+    "jplayer": "~2.9.2",
+    "mediaelement": "~2.18.1"
+  }
+}
