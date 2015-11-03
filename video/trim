@@ -1,0 +1,25 @@
+
+ffmpeg -ss 03:21.00 -i boat-to.mp4 -t 00:13.00 -c:v copy -c:a copy 321.mp4
+
+
+ffmpeg -i boat-to.mp4 -filter_complex \
+"[0:v]trim=duration=3[av];\
+ [0:a]atrim=duration=3[aa];\
+ [0:v]trim=start=8:end=35,setpts=PTS-STARTPTS[bv];\
+ [0:a]atrim=start=8:end=35,asetpts=PTS-STARTPTS[ba];\
+ [av][bv]concat[cv];\
+ [aa][ba]concat=v=0:a=1[ca];\
+ [0:v]trim=start=51:end=53,setpts=PTS-STARTPTS[dv];\
+ [0:a]atrim=start=51:end=53,asetpts=PTS-STARTPTS[da];\
+ [cv][dv]concat[outv];[ca][da]concat=v=0:a=1[outa]"\
+ -map [outv] -map [outa]  oa.mp4
+
+
+
+
+# trim
+
+     ffmpeg -i movie.mp4 -vf trim=3:8 cut.mp4
+
+     Drop everything except from second 3 to second 8.
+

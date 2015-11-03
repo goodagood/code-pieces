@@ -1,0 +1,44 @@
+
+# Linux capture
+
+Use the x11grab device:
+
+    ffmpeg -video_size 1024x576 -framerate 30 -f x11grab -i :0.0+100,200 output.mp4
+
+    # 16:9 >> 1024x576, 1920x1080
+    #  4:3 >> 1024x768
+
+This will grab the image from desktop, starting with the upper-left corner at
+(x=100, y=200) with the width and height of 1024x768.
+
+If you need audio too you can use ALSA (see Capture/ALSA for more info):
+
+    ffmpeg -video_size 1024x768 -framerate 25 -f x11grab -i :0.0+100,200 -f alsa -ac 2 -i hw:0 output.mkv
+
+Or the pulse input device:
+
+    ffmpeg -video_size 1024x768 -framerate 25 -f x11grab -i :0.0+100,200 -f pulse -ac 2 -i default output.mkv
+
+
+Lossless recording
+
+If you want a perfect recording of your desktop, x264 can help. Use lossless encoding, e.g.:
+
+    ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 -c:v libx264 -qp 0 -preset ultrafast capture.mkv
+
+-qp 0 tells x264 to encode in lossless mode, -preset ultrafast advises it to do so fast.
+
+The encoder should be fast enough on most modern hardware to record without any
+framedrop, and even leave enough CPU headroom for other applications.
+
+If you're going to archive the recording or are concerned about file size,
+re-encode it losslessly again but with a slower preset. Note that since the
+initial recording was lossless, and the re-encode is lossless too, no quality
+loss is introduced in this process in any way.
+
+    ffmpeg -i capture.mkv -c:v libx264 -qp 0 -preset veryslow capture_smaller.mkv
+
+See Encode/H.264 for more info and examples. 
+
+
+

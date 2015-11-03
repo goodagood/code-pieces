@@ -1,0 +1,19 @@
+
+<h1> ok? </h1>
+<div class="form-wrapper">
+    <form name="upload_file" action="/up/a" method="post" enctype="multipart/form-data">
+        <input id="input-file" type="file" name="file" multiple="">
+        <br>
+
+        <div id="to-up-fn">
+            <p id="selected_file_names"> </p>
+        </div>
+
+        <!-- now, we are not going to give file_path_uuid, 2015 0922 -->
+        <input type="hidden" name="file_path_uuid" id="file_path_uuid"  value="{{{file_path_uuid}}}" >
+
+        <input type="hidden" name="file_full_path" id="file_full_path"  value="{{{file_full_path}}}" >
+
+        <input type="submit" value="Upload" id="submit">
+    </form>
+</div>

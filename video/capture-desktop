@@ -1,0 +1,40 @@
+
+# screen capture
+
+  #passed, I used the following:
+  # with sound:
+  ffmpeg -video_size 1024x576  -framerate 25 -f x11grab -i  :0.0+100,100 -f alsa -ac 2 -i hw:0  to3m.mp4
+  # without sound, with x264:
+  ffmpeg -video_size 1024x576  -framerate 30 -f x11grab -i  :0.0+100,100  -c:v libx264 -qp 0  -preset ultrafast  a2121.mp4
+  # without sound, without x264:
+  ffmpeg -video_size 1024x576  -framerate 29 -f x11grab -i  :0.0+100,100 -f pulse -ac 2 -i default t32.mp4
+
+  # not pass:
+  # unknow libx264 in lubuntu
+  ffmpeg -video_size 1024x576  -framerate 30 -f x11grab \
+         -i  :0.0+100,100  -c:v libx264 -qp 0 \
+         -preset ultrafast  -f pulse -ac 2 -i default tt.mp4
+    
+  ffmpeg -video_size 1024x576  -framerate 29 -f x11grab -i  :0.0+100,100 -f alsa -ac 2 -i hw:0  to3m.mp4
+
+
+Linux
+
+Use the x11grab device:
+
+    ffmpeg -video_size 1024x768 -framerate 25 -f x11grab -i :0.0+100,200 output.mp4
+
+This will grab the image from desktop, starting with the upper-left corner at
+(x=100, y=200) with the width and height of 1024x768.
+
+If you need audio too you can use ALSA (see Capture/ALSA for more info):
+
+    ffmpeg -video_size 1024x768 -framerate 25 -f x11grab -i :0.0+100,200 -f alsa -ac 2 -i hw:0 output.mkv
+
+Or the pulse input device:
+
+    ffmpeg -video_size 1024x768 -framerate 25 -f x11grab -i :0.0+100,200 -f pulse -ac 2 -i default output.mkv
+
+
+
+

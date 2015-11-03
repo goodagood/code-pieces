@@ -5,16 +5,17 @@
     "asap": "~1.0.0",
     "async": "~0.9.0",
     "bluebird": "~2.3.2",
-    "gm": "~1.16.0",
+    "gm": "^1.16.0",
     "highlight.js": "~8.4.0",
     "jade": "^1.8.2",
     "markdown": "~0.5.0",
     "marked": "~0.3.2",
+    "node-static": "^0.7.7",
     "node-uuid": "~1.4.1",
     "promise": "~6.0.0",
     "pygmentize-bundled": "~2.3.0",
     "q": "~1.0.1",
     "request": "^2.56.0",
-    "underscore": "*"
+    "underscore": "^1.8.3"
   }
 }

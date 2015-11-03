@@ -2,8 +2,29 @@ require 'net/http'
 
 url = 'http://www.goodagood.com'
 url = 'http://www.cliki.com'
-url = 'http://www.jquery.com'
+url = 'http://www.wikipedia.org/'
+url = 'http://www.sohu.com/'
+
 res = Net::HTTP.get_response(URI.parse(url))
 
-p res
+#p res
 text = res.body
+p text
+
+
+# testing hash:
+#a = {
+#    "a" => 1,
+#    "b" => 2
+#}
+#
+#p a
+
+
+#Net::HTTP.version_1_2
+#Net::HTTP.start('www.sohu.com', 80) {|http|
+#    response = http.get('/index.html')
+#    puts response.body
+#}
+
+

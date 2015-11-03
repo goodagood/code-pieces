@@ -1,0 +1,64 @@
+
+http://unix.stackexchange.com/questions/159094/install-from-a-deb-file-by-dpkg-i-or-by-apt
+
+Install from a deb file, by dpkg -i or by apt?
+
+
+I have a deb package for installation.
+
+Shall I install by dpkg -i my.deb, or by apt?
+
+Will both handle the software dependency problem well?
+
+If by apt, how can I install from the deb by apt?
+software-installation apt dpkg deb
+shareimprove this question
+
+edited Oct 4 '14 at 0:52
+Tshepang
+13.2k39129214
+
+asked Oct 3 '14 at 15:52
+Tim
+7,9432272146
+
+
+
+You could use aptitude which removes unnecessary packages as well. –  Ramesh Oct 3 '14 at 16:12
+
+
+I recommend not to directly use dpkg. In case of single deb, go with gdebi and in case of multiple debs, go for APT local repository. –  Pandya Apr 18 at 10:53
+2    
+    
+    why ......... @Pandya –  Tim Apr 18 at 10:57
+         
+            
+            @Tim because dpkg doesn't resolve dependencies. –  Pandya Apr 18 at 11:05
+                 
+                    
+                    @Tim gdebi identifies missing dependencies, can download & install (using apt),can install & configure (using dpkg). –  Pandya Apr 18 at 11:12
+                    add a comment
+                    4 Answers
+                    active
+                    oldest
+                    votes
+                    up vote
+                    20
+                    down vote
+                        
+
+                        When you use apt to install a package, internally it uses dpkg. When you install a package using apt it first creates a list of all the dependencies and downloads it from the repository.
+
+                        Once the download is finished it calls dpkg to install all those files, satisfying all the dependencies.
+
+                        So if you have a .deb file:
+
+                            You can install it using sudo dpkg -i /path/to/deb/file followed by sudo apt-get install -f.
+
+                                You can install it using apt-get install package_name. But first move your deb file to /var/cache/apt/archives/ directory. After executing this command, it will automatically download its dependencies.
+
+                                    (it will work if the .deb package is present in the apt package list)
+
+                                        Install gdebi and open your .deb file using it (Right-click -> Open with). It will install your .deb package with all its dependencies.
+
+

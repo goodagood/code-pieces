@@ -1,0 +1,7 @@
+#ffmpeg -y -i boat-to.mp4   -itsoffset 00:00:10  -i  395-house-of-the-rising-sun.mp3   -map 0:0 -map 1:0 -c:v copy -preset -async  out.mp4
+#
+
+
+# add audio:
+
+    ffmpeg -i input.mp4 -i input.mp3 -c copy -map 0:0 -map 1:0 output.mp4

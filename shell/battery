@@ -1,0 +1,12 @@
+
+    
+
+    Run the following command in a terminal for getting detailed info:
+
+    cat /proc/acpi/battery/BAT0/info
+
+    If you just want the state do:
+
+    cat /proc/acpi/battery/BAT0/state
+
+

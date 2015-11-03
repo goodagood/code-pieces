@@ -1,0 +1,44 @@
+
+up vote
+50
+down vote
+
+
+You can use import tool available in the ImageMagick package (you need to install this if its already not available on your system).
+
+Run the following command in a shell:
+
+import screenshot.png
+
+and select the window you want to capture or select a region by pressing the left mouse button and dragging.
+
+import is a actually a very powerful command which can be used in many ways to > capture the screen. For example, to capture the entire screen and after some delay and resizing it, use the following command:
+
+import -window root -resize 400×300 -delay 200 screenshot.png
+
+To see all the options available with import command, go to ImageMagick’s website.
+
+Source and more info.
+
+Another way to take a screenshot from the terminal is with scrot
+
+To install scrot type:
+
+sudo apt-get install scrot
+
+To take a screenshot in Linux from the terminal with scrot type:
+
+scrot MyScreenshot.png
+
+Some more options with scrot are here:
+
+scrot -b -d 5 '%Y:%m:%d:%H:%M:%S.png' -e 'mv $f ~/Desktop/'
+
+In this example,
+
+-b specifies including the window borders
+-d specifies a delay of five seconds
+'%Y:%m:%d:%H:%M:%S.png' will save the screenshot with a name based on the current date and time and with the format specified, .png in this case
+-e 'mv $f ~/Desktop/' tells scrot to save the screenshot to the Desktop
+
+

@@ -1,0 +1,1 @@
+#ffmpeg -i map.mp4 -i road.mp4 -filter_complex '[0:0] [0:1] [1:0] [1:1] concat=n=2:v=1:a=1 [v] [a]' -map '[v]' -map '[a]' output.mp4

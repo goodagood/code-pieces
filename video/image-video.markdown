@@ -1,0 +1,171 @@
+
+# to rotate video:
+
+To rotate the picture clockwise you can use the rotate filter, indicating a
+positive angle in radians. With 90 degrees equating with PI/2, you can do it
+like so:
+
+    ffmpeg -i in.mp4 -vf "rotate=PI/2" out.mp4
+
+for counter-clockwise the angle must be negative
+
+    ffmpeg -i in.mp4 -vf "rotate=-PI/2" out.mp4
+
+The transpose filter will work equally well for 90 degrees, but for other
+angles this is a faster or only choice.
+    
+
+# image to video
+
+        ffmpeg -start_number 00047  -framerate 25 -i dsc%05d.jpg  -vcodec libx264  sky264.mp4
+        ffmpeg -start_number 06257  -framerate 9  -i DSC%05d.JPG  -vcodec libx264  zky264.mp4
+
+        ffmpeg -start_number 00047  -framerate 9 -i dsc%05d.jpg  -vcodec libx264  -b 1600k  sky264.mp4
+
+        ffmpeg -start_number 00047   -i dsc%05d.jpg  -vcodec libx264  -vf scale=320:240  sky-small.mp4
+
+    The quality of that command's output is bad for a few reasons:
+
+    It is encoding using the MPEG-1 codec, which is quite outdated.
+    You are not setting the bitrate, so it is coming up with its own guess, which is probably inadequate.
+
+    Try something like:
+
+            ffmpeg -f image2 -i image%d.jpg -vcodec mpeg4 -b 800k video.avi
+
+            for mpeg 4 video or:
+
+            ffmpeg -f image2 -i image%d.jpg -vcodec libx264 -b 800k video.avi
+
+    for H.264 video (You will have to have libx264 installed for this to work).
+    You can play around with the bitrate because it depends on the size of your
+    frames what bitrate you will need. Also, running ffmpeg -formats will
+    display all of the output formats and codecs if you want to experiment
+    more.
+
+
+# scaling
+
+    https://trac.ffmpeg.org/wiki/Scaling%20(resizing)%20with%20ffmpeg
+
+
+# cut
+    
+
+    You can use the -ss option to specify a start timestamp, and the -t option
+    to specify the encoding duration. The timestamps need to be in HH:MM:SS.xxx
+    format or in seconds.
+
+    The following would clip the first 30 seconds, and then clip everything
+    that is 10 seconds after that:
+
+        ffmpeg -i input.wmv -ss 00:00:30.0 -c copy -t 00:00:10.0 output.wmv
+        ffmpeg -i input.wmv -ss 30 -c copy -t 10 output.wmv
+
+    Note that -t is an output option and always needs to be specified after -i.
+
+    Some tips:
+
+        If you use -ss after -i, you get more accurate seeking at the expense
+        of a slower execution altogether. You can also put -ss before -i. See
+        also: Seeking with FFmpeg – FFmpeg
+
+        You can use -to instead of -t to specify the timestamp to which you
+        want to cut. So, instead of -i <input> -ss 30 -t 10 you could also do
+        -i <input> -ss 30 -to 40 to achieve the same thing.
+
+        If your ffmpeg does not support -c, or -to, it is likely very outdated.
+        Compile a new version yourself or download a static build from their
+        homepage. It's really not complicated.
+
+
+
+# more on image to video
+
+Create a video slideshow from images
+
+Up-vote+1Down-voteStart PageIndexHistory 
+
+Contents
+
+Frame rates
+    Starting with a specific image
+    If your video does not show the frames correctly
+    Color space conversion and chroma sub-sampling
+    Using a glob pattern
+    Using a single image as an input
+    Adding audio
+    Also see
+
+Frame rates
+
+Create a video (using the encoder libx264) from series of numerically sequential images such as img001.png, img002.png, img003.png, etc.
+
+Important: All images in a series need to be the same size and format.
+
+You can specify two frame rates:
+
+The rate according to which the images are read, by setting -framerate before -i. The default for reading input is -framerate 25 which will be set if no -framerate is specified.
+    The output frame rate for the video stream by setting -r after -i or by using the fps filter. If you want the input and output frame rates to be the same, then just declare an input -framerate and the output will inherit the same value. 
+
+By using a separate frame rate for the input and output you can control the duration at which each input is displayed and tell ffmpeg the frame rate you want for the output file. If the input -framerate is lower than the output -r then ffmpeg will duplicate frames to reach your desired output frame rate. If the input -framerate is higher than the output -r then ffmpeg will drop frames to reach your desired output frame rate.
+
+In this example each image will have a duration of 5 seconds (the inverse of 1/5 frames per second). The video stream will have a frame rate of 30 fps by duplicating the frames accordingly:
+
+ffmpeg -framerate 1/5 -i img%03d.png -c:v libx264 -r 30 -pix_fmt yuv420p out.mp4
+
+Starting with a specific image
+
+For example if you want to start with img126.png then use the -start_number option:
+
+ffmpeg -framerate 1/5 -start_number 126 -i img%03d.png -c:v libx264 -r 30 -pix_fmt yuv420p out.mp4
+
+If your video does not show the frames correctly
+
+If you encounter problems, such as the first image is skipped or only shows for one frame, then use the ​fps video filter instead of -r for the output framerate (see ticket:1578 and ticket:2674 / ticket:3164 for more info):
+
+ffmpeg -framerate 1/5 -i img%03d.png -c:v libx264 -vf fps=25 -pix_fmt yuv420p out.mp4
+
+Alternatively the ​format video filter can be added to the ​filterchain to replace -pix_fmt yuv420p. The advantage to this method is that you can control which filter goes first:
+
+ffmpeg -framerate 1/5 -i img%03d.png -c:v libx264 -vf "fps=25,format=yuv420p" out.mp4
+
+Color space conversion and chroma sub-sampling
+
+By default when using libx264, and depending on your input, ffmpeg will attempt
+to avoid color subsampling. Technically this is preferred, but unfortunately
+almost all video players, excluding FFmpeg based players, and many online video
+services only support the YUV color space with 4:2:0 chroma subsampling. Using
+the options `-pix_fmt` yuv420p or -vf format=yuv420p will maximize compatibility.
+Using a glob pattern
+
+    ffmpeg also supports bash-style globbing (* represents any number of any
+    characters). This is useful if your images are sequential but not necessarily
+    in a numerically sequential order as in the previous examples.
+
+    ffmpeg -framerate 1 -pattern_type glob -i '*.jpg' -c:v libx264 out.mp4
+
+    For PNG images:
+
+    ffmpeg -framerate 1 -pattern_type glob -i '*.png' -c:v libx264 -pix_fmt yuv420p out.mp4
+
+## Using a single image as an input
+
+If you want to create a video out of just one image, this will do (output video
+duration is set to 30 seconds with -t 30):
+
+    ffmpeg -loop 1 -i img.png -c:v libx264 -t 30 -pix_fmt yuv420p out.mp4
+
+## Adding audio
+
+If you want to add audio (e.g. audio.wav) to one "poster" image, you need
+-shortest to tell it to stop after the audio stream is finished. The internal
+AAC encoder is used in this example, but you can use any other supported AAC
+encoder as well:
+
+    ffmpeg -loop 1 -i img.jpg -i audio.wav -c:v libx264 -c:a aac -strict experimental -b:a 192k -shortest out.mp4
+
+If your audio file is using a codec that the output container supports (e.g. MP3 audio in AVI or M4A/AAC audio in MP4), you can copy it instead of re-encoding, which will preserve the audio quality:
+
+ffmpeg -loop 1 -i img.jpg -i audio.m4a -c:v libx264 -c:a copy -shortest out.mp4
+

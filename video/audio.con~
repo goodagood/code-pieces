@@ -1,0 +1,55 @@
+    
+
+This will concatenate two mp3 files, and the resulting metadata will be that of the first file:
+
+    ffmpeg -i "concat:file1.mp3|file2.mp3" -acodec copy output.mp3
+
+This is because, for ffmpeg, the whole "concat:" part is a single "input file",
+and its metadata will be of the first concatenated file. If you want to use
+metadata from the second file instead, you have to add it as a dummy input file
+and map its metadata to that of the output:
+
+    ffmpeg -i "concat:file1.mp3|file2.mp3" -i file2.mp3 -acodec copy test.mp3 -map_metadata 0:1
+
+If you want to construct your metadata from the two metadatas, you'll have to
+do it by hand. You can dump a file's metadata with
+
+    ffmpeg -i file1.mp3 -f ffmetadata file1.metadata
+
+After dumping both metadatas and constructing new metadata, you can add it
+to the output file with -metadata, and you can disable metadata copying by
+setting a -map_metadata mapping from a negative input file number. This
+sets a name value and no other metadata:
+
+    ffmpeg -i "concat:file1.mp3|file2.mp3" -acodec copy -metadata "title=Some Song" test.mp3 -map_metadata 0:-1
+
+
+
+
+Generate 3 seconds of (stereo) silence
+
+ sox -n -r 44100 -c 2 silence.wav trim 0.0 3.0
+
+Combining the files
+
+ sox silence.wav filetopad.mp3 silence.wav output.wav
+ lame output.wav output.mp3
+
+Putting the steps together as a script
+
+
+     #!/bin/bash
+      
+     duration=1.0
+       
+     for i
+     do
+         sox -n -r 44100 -c 2 /tmp/silence.wav trim 0.0 $duration
+         sox $i -r 44100 -c 2 /tmp/output1.wav
+         sox /tmp/silence.wav /tmp/output1.wav /tmp/silence.wav /tmp/output.wav 
+         lame /tmp/output.wav $i
+     done
+
+Resources: http://billposer.org/Linguistics/Computation/SoxTutorial.html
+
+# vim: set ft=markdown:

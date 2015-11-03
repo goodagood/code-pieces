@@ -1,0 +1,39 @@
+
+7. Using the terminal (in my opinion the best 100% of the way)
+
+As is known, the terminal is installed in any Linux distribution by default, so
+install additional software is not required.
+
+The terminal command to write the iso image, the distribution is as follows:
+
+sudo dd if=/home/USER/linuxmint.iso of=/dev/sdb
+
+Where instead of /home/USER/linuxmint.iso you need to specify the path to the
+iso file. sdb in the end, it's a stick on which is written the way. 
+
+Note about DD utility
+
+
+To determine your flash drive, run in terminal:
+
+ df
+
+Make a bootable flash drive from an ISO image on Linux Mint using terminal
+
+And if you stick decided differently, change in the command.
+
+To be entered correctly in the command path to the file, open the folder with
+the file, open next to the terminal and drag the file into the terminal:
+
+
+Now we are ready to start. I got the command:
+
+ sudo dd if=/home/linuxmintpro/Downloads/linuxmint-17.1-mate-64bit-LinuxMint.Pro-edition.iso of=/dev/sdb1
+
+The cursor of the terminal is blinking and it seems that nothing happens, but
+actually being recorded. Wait for the image capture and at the end you should
+see in the terminal like this:
+
+That's all
+
+Good Luck!!!

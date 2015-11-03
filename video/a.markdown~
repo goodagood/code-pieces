@@ -1,0 +1,44 @@
+
+
+# capture desktop
+
+    ffmpeg -video_size 1024x576  -framerate 30 -f x11grab -i  :0.0+100,100  -c:v libx264 -qp 0  -preset ultrafast  a2121.mp4
+
+# rotate
+
+    To rotate the picture clockwise you can use the rotate filter, indicating a
+    positive angle in radians. With 90 degrees equating with PI/2, you can do it
+    like so:
+
+        ffmpeg -i in.mp4 -vf "rotate=PI/2" out.mp4
+
+    for counter-clockwise the angle must be negative
+
+        ffmpeg -i in.mp4 -vf "rotate=-PI/2" out.mp4
+
+    The transpose filter will work equally well for 90 degrees, but for other
+    angles this is a faster or only choice.
+
+
+# thumbnail
+
+    ffmpeg -ss 3 -i sun.mp4 -vf "select=gt(scene\,0.4)" -frames:v 5 -vsync vfr -vf fps=fps=1/600 thumb%02d.jpg
+
+# to mp3
+
+    ffmpeg -i input.wav -codec:a libmp3lame -qscale:a 1 output.mp3
+
+# add audio:
+
+    ffmpeg -i input_0.mp4 -i input_1.mp4 -c copy -map 0:v:0 -map 1:a:0 -shortest out.mp4
+    ffmpeg -i input.mp4 -i input.mp3 -c copy -map 0:0 -map 1:0 output.mp4
+
+# concat
+
+    ffmpeg -i all.mp4 -i dc3m.mp4 -filter_complex \
+           '[0:0] [0:1] [1:0] [1:1] concat=n=2:v=1:a=1 [v] [a]'\
+           -map '[v]' -map '[a]'    all2.mp4
+
+# end
+
+  vim: set ft=markdown:

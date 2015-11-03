@@ -1,0 +1,88 @@
+
+
+
+Height in percent when parent has min-height and no height
+
+When trying to force an element to always extend to the height of its parent I
+ran into some peculiar browser behaviour that I thought was worth mentioning.
+Here’s the situation:
+
+The parent element has a min-height specified (in pixels), but no height The
+child’s height is set to 100%
+
+I was expecting the child to get the same height as its parent, but that is not
+what happens. What happens instead may well be according to the CSS 2.1
+Specification, but a bit nonintuitive, at least to me.  What the specification
+says
+
+Here’s what the CSS 2.1 specification says about heights set in percent:
+
+The percentage is calculated with respect to the height of the generated box’s
+containing block. If the height of the containing block is not specified
+explicitly (i.e., it depends on content height), and this element is not
+absolutely positioned, the value computes to ‘auto’.
+
+I interpret the containing block in this case to be the parent element. In my
+example it doesn’t have an explicit height, but it does have a min-height, so
+its height only partly depends on content height.
+
+What about min-height, then? The min-height section in the CSS 2.1
+specification says this about min-height values with a length unit:
+
+Specifies a fixed minimum or maximum computed height.
+
+To me it sounds like this should be considered when calculating percentage
+heights of children. But browsers do not, so apparently I am not reading the
+specification correctly.  What browsers do
+
+All browsers I have tested in ignore height:100% on the child element and make
+its height the height of its content. While not what I wanted, at least it’s
+cross-browser.
+
+While fiddling with this problem I tried giving the parent element a height of
+one pixel. And now things get interesting as the result of that differs between
+browsers.
+
+This would probably be easier to understand if all browsers behaved the same
+way. But they don’t.
+
+The following browsers do not set the child element’s height (specified in
+percent) based on its parent’s computed height if only min-height is used:
+
+Safari 6.0.5 Safari for iOS 6.1 Opera 12.15 IE 8
+
+But these browsers will expand the child element’s percentage height to its
+parent’s min-height if the parent also has a height specified, even if it is
+only one pixel:
+
+    Firefox 21 WebKit Nightly (verified with r151959) Chrome 27 IE 7, 9, 10
+
+    Take a look at the Height in percent when parent has min-height and no
+    height demo page to see the difference.
+
+    Once Safari gets updated and Opera switches to WebKit I would guess that
+    browsers will all behave like the latter bunch since the latest WebKit
+    nightly build does.
+
+    I don’t really understand why giving the parent element a 1px height has
+    this effect, but it’s what the browsers do.
+
+    Another interesting thing that happens when the parent element has both
+    height and min-height specified with the same unit: if its content makes
+    the element taller than its min-height, the content will overflow as if the
+    min-height magically turns into height. The child element’s computed height
+    will remain at the parent’s specified min-height though. As far as I can
+    tell all browsers behave the same in this regard, so unfortunately you can’
+    t just add height:1px to the parent element and solve the problem.  What
+    developers expect
+
+    Speaking for myself, the intuitive behaviour in this case would be to let
+    the value used to calculate heights in percent be the parent’s computed
+    height. If the parent has no explicit height but a given min-height, that
+    value should be used for the computed height (depending on which box-sizing
+    model is used paddings and borders may also be relevant).
+
+    No solution or magic trick offered here, just an observation of browser
+    behaviour that I wasn’t really expecting.
+
+    Posted on June 28, 2013 in CSS

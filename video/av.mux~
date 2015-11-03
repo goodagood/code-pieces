@@ -1,0 +1,75 @@
+
+# I am using:
+
+    $ ffmpeg -i input_0.mp4 -i input_1.mp4 -c copy -map 0:v:0 -map 1:a:0 -shortest out.mp4
+    #ffmpeg  -i  sun916.mp4   -i all.aac   -c copy  -map 0:v:0 -map 1:a:0 -bsf:a aac_adtstoasc  -shortest  music-sun.mp4
+    #ffmpeg -i  lisa-gerrard-now-we-are-free-gladiator-hd-obgyfinwru0.mp4   -c copy  -map 0:a:0   free.aac
+
+
+Overview of inputs
+
+input_0.mp4 has the desired video stream and input_1.mp4 has the desired audio stream:
+
+mapping diagram
+
+In ffmpeg the streams look like this:
+
+    $ ffmpeg -i input_0.mp4 -i input_1.mp4
+
+    Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'input_0.mp4':
+      Duration: 00:01:48.50, start: 0.000000, bitrate: 4144 kb/s
+      Stream #0:0(und): Video: h264 (High) (avc1 / 0x31637661), yuv420p,
+      1280x720, 4014 kb/s, SAR 115:87 DAR 1840:783, 23.98 fps, 23.98 tbr, 16k
+      tbn, 47.95 tbc (default)
+      Stream #0:1(und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 124 kb/s (default)
+
+    Input #1, mov,mp4,m4a,3gp,3g2,mj2, from 'input_1.mp4':
+      Duration: 00:00:30.05, start: 0.000000, bitrate: 1754 kb/s
+      Stream #1:0(und): Video: h264 (High) (avc1 / 0x31637661), yuv420p,
+      720x480 [SAR 8:9 DAR 4:3], 1687 kb/s, 59.94 fps, 59.94 tbr, 60k tbn,
+      119.88 tbc (default) Stream #1:1(und): Audio: aac (LC) (mp4a /
+      0x6134706D), 48000 Hz, stereo, fltp, 55 kb/s (default)
+
+ID numbers
+
+    ffmpeg refers to input files and streams with index numbers. The format is
+    input_file_id:input_stream_id. Since ffmpeg starts counting from 0, stream
+    1:1 refers to the audio from input_1.mp4.
+
+Stream specifiers
+
+    This can be enhanced with stream specifiers. For example, you can tell
+    ffmpeg that you want the first video stream from the first input (0:v:0),
+    and the first audio stream from the second input (1:a:0). I prefer this
+    method because it's more efficient. Also, it is less prone to accidental
+    mapping because 1:1 can refer to any type of stream, while 2:v:3 only
+    refers to the fourth video stream of the third input file.
+
+Examples
+
+    The -map option instructs ffmpeg what streams you want. To copy the video
+    from input_0.mp4 and audio from input_1.mp4:
+
+        $ ffmpeg -i input_0.mp4 -i input_1.mp4 -c copy -map 0:0 -map 1:1 -shortest out.mp4
+
+    This next example will do the same thing:
+
+        $ ffmpeg -i input_0.mp4 -i input_1.mp4 -c copy -map 0:v:0 -map 1:a:0 -shortest out.mp4
+
+    -map 0:v:0 can be translated as: from the first input (0), select video
+    stream type (v), first video stream (0)
+
+    -map 1:a:0 can be translated as: from the second input (1), select audio
+    stream type (a), first audio stream (0)
+
+Additional Notes
+
+    With -c copy the streams will be stream copied, not re-encoded, so there
+    will be no quality loss. If you want to re-encode, see FFmpeg Wiki: H.264
+    Encoding Guide.
+
+    The -shortest option will cause the output duration to match the duration of the shortest input stream.
+
+    See the -map option documentation for more info.
+
+
