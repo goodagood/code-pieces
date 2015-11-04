@@ -2,219 +2,47 @@
 
 Sox: silencing the first 100msec of audio file then fading in
 
-                With sox, I need to silence (ie. mute) the first 100msec (or 4800 samples) of a multichannel audio file, then
-                commence a rapid fade-in over 40 msecs. I've not been able to work out how to do it. Do fade-ins have to be
-                linear with sox or are there other options?
+                With sox, I need to silence (ie. mute) the first 100msec (or
+                4800 samples) of a multichannel audio file, then commence a
+                rapid fade-in over 40 msecs. I've not been able to work out how
+                to do it. Do fade-ins have to be linear with sox or are there
+                other options?
 
                 Suggestions please?
 
-up vote 2 down  sox
-vote favorite
                                              asked Jun 10 '13 at 19:40
                                               
-                share|improve this question  [9b3]
-                                             user1602842
-                                             183
-
-                
 
 
-                add a comment |   
-
-1 Answer 1
 
 active oldest votes
 
-              Muting and fading within the audio stream are not directly supported, but in your case, you can do it in these
-              steps:
+      Muting and fading within the audio stream are not directly supported, but
+      in your case, you can do it in these steps:
 
-               1. Remove the first part of the audio with trim 0.1. (You could write trim 4800s as well, if your sample rate is
-                  48000 Hz.)
-               2. Do the fade-in on what is now the start of the audio (0.10–0.14 of the original audio), with fade 0.04.
-               3. Prepend the audio with silence to make up for what you removed, with pad 0.1.
+       1. Remove the first part of the audio with trim 0.1. (You could write
+       trim 4800s as well, if your sample rate is 48000 Hz.)
 
-              So, the complete command is:
-up vote 3 
-down vote     sox infile outfile trim 0.1 fade 0.04 pad 0.1
-accepted
-              By default, fade uses a logarithmic fade curve starting at –100 dB. However, you can choose a different curve by
-              specifying a letter directly after fade, as in fade t 0.04. There are t for linear, q for quarter-sine, h for
-              half-sine, p for parabolic, as well as l for logarithmic (the default, but in case you want to make it explicit).
+       2. Do the fade-in on what is now the start of the audio (0.10–0.14 of
+       the original audio), with fade 0.04.
 
-                                         answered Jun 11 '13 at 9:11
-                                                                    
-              share|improve this answer                        [2a8]
-                                                              chirlu
-                                                           1,4751617
+       3. Prepend the audio with silence to make up for what you removed, with
+       pad 0.1.
 
-              
-                   chirlu, many thanks for your help! –  user1602842 Jun 11 '13 at 10:02
+      So, the complete command is:
+  
+          sox infile outfile trim 0.1 fade 0.04 pad 0.1
 
-              add a comment |   
+      By default, fade uses a logarithmic fade curve starting at –100 dB.
+      However, you can choose a different curve by specifying a letter directly
+      after fade, as in fade t 0.04. There are t for linear, q for
+      quarter-sine, h for half-sine, p for parabolic, as well as l for
+      logarithmic (the default, but in case you want to make it explicit).
 
-Your Answer
+                                 answered Jun 11 '13 at 9:11
+                                                            
 
-[                                                                                            ]
-[                                                                                            ]
-[                                                                                            ]
-[                                                                                            ]
-[                                                                                            ]
-[                                                                                            ]
-[                                                                                            ]
-[                                                                                            ]
-[                                                                                            ]
-[                                                                                            ]
-[                                                                                            ]
-[                                                                                            ]
-[                                                                                            ]
-[                                                                                            ]
-[                                                                                            ]
- 
-draft saved
-draft discarded
-[                    ]
+      
+           chirlu, many thanks for your help! –  user1602842 Jun 11 '13 at 10:02
 
-Sign up or log in
 
-Sign up using Google
-
-Sign up using Facebook
-
-Sign up using Stack Exchange
-
-[Submit]
-
-Post as a guest
-
-Name [                              ]
-Email [                              ]
-
-Post as a guest
-
-Name [                              ]
-Email [                              ]
-
-[Post Your Answer] discard
-
-By posting your answer, you agree to the privacy policy and terms of service.
-
-Not the answer you're looking for? Browse other questions tagged sox or ask your own question.
-
-asked  2 years ago
-
-viewed 662 times
-
-active 2 years ago
-
-Related
-
- 
-2
-sox fails to split files
- 
-0
-How to concatenate SoX commands?
- 
-3
-Append timestamps to filenames when splitting audio at silence
- 
-2
-How to remove a frequency range from an audio file using SoX command?
- 
-1
-Generate Spectrogram with sox
- 
-1
-Reduce volume of audio file by percentage value using SOX
- 
-1
-Can I use SoX to generate audio?
- 
-0
-After sox merge get resulting files shorter than source
- 
-0
-SoX remove silents in audio file and set tags about removing places
- 
-0
-what is the sub-second format in sox audio duration?
-
-Hot Network Questions
-
-  • 
-    Use xkcd's formula to approximate the world population
-  • 
-    increase FIFO size limit
-  • 
-    How to stop Microsoft from gathering telemetry data from Windows 7, 8, and 8.1
-  • 
-    XTEA: patterns in plain text
-  • 
-    How to make a sticky post on appear on top within a view
-  • 
-    Is my future mentor "harassing" me?
-  • 
-    What does "irregularly spaced spatial data" mean?
-  • 
-    Cardshifter web client deploy script
-  • 
-    Possible to display: none for structured data(image)
-  • 
-    Why does the cursor have a tail?
-  • 
-    How to delete a line with spelling mistake ("source.list"line) in a software install in sudo?
-  • 
-    Why do braces around a single-letter argument of a macro affect its output?
-  • 
-    sed, convert single backslash to double backslash
-  • 
-    What is the meaning of four colors in Google, Microsoft and eBay logos?
-  • 
-    Can I steal the competition's ToS or Privacy Policy?
-  • 
-    The village of the liars and truth-tellers
-  • 
-    Was there ever a scene with people in zero gravity in TNG?
-  • 
-    Magento page speed is very low
-  • 
-    Question on convex sets
-  • 
-    A person from medieval times comes into our time. What would he notice first?
-  • 
-    Timely review process by reviewers
-  • 
-    Why strings behave like an array in PHP 5.3?
-  • 
-    Surround a string with hashes
-  • 
-    Anyone know the name of this game?
-
-more hot questions
-question feed
-*
-tour help blog chat data legal privacy policy work here advertising info mobile contact us feedback
-
-                        Technology                             Life / Arts       Culture /          Science            Other
-                                                                                 Recreation
-                                                             1. Photography
-                  1. Programmers                             2. Science        1. English
-                  2. Unix & Linux                               Fiction &         Language &    1. Mathematics
- 1. Stack         3. Ask Different     1. Database              Fantasy           Usage         2. Cross
-    Overflow         (Apple)              Administrators     3. Graphic        2. Skeptics         Validated
- 2. Server Fault  4. WordPress         2. Drupal Answers        Design         3. Mi Yodeya        (stats)         1. Stack Apps
- 3. Super User       Development       3. SharePoint         4. Movies & TV       (Judaism)     3. Theoretical     2. Meta Stack
- 4. Web           5. Geographic        4. User Experience    5. Seasoned       4. Travel           Computer           Exchange
-    Applications     Information       5. Mathematica           Advice         5. Christianity     Science         3. Area 51
- 5. Ask Ubuntu       Systems           6. Salesforce            (cooking)      6. Arqade        4. Physics         4. Stack
- 6. Webmasters    6. Electrical        7. ExpressionEngine®  6. Home              (gaming)      5. MathOverflow       Overflow
- 7. Game             Engineering          Answers               Improvement    7. Bicycles      6. Chemistry          Careers
-    Development   7. Android           8. more (13)          7. Personal       8. Role-playing  7. Biology
- 8. TeX - LaTeX      Enthusiasts                                Finance &         Games         8. more (5)
-                  8. Information                                Money          9. more (21)
-                     Security                                8. Academia
-                                                             9. more (9)
-
-site design / logo © 2015 Stack Exchange Inc; user contributions licensed under cc by-sa 3.0 with attribution required
-rev 2015.9.14.2816
-Stack Overflow works best with JavaScript enabled[p-c1rF4kxg]

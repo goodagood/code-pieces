@@ -1,0 +1,40 @@
+
+
+Sox: silencing the first 100msec of audio file then fading in
+
+                With sox, I need to silence (ie. mute) the first 100msec (or 4800 samples) of a multichannel audio file, then
+                commence a rapid fade-in over 40 msecs. I've not been able to work out how to do it. Do fade-ins have to be
+                linear with sox or are there other options?
+
+                Suggestions please?
+
+                                             asked Jun 10 '13 at 19:40
+                                              
+
+
+
+active oldest votes
+
+              Muting and fading within the audio stream are not directly supported, but in your case, you can do it in these
+              steps:
+
+               1. Remove the first part of the audio with trim 0.1. (You could write trim 4800s as well, if your sample rate is
+                  48000 Hz.)
+               2. Do the fade-in on what is now the start of the audio (0.10–0.14 of the original audio), with fade 0.04.
+               3. Prepend the audio with silence to make up for what you removed, with pad 0.1.
+
+              So, the complete command is:
+          
+              sox infile outfile trim 0.1 fade 0.04 pad 0.1
+        
+              By default, fade uses a logarithmic fade curve starting at –100 dB. However, you can choose a different curve by
+              specifying a letter directly after fade, as in fade t 0.04. There are t for linear, q for quarter-sine, h for
+              half-sine, p for parabolic, as well as l for logarithmic (the default, but in case you want to make it explicit).
+
+                                         answered Jun 11 '13 at 9:11
+                                                                    
+
+              
+                   chirlu, many thanks for your help! –  user1602842 Jun 11 '13 at 10:02
+
+
