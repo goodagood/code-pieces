@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<h1>  this is ul </h1>
+<ul class="nav">
+    <li><a href="#" data-i18n="nav.home">home?</a></li>
+    <li><a href="#" data-i18n="nav.page1">p1</a></li>
+    <li><a href="#" data-i18n="nav.page2">p2</a></li>
+    <li><a href="#" data-i18n="nav.page2" id='three'>p3.</a></li>
+</ul>
+</body>
+
+<script type="text/javascript" src="./node_modules/jquery/dist/jquery.js" > </script>
+<script type="text/javascript" src="./node_modules/i18next-client/i18next.js" > </script>
+<script>
+
+//loaded resource file (locales/en/translation.json):
+
+var kv = {
+    "app": {
+        "name": "i18next"
+    },
+    "nav": {
+        "home": "Home",
+        "page1": "Page One",
+        "page2": "Page Two"
+    }
+};
+
+var opts = { 
+    customLoad: function(lng, ns, options, loadComplete) {
+        // load the file for given language and namespace
+
+        // callback with parsed json data
+        //loadComplete(null, data); // or loadComplete('some error'); if failed
+
+        if(lng==='zh'){
+            return loadComplete(null, kv);
+        }
+        if(lng==='en'){
+            return loadComplete(null, kv);
+        }
+    }
+};
+
+//javascript code:
+
+i18n.init(opts, function(t) {
+    console.log('haha');
+    // translate nav
+    $(".nav").i18n();
+
+    // programatical access
+    var appName = t("app.name");
+});
+
+console.log('end?');
+$(function(){
+    console.log('jq?');
+});
+</script>
+
+</html>
+

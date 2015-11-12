@@ -1,0 +1,16 @@
+{
+  "name": "mongodb-a",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "i18next": "^1.9.0",
+    "i18next-client": "^1.9.0",
+    "jquery": "^2.1.4",
+    "underscore": "*"
+  },
+  "main": "a.js"
+}

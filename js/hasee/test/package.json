@@ -1,0 +1,21 @@
+{
+  "name": "test",
+  "version": "0.1.0",
+  "description": "test some thing, 2015 1014",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "andrew",
+  "license": "GPL",
+  "dependencies": {
+    "bcrypt": "^0.8.5",
+    "cheerio": "^0.19.0",
+    "htmlparser2": "^3.8.3",
+    "password-hash-and-salt": "^0.1.2",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  }
+}

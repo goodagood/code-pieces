@@ -13,6 +13,10 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/1104', function(req, res) {
+  res.send('<h1>2015 1104 </h1>');
+});
+
 // to test passport.js local login.
 router.get('/login', function(req, res){
   res.render('login', { title: 'login test page' });
