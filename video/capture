@@ -8,12 +8,18 @@ Use the x11grab device:
     # 16:9 >> 1024x576, 1920x1080
     #  4:3 >> 1024x768
 
+## try
+
+    ffmpeg -video_size 1024x576 -framerate 30 -f x11grab -i :0.0+100,200 -f alsa -ac 2 -i hw:0 output.mp4
+
+
 This will grab the image from desktop, starting with the upper-left corner at
 (x=100, y=200) with the width and height of 1024x768.
 
 If you need audio too you can use ALSA (see Capture/ALSA for more info):
 
     ffmpeg -video_size 1024x768 -framerate 25 -f x11grab -i :0.0+100,200 -f alsa -ac 2 -i hw:0 output.mkv
+
 
 Or the pulse input device:
 

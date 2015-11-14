@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<h1>  this is ul </h1>
+<ul class="nav">
+    <li><a href="#" data-i18n="nav:home"></a></li>
+    <li><a href="#" data-i18n="nav:page1">p1</a></li>
+    <li><a href="#" data-i18n="nav:page2">p2</a></li>
+    <li><a href="#" data-i18n=":simple">sime key</a></li>
+    <li><a href="#" data-i18n="nav.page2" id='three'>p3.</a></li>
+</ul>
+</body>
+
+<script type="text/javascript" src="./node_modules/jquery/dist/jquery.js" > </script>
+<script type="text/javascript" src="./node_modules/i18next-client/i18next.js" > </script>
+<script>
+
+
+// tree: lng -> namespace -> key -> nested key
+var resources = {
+    dev: { translation: { 'key': 'value' } },
+    en: { translation: { 'key': 'value' } },            
+    'en-US': { translation: { 'key': 'value' } },
+    zh: {
+        'simple': 'this is chinese simple key',
+        "nav" :{
+            home: 'zh home',
+            page1: "Chinese page 1",
+            page2: "Chinese page 2",
+        }
+    }
+};
+
+//i18n.init({ resStore: resources });
+var opt = { resStore: resources };
+
+//javascript code:
+
+i18n.init({resStore: resources}, function(t) {
+    console.log('haha');
+    // translate nav
+    $(".nav").i18n();
+
+    // programatical access
+    //var appName = t("app.name");
+    console.log('t: ',  $.t("nav.home"));
+});
+
+console.log('end?');
+$(function(){
+    console.log('jq?');
+});
+</script>
+
+</html>
+

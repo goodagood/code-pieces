@@ -37,10 +37,10 @@ app.use(session({
 }));
 
 
-//var passport = require ('passport');
-var passport = require ('./pp/name-pass.js').passport;
-app.use(passport.initialize());
-app.use(passport.session());
+////var passport = require ('passport');
+//var passport = require ('./pp/name-pass.js').passport;
+//app.use(passport.initialize());
+//app.use(passport.session());
 
 
 // Try to guess user languages, limited to English/Chinese.
@@ -48,6 +48,14 @@ var locale = require("locale");
 var our_langs = ['en', 'zh'];  
 app.use(locale(our_langs));
 // tested at lang-test
+
+
+// try to watch inside the express request and response.
+var watcher = require('./watch.js');
+var u = require('underscore');
+console.log(11, u.isFunction(watcher));
+app.use(watcher);
+
 
 
 var routes = require('./routes/index');

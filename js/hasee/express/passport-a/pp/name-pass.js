@@ -15,11 +15,16 @@ var p = console.log;
 //console.log(LocalStrategy);
 
 
+// try to hash and salt the password
+var hashed = require("./bcry.js");
+//hashed.prepare_db();  //comment out for others 2015 1102
+
 
 //passport.use(new LocalStrategy
 passport.use( new LocalStrategy(
     function(username, password, done){
-        check_passwd(username, password, done);
+        //check_passwd_1(username, password, done);
+        hashed.check_passwd(username, password, done);
     }
 ));
 
@@ -30,7 +35,7 @@ var name_pass = {
     'dd' : 'ddpass',
 };
 
-function check_passwd(name, password, done){
+function check_passwd_1(name, password, done){
 
     var names = Object.keys(name_pass);
 
@@ -44,6 +49,7 @@ function check_passwd(name, password, done){
         'name' : name
     });
 }
+
 
 function get_or_deserialize(name, done){
     if(typeof name_pass[name] !== 'undefined') done(null, {name: name, 'id':name});

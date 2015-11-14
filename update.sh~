@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 git add -a .
+=======
+git add .
+>>>>>>> origin/hasee
 git commit 
 git push origin  HEAD
