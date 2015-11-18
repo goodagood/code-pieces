@@ -1,9 +1,12 @@
 var util = require("util");
-var EventEmitter = require("events");
+var EventEmitter = require("events").EventEmitter;
 
-function MyStream() {
+function MyStream(a) {
     EventEmitter.call(this);
 }
+
+//var myo = {};
+//util.inherits(myo, EventEmitter);
 
 util.inherits(MyStream, EventEmitter);
 
