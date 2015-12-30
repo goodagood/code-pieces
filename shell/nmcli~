@@ -1,0 +1,48 @@
+
+Manage your wireless with nmcli
+
+nmcli is a command line tool for controlling NetworkManager and reporting on
+its status. It is meant to be used as an alternative to nm-applet for headless
+servers and by power users.
+Listing
+
+To list all wireless networks in range,
+
+$ nmcli -p dev wifi list
+
+===================================================================
+WiFi scan list
+===================================================================
+SSID          BSSID               MODE             FREQ      
+-------------------------------------------------------------------
+'Wireless-1'  B8:E6:25:37:13:XX   Infrastructure   2462 MHz  
+'Wireless-2'  02:03:D8:08:A3:XX   Infrastructure   2412 MHz  
+
+Note: Some of the columns have been stripped from the above table.
+
+To list all the known wireless networks (networks that you have previously connected to), run
+
+$ nmcli con
+
+NAME            UUID                                   TYPE              TIME
+Wireless-1      28d6c265-xxxx-4e83-907f-ecb5ab3ac37c   802-11-wireless   Thu 
+Wired-Network   30d29da3-xxxx-4ea2-94ff-0edac8954ff7   802-3-ethernet    Sun 
+Wireless-2      89f31b44-xxxx-4b7d-abb1-8242a1fa7040   802-11-wireless   Thu 
+Wireless-3      6adcb4e8-xxxx-4e88-bf50-872d9e5eb1f3   802-11-wireless   Fri 
+Wireless-4      8c4fc701-xxxx-472e-aecc-40131c0d8d31   802-11-wireless   Fri 
+
+Connecting to your network
+
+Once you locate the network that you want to connect to, copy its BSSID and run the command,
+
+$ nmcli -p dev wifi connect "00:03:D8:0A:11:XX"
+
+For a known network, you can use the UUID to connect using,
+
+$ nmcli con up uuid 28d6c265-xxxx-4e83-907f-ecb5ab3ac37c
+Deleting a known network
+
+To delete a known network,
+
+$ nmcli con delete uuid "30d29da3-xxxx-4ea2-94ff-0edac8954ff7"
+

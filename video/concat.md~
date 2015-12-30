@@ -35,7 +35,9 @@ Note that these can be either relative or absolute paths. Then you can stream co
 
     ffmpeg -f concat -i mylist.txt -c copy output
 
-It is possible to generate this list file with a bash for loop, or using printf. Either of the following would generate a list file containing every *.wav in the working directory:
+It is possible to generate this list file with a bash for loop, or using
+printf. Either of the following would generate a list file containing every
+*.wav in the working directory:
 
     # with a bash for loop
     for f in ./*.wav; do echo "file '$f'" >> mylist.txt; done
@@ -72,14 +74,18 @@ following can be used:
     ffmpeg -i input2.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts intermediate2.ts
     ffmpeg -i "concat:intermediate1.ts|intermediate2.ts" -c copy -bsf:a aac_adtstoasc output.mp4
 
-If you're using a system that supports named pipes, you can use those to avoid creating intermediate files - this sends stderr (which ffmpeg sends all the written data to) to /dev/null, to avoid cluttering up the command-line:
+If you're using a system that supports named pipes, you can use those to avoid
+creating intermediate files - this sends stderr (which ffmpeg sends all the
+written data to) to /dev/null, to avoid cluttering up the command-line:
 
     mkfifo temp1 temp2
     ffmpeg -i input1.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts temp1 2> /dev/null & \
     ffmpeg -i input2.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts temp2 2> /dev/null & \
     ffmpeg -f mpegts -i "concat:temp1|temp2" -c copy -bsf:a aac_adtstoasc output.mp4
 
-All MPEG codecs (H.264, MPEG4/divx/xvid, MPEG2; MP2, MP3, AAC) are supported in the mpegts container format, though the commands above would require some alteration (the -bsf bitstream filters will have to be changed).
+All MPEG codecs (H.264, MPEG4/divx/xvid, MPEG2; MP2, MP3, AAC) are supported in
+the mpegts container format, though the commands above would require some
+alteration (the -bsf bitstream filters will have to be changed).
 Concatenation of files with different codecs
 Concat filter
 

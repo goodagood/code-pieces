@@ -5,6 +5,7 @@
 
 
 var session   = require('express-session');
+
 var FileStore = require('./fstore.js')(session);
 
 
@@ -19,6 +20,7 @@ function prepare_session_middle_ware(sdir, secrets){
     sdir = sdir || '/tmp';
     secrets = secrets || 'I-@m th2 Secr#t W0rds!';
 
+    p(sdir, secrets);
     return session({
         store: new FileStore({path: sdir}),
         resave: false,

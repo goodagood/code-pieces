@@ -35,14 +35,21 @@ Note that these can be either relative or absolute paths. Then you can stream co
 
     ffmpeg -f concat -i mylist.txt -c copy output
 
-It is possible to generate this list file with a bash for loop, or using printf. Either of the following would generate a list file containing every *.wav in the working directory:
+It is possible to generate this list file with a bash for loop, or using
+printf. Either of the following would generate a list file containing every
+*.wav in the working directory:
 
     # with a bash for loop
     for f in ./*.wav; do echo "file '$f'" >> mylist.txt; done
     # or with printf
     printf "file '%s'\n" ./*.wav > mylist.txt
 
-If your shell supports process substitution (like Bash and Zsh), you can avoid explicitly creating a list file and do the whole thing in a single line. This would be impossible with the concat protocol (see below). Make sure to generate absolute paths here, since ffmpeg will resolve paths relative to the list file your shell may create in a directory such as "/proc/self/fd/".
+If your shell supports process substitution (like Bash and Zsh), you can avoid
+explicitly creating a list file and do the whole thing in a single line. This
+would be impossible with the concat protocol (see below). Make sure to generate
+absolute paths here, since ffmpeg will resolve paths relative to the list file
+your shell may create in a directory such as "/proc/self/fd/".
+
 
     ffmpeg -f concat -i <(for f in ./*.wav; do echo "file '$PWD/$f'"; done) -c copy output.wav
     ffmpeg -f concat -i <(printf "file '$PWD/%s'\n" ./*.wav) -c copy output.wav

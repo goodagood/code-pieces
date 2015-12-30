@@ -44,7 +44,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 var fsession = require('./fsess.js');
 var sess_folder = '/home/za/tmp/sess';
-app.use(fsession.prepare_session_middle_ware(sess_folder));
+var sess_mid    = fsession.prepare_session_middle_ware(sess_folder);
+
+app.use(sess_mid);
 //** end the session settings.
 
 
@@ -57,6 +59,13 @@ function watch(req, res, next) {
     if(o){
         o.req = req;
         o.res = res;
+        if(req.session){
+            o.sess = req.session;
+            p('oo ', o.sess);
+        }else{
+            p('no session?');
+        }
+
     }
     //if(next) return next(req, res, next);
     next();

@@ -1,0 +1,26 @@
+
+Manage your wireless with nmcli
+
+
+Listing
+
+    $ nmcli -p dev wifi list
+
+To list all the known wireless networks (networks that you have previously connected to), run
+
+    $ nmcli con
+
+Connecting to your network
+
+Once you locate the network that you want to connect to, copy its BSSID and run the command,
+
+    $ nmcli -p dev wifi connect "00:03:D8:0A:11:XX"
+
+For a known network, you can use the UUID to connect using,
+
+    $ nmcli con up uuid 28d6c265-xxxx-4e83-907f-ecb5ab3ac37c
+
+Deleting a known network
+
+$ nmcli con delete uuid "30d29da3-xxxx-4ea2-94ff-0edac8954ff7"
+
