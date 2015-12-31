@@ -25,6 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 
+var u = require('underscore');
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
@@ -32,10 +34,9 @@ app.use(function(req, res, next) {
     next(err);
 });
 
-var watcher = require('./watch.js');
-var u = require('underscore');
-//console.log(1104, u.isFunction(watcher));
-app.use(watcher);
+//var watcher = require('./watch.js');
+////console.log(1104, u.isFunction(watcher));
+//app.use(watcher);
 
 
 // error handlers

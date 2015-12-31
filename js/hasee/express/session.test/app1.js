@@ -17,6 +17,8 @@ if(typeof __dirname === 'undefined'){
     var __dirname = '/home/za/workspace/code-pieces/js/hasee/express/session.test/';
 }
 
+var secrEt = 'i 8m secrEt!';
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -26,7 +28,7 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(cookieParser(secrEt));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
@@ -44,7 +46,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 var fsession = require('./fsess.js');
 var sess_folder = '/home/za/tmp/sess';
-app.use(fsession.prepare_session_middle_ware(sess_folder));
+var sess = fsession.prepare_session_middle_ware(sess_folder, secrEt);
+app.use(sess);
 //** end the session settings.
 
 
@@ -58,6 +61,7 @@ function watch(req, res, next) {
         o.req = req;
         o.res = res;
     }
+    if(req.session) req.session.noop = 'one';
     //if(next) return next(req, res, next);
     next();
 }
@@ -103,8 +107,8 @@ app.use(function(err, req, res, next) {
 
 var myserver;
 function applisten(){
-    myserver = app.listen(3000, function() {
-      console.log('Express server listening on port 3000');
+    myserver = app.listen(3300, function() {
+      console.log('Express server listening on port 3300');
     });
 }
 applisten(); //run
