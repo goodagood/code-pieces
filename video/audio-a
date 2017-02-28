@@ -1,7 +1,13 @@
 
+
+
     ffmpeg -y -i boat-to.mp4   -itsoffset 00:00:10  -i  395-house-of-the-rising-sun.mp3 \
            -map 0:0 -map 1:0 -c:v copy -preset -async  out.mp4
 
+# chop mp3
+
+    ffmpeg -t 38 -i input.mp3 -acodec copy out.mp3  # 38 secs
+    ffmpeg -ss 39.000 -i input.mp3 -acodec copy out.mp3  # without first 39 secs
 
 
 # add audio:

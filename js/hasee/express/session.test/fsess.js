@@ -4,10 +4,16 @@
  */
 
 
+<<<<<<< HEAD
 var session   = require('express-session');
+=======
+//var session   = require('express-session');
+var session   = require('./session/index.js');
+>>>>>>> origin/hasee
 
 var FileStore = require('./fstore.js')(session);
 
+var p = console.log;
 
 //var prepare_session = session({
 //    store: new FileStore({path: './store-file-session'}),
@@ -18,14 +24,19 @@ var FileStore = require('./fstore.js')(session);
 
 function prepare_session_middle_ware(sdir, secrets){
     sdir = sdir || '/tmp';
-    secrets = secrets || 'I-@m th2 Secr#t W0rds!';
+    secrets = secrets || 'I-am th2 Secret W0rds!';
 
+<<<<<<< HEAD
     p(sdir, secrets);
+=======
+    p('going to return session');
+>>>>>>> origin/hasee
     return session({
         store: new FileStore({path: sdir}),
         resave: false,
         saveUninitialized: false,
-        secret: secrets
+        secret: secrets,
+        cookie: {maxAge: 3600000}
     });
 }
 

@@ -37,7 +37,7 @@ Note that these can be either relative or absolute paths. Then you can stream co
 
 It is possible to generate this list file with a bash for loop, or using
 printf. Either of the following would generate a list file containing every
-*.wav in the working directory:
+`*.wav` in the working directory:
 
     # with a bash for loop
     for f in ./*.wav; do echo "file '$f'" >> mylist.txt; done
@@ -107,11 +107,17 @@ This is easiest to explain using an example:
 
     [0:0] [0:1] [1:0] [1:1]
 
-tells ffmpeg what streams to send to the concat filter; in this case, streams 0 and 1 from input 0 (input1.mp4 in this example), and streams 0 and 1 from input 1 (input2.webm).
+tells ffmpeg what streams to send to the concat filter; in this case, streams 0
+and 1 from input 0 (input1.mp4 in this example), and streams 0 and 1 from input
+1 (input2.webm).
 
     concat=n=2:v=1:a=1 [v] [a]'
 
-This is the concat filter itself. n=2 is telling the filter that there are two input files; v=1 is telling it that there will be one video stream; a=1 is telling it that there will be one audio stream. [v] and [a] are names for the output streams to allow the rest of the ffmpeg line to use the output of the concat filter.
+This is the concat filter itself. n=2 is telling the filter that there are two
+input files; v=1 is telling it that there will be one video stream; a=1 is
+telling it that there will be one audio stream. [v] and [a] are names for the
+output streams to allow the rest of the ffmpeg line to use the output of the
+concat filter.
 
 Note that the single quotes around the whole filter section are required.
 
@@ -121,12 +127,19 @@ This tells ffmpeg to use the results of the concat filter rather than the stream
 
 Note that filters are incompatible with stream copying; you can't use -c copy with this method. Also, I'm not sure whether softsubs are supported.
 
-As you can infer from this example, multiple types of input are supported, and anything readable by ffmpeg should work. The inputs have to be of the same frame size, and a handful of other attributes have to match.
+As you can infer from this example, multiple types of input are supported, and
+anything readable by ffmpeg should work. The inputs have to be of the same
+frame size, and a handful of other attributes have to match.
 Using an external script
 
-The following script can be used to concatenate multiple input media files (containing audio/video streams) into one output file (just like as if all the inputs were played in a playlist, one after another). It is based on this FAQ item: How can I join video files, which also contains other useful information.
+The following script can be used to concatenate multiple input media files
+(containing audio/video streams) into one output file (just like as if all the
+inputs were played in a playlist, one after another). It is based on this FAQ
+item: How can I join video files, which also contains other useful information.
 
-If you find any bugs, feel free to correct the script, add yourself to the list of contributors and change the version string to reflect your change(s) or email the author with your patch, whatever you find more convenient.
+If you find any bugs, feel free to correct the script, add yourself to the list
+of contributors and change the version string to reflect your change(s) or
+email the author with your patch, whatever you find more convenient.
 Instructions
 
 Save the script in a file named mmcat (or some other name), make it executable (chmod +x mmcat) and run it, using the syntax:
@@ -137,7 +150,10 @@ If you get an error like this:
 
     #/tmp/mcs_v_all: Operation not permitted
 
-that could mean that you don't have correct permissions set on /tmp directory (or whatever you set in TMP variable) or that decoding of your input media has failed for some reason. In this case it would be the best to turn on the logging (as described in the script's comments)
+that could mean that you don't have correct permissions set on /tmp directory
+(or whatever you set in TMP variable) or that decoding of your input media has
+failed for some reason. In this case it would be the best to turn on the
+logging (as described in the script's comments)
 Script
 
     #!/bin/bash
@@ -277,6 +293,9 @@ Script
     ################################################################################
     rm -f $TMP/mcs_*
 
+
+#ffmpeg -i all.mp4 -i dc3m.mp4 -filter_complex '[0:0] [0:1] [1:0] [1:1] concat=n=2:v=1:a=1 [v] [a]' -map '[v]' -map '[a]'    all2.mp4
+#ffmpeg -i map.mp4 -i road.mp4 -filter_complex '[0:0] [0:1] [1:0] [1:1] concat=n=2:v=1:a=1 [v] [a]' -map '[v]' -map '[a]' output.mp4
 
 # end
   vim: set ft=markdown:

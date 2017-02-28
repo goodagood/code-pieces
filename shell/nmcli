@@ -9,6 +9,7 @@ Listing
 To list all the known wireless networks (networks that you have previously connected to), run
 
     $ nmcli con
+    $ nmcli -p dev wifi connect "the wifi name"  password PAssWord name "it's name"
 
 Connecting to your network
 

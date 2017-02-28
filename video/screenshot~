@@ -1,0 +1,19 @@
+
+    mplayer -vf screenshot  to-be-play-video.mp4.or.avi.or.any.flv
+    # hit 's' when you want the screenshot
+
+Then, to take a single shot, make sure that the mplayer window is active (move
+the mouse over it if you are using sloppy focus) and press ‘s’. 
+
+    convert input-image  -resize 1024x  -quality 50%  new-name-image
+
+
+
+ Create a stereo output from one mono input:
+
+ ffmpeg -i input.mp3 -ac 2 output.m4a
+
+ or with the amerge audio filter:
+
+ ffmpeg -i input.mp3 -filter_complex "[0:a][0:a]amerge=inputs=2[aout]" -map "[aout]" output.m4a
+

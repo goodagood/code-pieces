@@ -20,6 +20,8 @@ angles this is a faster or only choice.
         ffmpeg -start_number 00047  -framerate 25 -i dsc%05d.jpg  -vcodec libx264  sky264.mp4
         ffmpeg -start_number 06257  -framerate 9  -i DSC%05d.JPG  -vcodec libx264  zky264.mp4
 
+        ffmpeg -framerate 25 -pattern_type glob -i '*.jpg' -c:v libx264 out.mp4
+
         ffmpeg -start_number 00047  -framerate 9 -i dsc%05d.jpg  -vcodec libx264  -b 1600k  sky264.mp4
 
         ffmpeg -start_number 00047   -i dsc%05d.jpg  -vcodec libx264  -vf scale=320:240  sky-small.mp4
@@ -43,6 +45,7 @@ angles this is a faster or only choice.
     display all of the output formats and codecs if you want to experiment
     more.
 
+     cat *.jpg | ffmpeg -f image2pipe -r 1 -vcodec mjpeg -i - -vcodec libx264 out.mp4
 
 # scaling
 
@@ -99,36 +102,55 @@ Frame rates
 
 Frame rates
 
-Create a video (using the encoder libx264) from series of numerically sequential images such as img001.png, img002.png, img003.png, etc.
+Create a video (using the encoder libx264) from series of numerically
+sequential images such as img001.png, img002.png, img003.png, etc.
 
 Important: All images in a series need to be the same size and format.
 
 You can specify two frame rates:
 
-The rate according to which the images are read, by setting -framerate before -i. The default for reading input is -framerate 25 which will be set if no -framerate is specified.
-    The output frame rate for the video stream by setting -r after -i or by using the fps filter. If you want the input and output frame rates to be the same, then just declare an input -framerate and the output will inherit the same value. 
+The rate according to which the images are read, by setting -framerate before
+-i. The default for reading input is -framerate 25 which will be set if no
+-framerate is specified.
 
-By using a separate frame rate for the input and output you can control the duration at which each input is displayed and tell ffmpeg the frame rate you want for the output file. If the input -framerate is lower than the output -r then ffmpeg will duplicate frames to reach your desired output frame rate. If the input -framerate is higher than the output -r then ffmpeg will drop frames to reach your desired output frame rate.
+    The output frame rate for the video stream by setting -r after -i or by
+    using the fps filter. If you want the input and output frame rates to be
+    the same, then just declare an input -framerate and the output will inherit
+    the same value. 
 
-In this example each image will have a duration of 5 seconds (the inverse of 1/5 frames per second). The video stream will have a frame rate of 30 fps by duplicating the frames accordingly:
+By using a separate frame rate for the input and output you can control the
+duration at which each input is displayed and tell ffmpeg the frame rate you
+want for the output file. If the input -framerate is lower than the output -r
+then ffmpeg will duplicate frames to reach your desired output frame rate. If
+the input -framerate is higher than the output -r then ffmpeg will drop frames
+to reach your desired output frame rate.
 
-ffmpeg -framerate 1/5 -i img%03d.png -c:v libx264 -r 30 -pix_fmt yuv420p out.mp4
+In this example each image will have a duration of 5 seconds (the inverse of
+1/5 frames per second). The video stream will have a frame rate of 30 fps by
+duplicating the frames accordingly:
+
+    ffmpeg -framerate 1/5 -i img%03d.png -c:v libx264 -r 30 -pix_fmt yuv420p out.mp4
 
 Starting with a specific image
 
-For example if you want to start with img126.png then use the -start_number option:
+For example if you want to start with img126.png then use the `-start_number` option:
 
-ffmpeg -framerate 1/5 -start_number 126 -i img%03d.png -c:v libx264 -r 30 -pix_fmt yuv420p out.mp4
+    ffmpeg -framerate 1/5 -start_number 126 -i img%03d.png -c:v libx264 -r 30 -pix_fmt yuv420p out.mp4
 
 If your video does not show the frames correctly
 
-If you encounter problems, such as the first image is skipped or only shows for one frame, then use the ​fps video filter instead of -r for the output framerate (see ticket:1578 and ticket:2674 / ticket:3164 for more info):
+If you encounter problems, such as the first image is skipped or only shows for
+one frame, then use the ​fps video filter instead of -r for the output
+framerate (see ticket:1578 and ticket:2674 / ticket:3164 for more info):
 
-ffmpeg -framerate 1/5 -i img%03d.png -c:v libx264 -vf fps=25 -pix_fmt yuv420p out.mp4
+    ffmpeg -framerate 1/5 -i img%03d.png -c:v libx264 -vf fps=25 -pix_fmt yuv420p out.mp4
 
-Alternatively the ​format video filter can be added to the ​filterchain to replace -pix_fmt yuv420p. The advantage to this method is that you can control which filter goes first:
+    Alternatively the ​format video filter can be added to the ​
+    filterchain to replace -pix_fmt yuv420p. The advantage to this method is that
+    you can control which filter goes first:
 
-ffmpeg -framerate 1/5 -i img%03d.png -c:v libx264 -vf "fps=25,format=yuv420p" out.mp4
+    ffmpeg -framerate 1/5 -i img%03d.png -c:v libx264 -vf "fps=25,format=yuv420p" out.mp4
+
 
 Color space conversion and chroma sub-sampling
 

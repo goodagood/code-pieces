@@ -1,0 +1,140 @@
+
+
+
+
+
+Daniel Mitchell's Blog
+
+
+
+Video in a Video using FFMPEG
+
+Posted on September 10, 2013 by Daniel MitchellLeave a comment
+
+Use ffmpeg to overlay a video inside a master video or picture in a picture.
+This effect can be accomplished using ffmpegs overlay filter command.
+
+video-in-a-video
+
+For this example I use two videos.
+A master_video.mp4 1920×1080 and a resized smaller_inner_video.mp4 800×450.
+The two can be combined with the following command:
+
+    >ffmpeg.exe -i master_video.mp4 -vf 
+     "movie=smaller_inner_video.mp4[inner]; [in][inner] overlay [out]"
+     completed.mp4
+
+To improve the look the inner video can have additional padding to adjust its
+position. The following is the same as above, except additional padding is
+added:
+
+    >ffmpeg.exe -i master_video.mp4 -vf "movie=smaller_inner_video.mp4[inner]; 
+    [in][inner] overlay=70:70 [out]" completed.mp4
+
+This produces the following:
+
+video-in-a-video-padded
+
+You can use the padding, to present the inner video into a different corner as required.
+
+You can use the same technique to combine multiple videos together. Simple string the commands together using the [labels] and semi colons ; to separate the steps. For example:
+
+>ffmpeg.exe -i master_video.mp4 -vf "movie=smaller_inner_video.mp4[inner]; 
+movie=smaller_inner_video2.mp4[inner2]; [in][inner] overlay=70:70 [step1]; 
+[step1][inner2] overlay=1050:560 [out]" completed.mp4
+
+Will produce something like:
+
+video-in-a-video-multiple
+
+Combining steps
+
+In the above examples I had used a video file that had been resized to the smaller size (800×450). However the resizing of the inner video and the merging onto the master video can be done in one step, rather than having to resize the video first, then do a second ffmpeg command to actually combine the two videos.
+
+>ffmpeg.exe -i master_video.mp4 -vf "movie=smaller_inner_video.mp4, scale=800:-1 [inner]; 
+[in][inner] overlay=70:70 [out]" completed.mp4
+
+Notice the (comma) , scale=800:-1 This tells ffmpeg to first of all scale the inner movie to the width of 800. The -1 tells ffmpeg to maintain the aspect ratio.
+
+Combining tasks allows ffmpeg to optimise the process which should reduce the time required to complete an operation. it also saves making additional intermediate files.
+
+Fade out
+
+Unless the videos are both the same length, then the last frame of the inner video will remain until the master video has finished. In this case it is best to use the fade command to improve the display.
+
+>ffmpeg.exe -i master_video.mp4 -vf "movie=smaller_inner_video.mp4,  fade=out:300:30:alpha=1 [inner]; 
+[in][inner] overlay=70:70 [out]" completed.mp4
+
+Again use the comma to add additional filters , fade=out:300:alpha=1 This tells ffmpeg to use the fade out filter. The first number is the start frame, the second number is the number of frames the fade should happen over. The alpha=1 part tells ffmpeg to make the video entirely transparent.
+
+Remember all new lines in the ffmpeg commands above should be ignored. They are only there to improve readability on this page. All the commands were tested on Windows machine using a version of ffmpeg built on March 2013
+Share this:
+
+Email
+Print
+
+Categories: ffmpeg
+Leave a comment
+
+Your email address will not be published. Required fields are marked *
+
+Comment
+
+Name *
+
+Email *
+
+Website
+
+Notify me of follow-up comments by email.
+
+Notify me of new posts by email.
+« Windows 8 Firewall Predefined Rules Missing
+Install Windows on a DEDIBOX XC C2750 Avoton at Online.net »
+Categories
+
+Facebook
+ffmpeg
+Outlook
+VirtualMachine
+Windows
+YouTube
+
+Recent Posts
+
+Compact or Resize VHD file
+Install Windows on a DEDIBOX XC C2750 Avoton at Online.net
+Video in a Video using FFMPEG
+Windows 8 Firewall Predefined Rules Missing
+Windows 7 Product Key not available
+
+Recent Comments
+
+Darren on Outlook 2007 Prompt for mail account when sending email
+Michael on Windows 7 Product Key not available
+Vikas Sharma on Install Windows on a DEDIBOX XC C2750 Avoton at Online.net
+Esther on Reset Windows 7 Rearm Count
+Aki on Reset Windows 7 Rearm Count
+
+Archives
+
+January 2016
+September 2014
+September 2013
+August 2013
+July 2013
+June 2013
+May 2013
+August 2007
+
+Meta
+
+Register
+Log in
+Entries RSS
+Sign Language BSL
+Sign Language ASL
+
+Contact Privacy Policy 
+
+:)

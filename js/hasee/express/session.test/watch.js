@@ -18,4 +18,4 @@ module.exports.seto = seto;
 
 function seto(o) {
     o = o;
-});
+};

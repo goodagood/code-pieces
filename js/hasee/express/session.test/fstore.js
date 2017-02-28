@@ -9,6 +9,8 @@ var fs  = require('graceful-fs'),
   path  = require('path'),
   retry = require("retry");
 
+var util = require('util');
+
 var p = console.log;
 
 /**
@@ -59,6 +61,7 @@ module.exports = function (session) {
       }, self.reapInterval);
     }
 
+<<<<<<< HEAD
     // With ubuntu, i got no such thing: 'stats.isDirectory', 2015 1115
     fs.stat(self.path, function(err, stats){
         if(!err) return;
@@ -67,13 +70,26 @@ module.exports = function (session) {
             if(err) p('trying to make dir get: ', err);
             if (err && err.code != 'EEXIST') throw err;
         });
+=======
+    fs.mkdir(self.path, function (err) {
+        if(err) p('trying to make dir get: ', err);
+        if (err && err.code != 'EEXIST'){
+            p('trying throw err when making dir: ', err);
+            throw err;
+        }
+>>>>>>> origin/hasee
     });
   }
 
   /**
    * Inherit from Store
    */
+<<<<<<< HEAD
   FileStore.prototype.__proto__ = Object.create(Store.prototype);
+=======
+  FileStore.prototype.__proto__ = Store.prototype;
+  //util.inherits(FileStore, Store);
+>>>>>>> origin/hasee
 
   /**
    Delete sessions older than ttl / maxAge
@@ -115,6 +131,8 @@ module.exports = function (session) {
   FileStore.prototype.get = function (sessionId, callback) {
     var self = this;
 
+    p('in get');
+
     var sessionPath = path.join(this.path, sessionId + '.json'),
       json;
 
@@ -126,6 +144,7 @@ module.exports = function (session) {
     });
 
     operation.attempt(function (currentAttempt) {
+<<<<<<< HEAD
       fs.readFile(sessionPath, 'utf8', function (err, data) {
         if (err) return callback(err);
 
@@ -139,12 +158,28 @@ module.exports = function (session) {
           return callback(err);
         }
         p('get ', sessionPath, json);//indev
+=======
+        p('current attempt in get, ', currentAttempt);
+        fs.readFile(sessionPath, 'utf8', function (err, data) {
+            if (err) return callback(err);
 
-        callback(null, json);
-      });
+            try {
+                json = JSON.parse(data);
+            } catch (err) {
+                if (operation.retry(err)) {
+                    console.log("[retry] will retry, error on last attempt: " + err);
+                    return;
+                }
+                return callback(err);
+            }
+>>>>>>> origin/hasee
+
+            callback(null, json);
+        });
     });
   };
 
+  // no using retry, the lib is not fully good written. 2015 1125
   /**
    * Attempts to commit the given session associated with the given `sessionId` to a session file
    *
@@ -157,6 +192,7 @@ module.exports = function (session) {
   FileStore.prototype.set = function (sessionId, session, callback) {
     var self = this;
 
+<<<<<<< HEAD
     var spath = path.join(self.path, sessionId + '.json');
 
     try {
@@ -170,6 +206,18 @@ module.exports = function (session) {
               p('set ', spath, session);//indev
               return callback(null, session);
           }
+=======
+    var session_json_file_path = path.join(self.path, sessionId + '.json');
+
+    p('in set, ', session_json_file_path);
+
+    try {
+      session.__lastAccess = new Date().getTime();
+      session = JSON.stringify(session);
+
+      fs.writeFile(session_json_file_path, session, function (err) {
+        callback && err ? callback(err) : callback(null, JSON.parse(session));
+>>>>>>> origin/hasee
       });
     } catch (err) {
       callback && callback(err);
@@ -186,9 +234,10 @@ module.exports = function (session) {
    * @api public
    */
   FileStore.prototype.destroy = function (sessionId, callback) {
-    fs.unlink(path.join(this.path, sessionId + '.json'), function (err) {
-      if (callback) callback(err);
-    });
+      p('in destroy');
+      fs.unlink(path.join(this.path, sessionId + '.json'), function (err) {
+          if (callback) callback(err);
+      });
   };
 
   /**
@@ -199,20 +248,21 @@ module.exports = function (session) {
    * @api public
    */
   FileStore.prototype.length = function (callback) {
-    var self = this;
+      p('in length');
+      var self = this;
 
-    fs.readdir(self.path, function (err, files) {
-      if (err) return callback(err);
+      fs.readdir(self.path, function (err, files) {
+          if (err) return callback(err);
 
-      var result = 0;
-      files.forEach(function (file) {
-        if (self.filePattern.exec(file)) {
-          ++result;
-        }
+          var result = 0;
+          files.forEach(function (file) {
+              if (self.filePattern.exec(file)) {
+                  ++result;
+              }
+          });
+
+          callback(null, result);
       });
-
-      callback(null, result);
-    });
   };
 
   /**
@@ -223,6 +273,7 @@ module.exports = function (session) {
    * @api public
    */
   FileStore.prototype.clear = function (callback) {
+      p('in clear');
     var self = this,
       filePath;
 
@@ -259,6 +310,7 @@ module.exports = function (session) {
    * @api public
    */
   FileStore.prototype.list = function (callback) {
+      p('in list');
     var self = this;
 
     fs.readdir(self.path, function (err, files) {
@@ -281,6 +333,7 @@ module.exports = function (session) {
    * @api public
    */
   FileStore.prototype.expired = function (sessionId, callback) {
+      p('in expired');
     var self = this,
       now = new Date().getTime();
     self.get(sessionId, function (err, session) {
@@ -294,6 +347,12 @@ module.exports = function (session) {
       err ? callback(err) : callback(null, session.__lastAccess + ttl < now);
     });
   };
+
+  //h
+  FileStore.prototype.info = function () {
+      p(options);
+  };
+  p('going to return FileStore');
 
   return FileStore;
 };
